@@ -11,6 +11,7 @@ public class Algo2mac {
 		alg2(3);
 	}
 	/**
+	 * 88888
 	 * This Function compare each row in listInput to all the rows in list comb.
 	 * Find the  five rows most similar by the requirement of imagine.
 	 * Then send them to the class PiAlgo2 to calculate and to insert to the row the missing data.
