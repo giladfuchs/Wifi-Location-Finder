@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) throws ParseException {
 		/**
-		 * main function
+		 * Main function
 		 * @param dirPath get the path to upload wigelewifi file
 		 * @param desPath get the path and name for the file he will create by the requirement of q2
 		 * @param srcPath get the path to upload the csv file we create 
