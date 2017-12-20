@@ -13,19 +13,20 @@ import object.Row;
 public class WriteToKMLTestempty {
 
 	@Test
-	public void testempty() {
+	public void testempty() 
+	{
 		/**
 		 * This function send to create kml file without a spot and 
 		 * check if it's create a kml file
 		 */
+		String desPath = "C:/OOP/final_Test.kml";
 		List<Row> listInput = new ArrayList<Row>();	
 		WriteToKML kml=new WriteToKML();
-		kml. createKMLFile(listInput);
-		File k = new File("final.kml");
+		kml.createKMLFile(listInput,desPath);
+		File k = new File(desPath);
 		boolean check=true;
 		if(k.isFile()){
-			check=false;
-		
+			check=false;	
 		}
 		assertEquals(true, check);
 	}

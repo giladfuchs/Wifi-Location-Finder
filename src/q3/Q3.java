@@ -9,15 +9,18 @@ import Read_Write.WriteToKML;
 import object.Row;
 
 public class Q3 {
+	/** 
+	 * This function get a path with the file we created in q2.
+	 * then it's upload it to list by the function ReadFileIntoList3
+	 * and then send it to filter,and after create a kml file
+	 * @param srcPath
+	 * @param desPath
+	 * @param desPathAfterFilterKML 
+	 * @throws ParseException
+	 */
 
-
-	public void ReadFile(String srcPath) throws ParseException
+	public void ReadFile(String srcPath, String desPathAfterFilterCSV, String desPathAfterFilterKML) throws ParseException
 	{
-		/**
-		 * This function get a path with the file we created in q2.
-		 * then it's upload it to list by the function ReadFileIntoList3
-		 *  and then send it to filter,and after create a kml file
-		 */
 		File file = new File(srcPath);		
 		ReadAndWriteCSV read = new ReadAndWriteCSV();
 
@@ -28,14 +31,13 @@ public class Q3 {
 		if(!listInput.isEmpty()){
 			System.out.println("-------");
 			Filter f = new Filter();
-			listOutput = f.filter(listInput,listOutput);	
+			listOutput = f.filter(listInput,listOutput,desPathAfterFilterCSV);	
 		}
 		/**
 		 * write the kml file		
 		 */
 		WriteToKML kml=new WriteToKML();
-		kml. createKMLFile(listOutput);
+		kml.createKMLFile(listOutput,desPathAfterFilterKML);
 	}
-
 
 }

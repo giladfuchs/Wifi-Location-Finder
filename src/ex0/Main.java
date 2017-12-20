@@ -13,8 +13,8 @@ public class Main {
 		 * @param desPath get the path and name for the file he will create by the requirement of q2
 		 * @param srcPath get the path to upload the csv file we create 
 		 */
-		String dirPath = "C:/Users/Gilad Fuchs/workspace/Ex0";
-		String desPath = "C:/Users/Gilad Fuchs/workspace/Ex0/output2.csv";
+		String dirPath = "C:/OOP/WigleWifi_files";
+		String desPath = "C:/OOP/List_of_wifi.csv";
        
 		Q2 q2 = new Q2();          
 		/**
@@ -23,9 +23,11 @@ public class Main {
 		 */
 		boolean b = q2.ReadDir(dirPath,desPath);
 		if(b){
-			String srcPath = "C:/Users/Gilad Fuchs/workspace/Ex0/output2.csv";		
+			String filePath = "C:/OOP/List_of_wifi.csv";
+			String desPathAfterFilterCSV = "C:/OOP/List_of_wifi_after_filter.csv";
+			String desPathAfterFilterKML = "C:/OOP/final.kml";
 			Q3 q3 = new Q3();
-			q3.ReadFile(srcPath);     
+			q3.ReadFile(filePath,desPathAfterFilterCSV,desPathAfterFilterKML);     
 		}
 		/**
 		 *  read file -> filter by time&ID&location -> filter by MAC -> write to kml
