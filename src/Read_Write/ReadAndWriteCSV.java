@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import object.Details;
-import object.Listmac;
-import object.Row;
-import object.Spot;
-import object.Wifi;
+import Objects.Details;
+import Objects.Listmac;
+import Objects.Row;
+import Objects.Spot;
+import Objects.Wifi;
 
 public class ReadAndWriteCSV {
 	/**
