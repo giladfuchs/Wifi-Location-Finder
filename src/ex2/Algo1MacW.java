@@ -10,9 +10,10 @@ public class Algo1MacW {
 	/**
 	 * 	
 	 * @param output The List he receive from the Function macbase 
+	 * @param dest 
 	 */
 
-	public  void MacW(List<Listmac> output){
+	public  void MacW(List<Listmac> output, String dest){
 
 		List<Listmac> output2 = new ArrayList<Listmac>();
 		/**
@@ -49,6 +50,6 @@ public class Algo1MacW {
 		 * export it to csv file
 		 */
 		ReadAndWriteCSV a=new ReadAndWriteCSV();
-		a.WriteListmacIntoFile(output2, "C:/Users/Gilad Fuchs/workspace/Ex0/mac.csv");	
+		a.WriteListmacIntoFile(output2,dest);	
 
 	}}
