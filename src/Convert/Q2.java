@@ -16,6 +16,8 @@ public class Q2
 	 */
 	public boolean ReadDir(String dirPath,String destination) // read files from directory
 	{
+		if(dirPath.equals("/WigleWifi_files") || destination.equals(".csv"))
+			return false;
 		File folder = new File(dirPath);
 		File[] listOfFiles = folder.listFiles();
 

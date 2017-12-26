@@ -29,7 +29,7 @@ public class Main {
 			String desPathAfterFilterCSV = "C:/OOP/List_of_wifi_after_filter.csv";
 			String desPathAfterFilterKML = "C:/OOP/final.kml";
 			Q3 q3 = new Q3();
-			q3.ReadFile(filePath,desPathAfterFilterCSV,desPathAfterFilterKML);     
+			q3.ReadFile(filePath);//,desPathAfterFilterCSV,desPathAfterFilterKML);     
 		}
 		
 	}

@@ -18,7 +18,7 @@ public class Filter {
 	 * @throws ParseException
 	 *This function filter the data by the user requirement
 	 */
-	public List<Row> filter(List<Row> listInput,List<Row> listOutput, String desPath) throws ParseException 
+	public List<Row> filter(List<Row> listInput,List<Row> listOutput) throws ParseException 
 	{
 		Scanner reader = new Scanner(System.in);
 		int filter=0;
@@ -160,8 +160,8 @@ public class Filter {
 		 */
 		MacQ3 M=new MacQ3();
 		M.Mac(listOutput);
-		ReadAndWriteCSV write = new ReadAndWriteCSV();
-		write.WriteListIntoFile(listOutput,desPath);	
+		//ReadAndWriteCSV write = new ReadAndWriteCSV();
+		//write.WriteListIntoFile(listOutput,desPath);	
 		return listOutput;	
 	}
 

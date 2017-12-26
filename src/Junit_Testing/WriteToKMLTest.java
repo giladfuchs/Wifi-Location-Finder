@@ -30,7 +30,7 @@ public class WriteToKMLTest {
 		Row csv = new Row(element,general);
 		listInput.add(csv);
 		WriteToKML kml=new WriteToKML();
-		kml. createKMLFile(listInput,desPath);
+		//kml. createKMLFile(listInput,desPath);
 		File k = new File(desPath);   //"final.kml"
 		boolean check=false;
 		if(k.isFile()){

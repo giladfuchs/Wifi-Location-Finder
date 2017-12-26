@@ -16,12 +16,14 @@ public class Q3 {
 	 * @param srcPath
 	 * @param desPath
 	 * @param desPathAfterFilterKML 
+	 * @return 
 	 * @throws ParseException
 	 */
 
-	public void ReadFile(String srcPath, String desPathAfterFilterCSV, String desPathAfterFilterKML) throws ParseException
+	public List<Row> ReadFile(String srcPath) throws ParseException
 	{
-		File file = new File(srcPath);		
+		File file = new File(srcPath);
+
 		ReadAndWriteCSV read = new ReadAndWriteCSV();
 
 		List<Row> listInput = new ArrayList<Row>();  
@@ -31,13 +33,9 @@ public class Q3 {
 		if(!listInput.isEmpty()){
 			System.out.println("-------");
 			Filter f = new Filter();
-			listOutput = f.filter(listInput,listOutput,desPathAfterFilterCSV);	
-		}
-		/**
-		 * write the kml file		
-		 */
-		WriteToKML kml=new WriteToKML();
-		kml.createKMLFile(listOutput,desPathAfterFilterKML);
+			listOutput = f.filter(listInput,listOutput);	
+		}		
+		return listOutput;
 	}
 
 }

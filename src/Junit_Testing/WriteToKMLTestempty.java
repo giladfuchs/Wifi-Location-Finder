@@ -22,7 +22,7 @@ public class WriteToKMLTestempty {
 		String desPath = "C:/OOP/final_Test.kml";
 		List<Row> listInput = new ArrayList<Row>();	
 		WriteToKML kml=new WriteToKML();
-		kml.createKMLFile(listInput,desPath);
+		//kml.createKMLFile(listInput,desPath);
 		File k = new File(desPath);
 		boolean check=true;
 		if(k.isFile()){

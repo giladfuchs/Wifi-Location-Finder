@@ -13,9 +13,10 @@ public class WriteToKML
 	/**
 	 * This function get a list of Row object and create with that kml file by using jre for kml
 	 * @param list
+	 * @param desPath 
 	 * @param desPathAfterFilterKML 
 	 */
-	public  void createKMLFile(List<Row> list, String desPathAfterFilterKML)
+	public  void createKMLFile(List<Row> list, String desPath)
 	{
 		Kml l =new Kml();
 		Document doc=l.createAndSetDocument();
@@ -36,7 +37,7 @@ public class WriteToKML
 		 */
 		if(list.size()>0){
 			try {
-				l.marshal(new File(desPathAfterFilterKML));  //"final.kml"
+				l.marshal(new File(desPath));  //"final.kml"
 				/**
 				 * write to kml file
 				 */
