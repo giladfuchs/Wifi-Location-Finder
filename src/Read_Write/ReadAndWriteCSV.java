@@ -62,7 +62,7 @@ public class ReadAndWriteCSV {
 			System.out.println("The file is empty");
 			return listInput;
 		}
-		Spot spot=new Spot(input,ID);      
+		Spot spot = new Spot(ID,temp[0],temp[1],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[10]);    
 		listInput.add(spot);	 
 		/**
 		 *  read all lines
@@ -70,13 +70,15 @@ public class ReadAndWriteCSV {
 		while(scan.hasNext())    
 		{
 			input = scan.nextLine();
-			spot=new Spot(input,ID);      
+			temp = input.split(",");
+			
+			spot=new Spot(ID,temp[0],temp[1],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[10]);      
 			listInput.add(spot);	         	               	        
 		}	   
 		scan.close();
 		return listInput;	   
 	}
-
+	
 	public List<Row> ReadFileIntoList3(String filePath)  
 	{
 		List<Row> listInput = new ArrayList<Row>();	

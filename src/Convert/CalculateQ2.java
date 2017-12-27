@@ -47,7 +47,7 @@ public class CalculateQ2 {
 					if(countWifi<10)
 					{					
 						countWifi++;
-						Wifi insert=new Wifi(listInput.get(i).getMac(),listInput.get(i).getSSID(),listInput.get(i).getchanal(),listInput.get(i).getSignal());
+						Wifi insert=new Wifi(listInput.get(i).getMac(),listInput.get(i).getSsid(),listInput.get(i).getChanal(),listInput.get(i).getSignal());
 						element.add(insert);
 					}
 					else  // only best 10 wifi
@@ -62,7 +62,7 @@ public class CalculateQ2 {
 						if(Integer.parseInt(listInput.get(i).getSignal()) > Integer.parseInt(element.get(minSignalIndex).getSignal()))
 						{
 							element.remove(minSignalIndex);
-							Wifi insert=new Wifi(listInput.get(i).getMac(),listInput.get(i).getSSID(),listInput.get(i).getchanal(),listInput.get(i).getSignal());
+							Wifi insert=new Wifi(listInput.get(i).getMac(),listInput.get(i).getSsid(),listInput.get(i).getChanal(),listInput.get(i).getSignal());
 							element.add(insert);      					
 						} 
 					}
@@ -93,7 +93,7 @@ public class CalculateQ2 {
 					/**
 					 * add the wifi of the current row to the wifi's list
 					 */
-					Wifi insert=new Wifi(listInput.get(i).getMac(),listInput.get(i).getSSID(),listInput.get(i).getchanal(),listInput.get(i).getSignal());
+					Wifi insert=new Wifi(listInput.get(i).getMac(),listInput.get(i).getSsid(),listInput.get(i).getChanal(),listInput.get(i).getSignal());
 					element.add(insert);
 				}
 			}
