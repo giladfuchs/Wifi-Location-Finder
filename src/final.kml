@@ -1,0 +1,4325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <Placemark>
+            <name>HOTBOX-D88A</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-D88A
+Signal:   -92
+Chanal:   1
+Mac:   c0:ac:54:f5:b4:c9
+Time and Date:   2017-12-01 10:42:54
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:42:54</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8144489381276,32.17224246105308</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Efrat</name>
+            <open>1</open>
+            <description>Ssid: Efrat
+Signal:   -74
+Chanal:   11
+Mac:   b4:ee:b4:86:c0:f1
+Time and Date:   2017-12-01 10:43:00
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:00</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81444473498782,32.172238019565235</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>angela</name>
+            <open>1</open>
+            <description>Ssid: angela
+Signal:   -89
+Chanal:   1
+Mac:   80:1f:02:f5:d8:e8
+Time and Date:   2017-12-01 10:43:06
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:06</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.814391891326764,32.172252019523675</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>KarvatB0.5</name>
+            <open>1</open>
+            <description>Ssid: KarvatB0.5
+Signal:   -89
+Chanal:   48
+Mac:   14:ae:db:cc:ed:6d
+Time and Date:   2017-12-01 10:43:18
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:18</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81421445142988,32.172265215924426</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>dobry2016</name>
+            <open>1</open>
+            <description>Ssid: dobry2016
+Signal:   -69
+Chanal:   1
+Mac:   6c:b0:ce:ac:32:9b
+Time and Date:   2017-12-01 10:43:33
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:33</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81341290942063,32.17238058500455</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIR-825-4f83</name>
+            <open>1</open>
+            <description>Ssid: DIR-825-4f83
+Signal:   -57
+Chanal:   1
+Mac:   80:26:89:0d:4f:84
+Time and Date:   2017-12-01 10:43:41
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:41</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81295646141121,32.17244042298214</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>urigil1</name>
+            <open>1</open>
+            <description>Ssid: urigil1
+Signal:   -90
+Chanal:   10
+Mac:   a0:ab:1b:5d:c2:60
+Time and Date:   2017-12-01 10:43:57
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:57</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.812091884783165,32.17240151409594</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>U2I8L1M0X42</name>
+            <open>1</open>
+            <description>Ssid: U2I8L1M0X42
+Signal:   -85
+Chanal:   11
+Mac:   54:64:d9:66:29:ef
+Time and Date:   2017-12-01 10:44:01
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:01</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81201239183262,32.17217553070084</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Liza</name>
+            <open>1</open>
+            <description>Ssid: Liza
+Signal:   -78
+Chanal:   1
+Mac:   8c:59:c3:ea:db:4a
+Time and Date:   2017-12-01 10:44:05
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:05</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81190851897319,32.17188758190333</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>donush</name>
+            <open>1</open>
+            <description>Ssid: donush
+Signal:   -87
+Chanal:   1
+Mac:   c0:ac:54:f5:b7:f2
+Time and Date:   2017-12-01 10:44:14
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:14</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81169555724996,32.17134020148104</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DAVID</name>
+            <open>1</open>
+            <description>Ssid: DAVID
+Signal:   -92
+Chanal:   11
+Mac:   d8:fb:5e:17:1b:d6
+Time and Date:   2017-12-01 10:44:18
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:18</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811594706105254,32.17113909756608</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>TP-LINK_2C3A</name>
+            <open>1</open>
+            <description>Ssid: TP-LINK_2C3A
+Signal:   -90
+Chanal:   1
+Mac:   84:16:f9:d7:2c:3a
+Time and Date:   2017-12-01 10:44:22
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:22</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81148871152029,32.17094198600168</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>home</name>
+            <open>1</open>
+            <description>Ssid: home
+Signal:   -77
+Chanal:   1
+Mac:   00:13:d4:0f:f3:ba
+Time and Date:   2017-12-01 10:44:26
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81136052218762,32.17073022335429</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>rdk</name>
+            <open>1</open>
+            <description>Ssid: rdk
+Signal:   -85
+Chanal:   13
+Mac:   e4:d3:f1:9a:81:60
+Time and Date:   2017-12-01 10:44:30
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:30</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811243700290355,32.17052489858893</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>RDK</name>
+            <open>1</open>
+            <description>Ssid: RDK
+Signal:   -85
+Chanal:   1
+Mac:   58:b6:33:34:81:a8
+Time and Date:   2017-12-01 10:44:30
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:30</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811243700290355,32.17052489858893</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>RDK</name>
+            <open>1</open>
+            <description>Ssid: RDK
+Signal:   -85
+Chanal:   11
+Mac:   58:b6:33:34:ae:f8
+Time and Date:   2017-12-01 10:44:30
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:30</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811243700290355,32.17052489858893</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>dlink</name>
+            <open>1</open>
+            <description>Ssid: dlink
+Signal:   -92
+Chanal:   44
+Mac:   40:9b:cd:11:2f:88
+Time and Date:   2017-12-01 10:44:30
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:30</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811243700290355,32.17052489858893</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Neeman2.4_5</name>
+            <open>1</open>
+            <description>Ssid: Neeman2.4_5
+Signal:   -89
+Chanal:   60
+Mac:   20:0c:c8:1d:c8:2c
+Time and Date:   2017-12-01 10:44:38
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:38</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811007615648165,32.17005047256307</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-2E6E</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-2E6E
+Signal:   -89
+Chanal:   11
+Mac:   c0:ac:54:f7:27:42
+Time and Date:   2017-12-01 10:44:41
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:41</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8109235856239,32.16984101063408</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>edimax_2.4G_A92417</name>
+            <open>1</open>
+            <description>Ssid: edimax_2.4G_A92417
+Signal:   -75
+Chanal:   3
+Mac:   74:da:38:a9:24:17
+Time and Date:   2017-12-01 10:44:49
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:49</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81071393258221,32.16930328971546</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>RS_GUEST</name>
+            <open>1</open>
+            <description>Ssid: RS_GUEST
+Signal:   -85
+Chanal:   12
+Mac:   ec:08:6b:38:0d:dd
+Time and Date:   2017-12-01 10:44:57
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:57</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.810544049627936,32.168823167573045</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>RS_GUEST_5G</name>
+            <open>1</open>
+            <description>Ssid: RS_GUEST_5G
+Signal:   -89
+Chanal:   44
+Mac:   ec:08:6b:38:0d:dc
+Time and Date:   2017-12-01 10:44:57
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:57</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.810544049627936,32.168823167573045</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-F4-HP DeskJet 3830 series</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-F4-HP DeskJet 3830 series
+Signal:   -89
+Chanal:   1
+Mac:   c8:d3:ff:57:60:f5
+Time and Date:   2017-12-01 10:44:57
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:57</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.810544049627936,32.168823167573045</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>KaymeraDev</name>
+            <open>1</open>
+            <description>Ssid: KaymeraDev
+Signal:   -92
+Chanal:   36
+Mac:   00:f6:63:15:58:8e
+Time and Date:   2017-12-01 10:44:57
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:57</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.810544049627936,32.168823167573045</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>LRWN</name>
+            <open>1</open>
+            <description>Ssid: LRWN
+Signal:   -70
+Chanal:   44
+Mac:   ec:8c:a2:09:dd:4c
+Time and Date:   2017-12-01 10:45:13
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:13</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811787470063976,32.168846097297546</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTFiber-400D</name>
+            <open>1</open>
+            <description>Ssid: HOTFiber-400D
+Signal:   -89
+Chanal:   6
+Mac:   40:65:a3:2b:62:0e
+Time and Date:   2017-12-01 10:45:13
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:13</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811787470063976,32.168846097297546</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>klaiman</name>
+            <open>1</open>
+            <description>Ssid: klaiman
+Signal:   -78
+Chanal:   2
+Mac:   a0:ab:1b:62:0d:fc
+Time and Date:   2017-12-01 10:45:37
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:37</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81246926564551,32.170257763614224</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-62EF</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-62EF
+Signal:   -80
+Chanal:   1
+Mac:   d8:fb:5e:17:62:f5
+Time and Date:   2017-12-01 10:45:37
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:37</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81246926564551,32.170257763614224</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>SHAHAF2.4</name>
+            <open>1</open>
+            <description>Ssid: SHAHAF2.4
+Signal:   -82
+Chanal:   11
+Mac:   20:0c:c8:0a:ef:2a
+Time and Date:   2017-12-01 10:46:04
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:46:04</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81299603716402,32.17198534972246</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>sellahome</name>
+            <open>1</open>
+            <description>Ssid: sellahome
+Signal:   -73
+Chanal:   9
+Mac:   d8:fb:5e:17:47:f8
+Time and Date:   2017-12-01 10:46:13
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:46:13</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.813112686158654,32.172434684187074</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>sellahome_2EX</name>
+            <open>1</open>
+            <description>Ssid: sellahome_2EX
+Signal:   -82
+Chanal:   9
+Mac:   74:da:38:14:1f:8d
+Time and Date:   2017-12-01 10:43:37
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:37</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81315388,32.17241727</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>shweiger1</name>
+            <open>1</open>
+            <description>Ssid: shweiger1
+Signal:   -84
+Chanal:   1
+Mac:   14:ae:db:c1:ad:7d
+Time and Date:   2017-12-01 10:43:40
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:40</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81296682,32.17243758</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>ELDAD</name>
+            <open>1</open>
+            <description>Ssid: ELDAD
+Signal:   -73
+Chanal:   11
+Mac:   10:0d:7f:80:17:80
+Time and Date:   2017-12-01 10:43:43
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:43</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81278713,32.17246651</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BezeqFree</name>
+            <open>1</open>
+            <description>Ssid: BezeqFree
+Signal:   -87
+Chanal:   1
+Mac:   06:ae:db:c1:ad:7d
+Time and Date:   2017-12-01 10:43:43
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:43</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81278713,32.17246651</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX1234</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX1234
+Signal:   -88
+Chanal:   1
+Mac:   30:b5:c2:6e:12:d4
+Time and Date:   2017-12-01 10:43:46
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:46</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81260015,32.1724962</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Eldad_2EX</name>
+            <open>1</open>
+            <description>Ssid: Eldad_2EX
+Signal:   -81
+Chanal:   11
+Mac:   80:1f:02:e8:b9:cc
+Time and Date:   2017-12-01 10:43:46
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:46</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81260015,32.1724962</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Gil-Up</name>
+            <open>1</open>
+            <description>Ssid: Gil-Up
+Signal:   -89
+Chanal:   2
+Mac:   50:c7:bf:36:df:98
+Time and Date:   2017-12-01 10:43:58
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:43:58</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81204165,32.17230828</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>U2I8L1M0X42</name>
+            <open>1</open>
+            <description>Ssid: U2I8L1M0X42
+Signal:   -73
+Chanal:   1
+Mac:   7c:b7:33:97:35:f1
+Time and Date:   2017-12-01 10:44:01
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:01</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81196568,32.17212193</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Hilush111</name>
+            <open>1</open>
+            <description>Ssid: Hilush111
+Signal:   -92
+Chanal:   1
+Mac:   6c:b0:ce:2f:43:36
+Time and Date:   2017-12-01 10:44:07
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:07</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81179424,32.1716947</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTFiber-A53E</name>
+            <open>1</open>
+            <description>Ssid: HOTFiber-A53E
+Signal:   -79
+Chanal:   6
+Mac:   7c:b7:33:a1:7e:98
+Time and Date:   2017-12-01 10:44:31
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:31</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81116946,32.17044716</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>devolo-0f4</name>
+            <open>1</open>
+            <description>Ssid: devolo-0f4
+Signal:   -80
+Chanal:   6
+Mac:   30:d3:2d:37:20:f4
+Time and Date:   2017-12-01 10:44:37
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:37</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81099899,32.17009476</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Bezeq Free F026CC</name>
+            <open>1</open>
+            <description>Ssid: Bezeq Free F026CC
+Signal:   -81
+Chanal:   1
+Mac:   6a:0c:c8:1d:c8:28
+Time and Date:   2017-12-01 10:44:40
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:40</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81091198,32.16988722</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX12</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX12
+Signal:   -87
+Chanal:   1
+Mac:   d8:fb:5e:17:62:4d
+Time and Date:   2017-12-01 10:44:40
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:40</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81091198,32.16988722</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>oved-main</name>
+            <open>1</open>
+            <description>Ssid: oved-main
+Signal:   -87
+Chanal:   6
+Mac:   74:da:3a:97:66:9e
+Time and Date:   2017-12-01 10:44:40
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:40</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81091198,32.16988722</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HP-Print-20-Deskjet 4640 series</name>
+            <open>1</open>
+            <description>Ssid: HP-Print-20-Deskjet 4640 series
+Signal:   -83
+Chanal:   1
+Mac:   fc:15:b4:65:09:20
+Time and Date:   2017-12-01 10:44:40
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:40</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81091198,32.16988722</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Alpha125</name>
+            <open>1</open>
+            <description>Ssid: Alpha125
+Signal:   -82
+Chanal:   6
+Mac:   30:b5:c2:e0:55:9c
+Time and Date:   2017-12-01 10:44:43
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:43</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81083325,32.16968089</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>netbox</name>
+            <open>1</open>
+            <description>Ssid: netbox
+Signal:   -96
+Chanal:   1
+Mac:   d0:d4:12:65:19:a2
+Time and Date:   2017-12-01 10:44:49
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:49</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81066887,32.1692751</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>KaymeraGuest</name>
+            <open>1</open>
+            <description>Ssid: KaymeraGuest
+Signal:   -86
+Chanal:   1
+Mac:   00:f6:63:15:58:82
+Time and Date:   2017-12-01 10:44:52
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:52</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81060214,32.16907519</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Oberyn Martell</name>
+            <open>1</open>
+            <description>Ssid: Oberyn Martell
+Signal:   -79
+Chanal:   8
+Mac:   18:d6:c7:fb:1c:0e
+Time and Date:   2017-12-01 10:44:56
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:56</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81052111,32.16883715</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>INGENEO</name>
+            <open>1</open>
+            <description>Ssid: INGENEO
+Signal:   -87
+Chanal:   6
+Mac:   cc:b2:55:e8:4c:e6
+Time and Date:   2017-12-01 10:44:56
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:56</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81052111,32.16883715</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>kaymeraQA</name>
+            <open>1</open>
+            <description>Ssid: kaymeraQA
+Signal:   -82
+Chanal:   1
+Mac:   00:f6:63:15:58:80
+Time and Date:   2017-12-01 10:44:59
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:59</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81060785,32.16872739</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BARON WIFI 2.4</name>
+            <open>1</open>
+            <description>Ssid: BARON WIFI 2.4
+Signal:   -91
+Chanal:   11
+Mac:   60:e3:27:bf:a1:a5
+Time and Date:   2017-12-01 10:44:59
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:59</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81060785,32.16872739</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>cactus</name>
+            <open>1</open>
+            <description>Ssid: cactus
+Signal:   -95
+Chanal:   1
+Mac:   a0:4f:d4:42:ba:71
+Time and Date:   2017-12-01 10:44:59
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:59</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81060785,32.16872739</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Vision Public</name>
+            <open>1</open>
+            <description>Ssid: Vision Public
+Signal:   -89
+Chanal:   10
+Mac:   c0:4a:00:f7:00:c1
+Time and Date:   2017-12-01 10:44:59
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:59</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81060785,32.16872739</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>KaymeraGuest</name>
+            <open>1</open>
+            <description>Ssid: KaymeraGuest
+Signal:   -95
+Chanal:   1
+Mac:   cc:16:7e:97:1d:92
+Time and Date:   2017-12-01 10:44:59
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:44:59</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81060785,32.16872739</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>A-Home</name>
+            <open>1</open>
+            <description>Ssid: A-Home
+Signal:   -81
+Chanal:   6
+Mac:   00:25:86:b1:6f:f8
+Time and Date:   2017-12-01 10:45:01
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:01</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81074499,32.16870873</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>LRWN</name>
+            <open>1</open>
+            <description>Ssid: LRWN
+Signal:   -69
+Chanal:   52
+Mac:   ec:8c:a2:08:a4:5c
+Time and Date:   2017-12-01 10:45:11
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:11</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81164041,32.16877222</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>SE-WiFi-Employees</name>
+            <open>1</open>
+            <description>Ssid: SE-WiFi-Employees
+Signal:   -94
+Chanal:   1
+Mac:   70:4c:a5:20:be:18
+Time and Date:   2017-12-01 10:45:16
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:16</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81188912,32.16898017</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Einav_1</name>
+            <open>1</open>
+            <description>Ssid: Einav_1
+Signal:   -82
+Chanal:   6
+Mac:   00:26:5a:10:b7:0a
+Time and Date:   2017-12-01 10:45:23
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:23</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81209444,32.16940316</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Nehalem_ISR</name>
+            <open>1</open>
+            <description>Ssid: Nehalem_ISR
+Signal:   -92
+Chanal:   1
+Mac:   08:ea:44:74:4b:d5
+Time and Date:   2017-12-01 10:45:26
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81218021,32.16958729</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>mazia</name>
+            <open>1</open>
+            <description>Ssid: mazia
+Signal:   -87
+Chanal:   1
+Mac:   14:ae:db:b2:5f:05
+Time and Date:   2017-12-01 10:45:29
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:29</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81225463,32.16977119</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>TUCHLER</name>
+            <open>1</open>
+            <description>Ssid: TUCHLER
+Signal:   -81
+Chanal:   6
+Mac:   00:26:5a:69:94:e3
+Time and Date:   2017-12-01 10:45:32
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:32</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81233913,32.16994827</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>  InnovationEndeavors</name>
+            <open>1</open>
+            <description>Ssid:   InnovationEndeavors
+Signal:   -83
+Chanal:   2
+Mac:   74:da:38:a9:1c:df
+Time and Date:   2017-12-01 10:45:32
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:32</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81233913,32.16994827</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>landau</name>
+            <open>1</open>
+            <description>Ssid: landau
+Signal:   -81
+Chanal:   11
+Mac:   74:da:38:14:4b:88
+Time and Date:   2017-12-01 10:45:32
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:32</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81233913,32.16994827</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Astra</name>
+            <open>1</open>
+            <description>Ssid: Astra
+Signal:   -86
+Chanal:   6
+Mac:   00:21:63:4d:73:31
+Time and Date:   2017-12-01 10:45:32
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:32</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81233913,32.16994827</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Florida_Israel1</name>
+            <open>1</open>
+            <description>Ssid: Florida_Israel1
+Signal:   -94
+Chanal:   1
+Mac:   48:ee:0c:3b:fa:1e
+Time and Date:   2017-12-01 10:45:35
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:35</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81242227,32.17012573</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>geller</name>
+            <open>1</open>
+            <description>Ssid: geller
+Signal:   -90
+Chanal:   11
+Mac:   00:78:9e:fa:3b:62
+Time and Date:   2017-12-01 10:45:38
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:38</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81250563,32.17031089</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Oded</name>
+            <open>1</open>
+            <description>Ssid: Oded
+Signal:   -65
+Chanal:   11
+Mac:   14:cc:20:76:b8:2a
+Time and Date:   2017-12-01 10:45:47
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:45:47</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8127604,32.17086052</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Oded 5Ghz</name>
+            <open>1</open>
+            <description>Ssid: Oded 5Ghz
+Signal:   -82
+Chanal:   48
+Mac:   00:12:2a:e1:6c:4c
+Time and Date:   2017-12-01 10:46:05
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:46:05</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81299553,32.17201156</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Miller</name>
+            <open>1</open>
+            <description>Ssid: Miller
+Signal:   -78
+Chanal:   1
+Mac:   00:78:9e:fa:0e:5c
+Time and Date:   2017-12-01 10:46:14
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:46:14</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81314461,32.17240104</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>dobry2016_5</name>
+            <open>1</open>
+            <description>Ssid: dobry2016_5
+Signal:   -89
+Chanal:   60
+Mac:   6c:b0:ce:ac:32:9c
+Time and Date:   2017-12-01 10:46:23
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:46:23</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81365654,32.17232792</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Wifi</name>
+            <open>1</open>
+            <description>Ssid: Wifi
+Signal:   -93
+Chanal:   11
+Mac:   74:44:01:39:09:86
+Time and Date:   2017-12-01 10:46:32
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:46:32</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81420816,32.17226318</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Zvi_2.4</name>
+            <open>1</open>
+            <description>Ssid: Zvi_2.4
+Signal:   -91
+Chanal:   11
+Mac:   10:5a:f7:0f:d5:32
+Time and Date:   2017-12-01 10:49:21
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:49:21</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81440381,32.17228106</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BezeqFree</name>
+            <open>1</open>
+            <description>Ssid: BezeqFree
+Signal:   -88
+Chanal:   9
+Mac:   62:ee:0c:3d:eb:b9
+Time and Date:   2017-12-01 10:49:42
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:49:42</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81413625,32.17227827</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Lahav</name>
+            <open>1</open>
+            <description>Ssid: Lahav
+Signal:   -73
+Chanal:   11
+Mac:   b0:b2:8f:01:ad:fe
+Time and Date:   2017-12-01 10:49:51
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:49:51</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81367079,32.17234589</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Mevohot_3</name>
+            <open>1</open>
+            <description>Ssid: Mevohot_3
+Signal:   -80
+Chanal:   11
+Mac:   60:e3:27:e8:41:e8
+Time and Date:   2017-12-01 10:50:00
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:00</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81316731,32.1724094</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BezeqFree</name>
+            <open>1</open>
+            <description>Ssid: BezeqFree
+Signal:   -76
+Chanal:   11
+Mac:   06:ae:db:ba:1e:85
+Time and Date:   2017-12-01 10:50:00
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:00</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81316731,32.1724094</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>GuyHila</name>
+            <open>1</open>
+            <description>Ssid: GuyHila
+Signal:   -76
+Chanal:   11
+Mac:   14:ae:db:ba:1e:85
+Time and Date:   2017-12-01 10:50:00
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:00</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81316731,32.1724094</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BS-WIFI-4EVER</name>
+            <open>1</open>
+            <description>Ssid: BS-WIFI-4EVER
+Signal:   -94
+Chanal:   6
+Mac:   fc:75:16:55:27:fa
+Time and Date:   2017-12-01 10:50:09
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:09</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81263803,32.17250306</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-74-HP DeskJet 4670 series</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-74-HP DeskJet 4670 series
+Signal:   -59
+Chanal:   1
+Mac:   3c:52:82:af:42:75
+Time and Date:   2017-12-01 10:50:12
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:12</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81242662,32.17253375</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>NIPPON_3687</name>
+            <open>1</open>
+            <description>Ssid: NIPPON_3687
+Signal:   -79
+Chanal:   2
+Mac:   08:97:58:32:d2:98
+Time and Date:   2017-12-01 10:50:15
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:15</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81222007,32.17254538</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>varda_HD</name>
+            <open>1</open>
+            <description>Ssid: varda_HD
+Signal:   -88
+Chanal:   60
+Mac:   c4:12:f5:85:27:c1
+Time and Date:   2017-12-01 10:50:21
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:21</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81201158,32.17226944</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Shani - Green</name>
+            <open>1</open>
+            <description>Ssid: Shani - Green
+Signal:   -89
+Chanal:   6
+Mac:   54:b8:0a:34:68:90
+Time and Date:   2017-12-01 10:50:27
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:27</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81187369,32.17190615</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>maya salon</name>
+            <open>1</open>
+            <description>Ssid: maya salon
+Signal:   -89
+Chanal:   1
+Mac:   c4:a8:1d:12:df:c5
+Time and Date:   2017-12-01 10:50:36
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:36</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81165241,32.17134232</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>luxynet</name>
+            <open>1</open>
+            <description>Ssid: luxynet
+Signal:   -93
+Chanal:   7
+Mac:   00:c0:02:0a:c6:c2
+Time and Date:   2017-12-01 10:50:36
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:36</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81165241,32.17134232</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>@Cafe</name>
+            <open>1</open>
+            <description>Ssid: @Cafe
+Signal:   -92
+Chanal:   1
+Mac:   52:a8:1d:12:df:c4
+Time and Date:   2017-12-01 10:50:36
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:36</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81165241,32.17134232</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Gana7</name>
+            <open>1</open>
+            <description>Ssid: Gana7
+Signal:   -93
+Chanal:   5
+Mac:   48:ee:0c:3c:30:1e
+Time and Date:   2017-12-01 10:50:45
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:45</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81137225,32.1708157</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Eric 2.4</name>
+            <open>1</open>
+            <description>Ssid: Eric 2.4
+Signal:   -87
+Chanal:   1
+Mac:   c4:a8:1d:13:2a:95
+Time and Date:   2017-12-01 10:50:58
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:58</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81094348,32.1699948</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>oved-main_2EX</name>
+            <open>1</open>
+            <description>Ssid: oved-main_2EX
+Signal:   -77
+Chanal:   6
+Mac:   74:da:38:97:66:9d
+Time and Date:   2017-12-01 10:51:01
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:01</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81088834,32.16983611</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX12</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX12
+Signal:   -87
+Chanal:   1
+Mac:   a0:8e:78:7f:2a:69
+Time and Date:   2017-12-01 10:51:01
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:01</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81088834,32.16983611</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Li</name>
+            <open>1</open>
+            <description>Ssid: Li
+Signal:   -80
+Chanal:   1
+Mac:   c0:ac:54:f8:6b:28
+Time and Date:   2017-12-01 10:51:04
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:04</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81083489,32.16970224</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BezeqFree</name>
+            <open>1</open>
+            <description>Ssid: BezeqFree
+Signal:   -84
+Chanal:   5
+Mac:   62:ee:0c:39:f9:16
+Time and Date:   2017-12-01 10:51:10
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:10</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81076003,32.16948516</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Ronizyc1</name>
+            <open>1</open>
+            <description>Ssid: Ronizyc1
+Signal:   -85
+Chanal:   5
+Mac:   48:ee:0c:39:f9:15
+Time and Date:   2017-12-01 10:51:10
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:10</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81076003,32.16948516</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>forestisthebest</name>
+            <open>1</open>
+            <description>Ssid: forestisthebest
+Signal:   -93
+Chanal:   6
+Mac:   c8:d7:19:d4:7c:73
+Time and Date:   2017-12-01 10:51:19
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:19</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81072683,32.16937301</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>forestisthebest-guest</name>
+            <open>1</open>
+            <description>Ssid: forestisthebest-guest
+Signal:   -94
+Chanal:   6
+Mac:   c8:d7:19:d4:7c:75
+Time and Date:   2017-12-01 10:52:13
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:52:13</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81070436,32.16936666</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>edimax_5G_A9241C</name>
+            <open>1</open>
+            <description>Ssid: edimax_5G_A9241C
+Signal:   -79
+Chanal:   40
+Mac:   74:da:38:a9:24:1c
+Time and Date:   2017-12-01 10:52:43
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:52:43</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81071282,32.16938116</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BezeqFree</name>
+            <open>1</open>
+            <description>Ssid: BezeqFree
+Signal:   -96
+Chanal:   10
+Mac:   62:be:f5:40:26:83
+Time and Date:   2017-12-01 10:55:10
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:55:10</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81068889,32.16935676</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Home</name>
+            <open>1</open>
+            <description>Ssid: Home
+Signal:   -91
+Chanal:   11
+Mac:   34:36:3b:c2:be:b8
+Time and Date:   2017-12-01 10:55:46
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:55:46</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81066982,32.16923806</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Home</name>
+            <open>1</open>
+            <description>Ssid: Home
+Signal:   -89
+Chanal:   10
+Mac:   10:be:f5:40:26:82
+Time and Date:   2017-12-01 10:56:21
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:56:21</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81065234,32.16916884</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Levy</name>
+            <open>1</open>
+            <description>Ssid: Levy
+Signal:   -85
+Chanal:   10
+Mac:   f8:ab:05:46:de:55
+Time and Date:   2017-12-01 10:57:04
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:04</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81066791,32.16876228</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>LRWN</name>
+            <open>1</open>
+            <description>Ssid: LRWN
+Signal:   -59
+Chanal:   11
+Mac:   ec:8c:a2:09:dd:48
+Time and Date:   2017-12-01 10:57:19
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:19</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81180676,32.16885258</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>nina</name>
+            <open>1</open>
+            <description>Ssid: nina
+Signal:   -67
+Chanal:   11
+Mac:   20:0c:c8:2b:2a:14
+Time and Date:   2017-12-01 10:57:37
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:37</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81229045,32.16960197</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>arama</name>
+            <open>1</open>
+            <description>Ssid: arama
+Signal:   -67
+Chanal:   11
+Mac:   80:1f:02:36:04:d0
+Time and Date:   2017-12-01 10:57:43
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:43</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81265851,32.16957574</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTFiber arama</name>
+            <open>1</open>
+            <description>Ssid: HOTFiber arama
+Signal:   -76
+Chanal:   1
+Mac:   e0:ce:c3:23:12:30
+Time and Date:   2017-12-01 10:57:43
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:43</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81265851,32.16957574</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Ab</name>
+            <open>1</open>
+            <description>Ssid: Ab
+Signal:   -95
+Chanal:   10
+Mac:   90:8d:78:54:d9:69
+Time and Date:   2017-12-01 10:57:55
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:55</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81343376,32.1696487</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>hilda</name>
+            <open>1</open>
+            <description>Ssid: hilda
+Signal:   -73
+Chanal:   6
+Mac:   00:30:4f:91:38:b3
+Time and Date:   2017-12-01 10:57:55
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:55</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81343376,32.1696487</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>NETGEAR_DGN2200</name>
+            <open>1</open>
+            <description>Ssid: NETGEAR_DGN2200
+Signal:   -93
+Chanal:   11
+Mac:   10:0d:7f:83:6c:fe
+Time and Date:   2017-12-01 10:57:55
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:55</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81343376,32.1696487</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Bezeq Free 836CFE</name>
+            <open>1</open>
+            <description>Ssid: Bezeq Free 836CFE
+Signal:   -90
+Chanal:   11
+Mac:   52:0d:7f:83:6c:ff
+Time and Date:   2017-12-01 10:57:55
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:55</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81343376,32.1696487</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>kawasaki</name>
+            <open>1</open>
+            <description>Ssid: kawasaki
+Signal:   -75
+Chanal:   11
+Mac:   48:ee:0c:3b:ac:5a
+Time and Date:   2017-12-01 10:57:58
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:58</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81346387,32.16981779</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Bezeq Free</name>
+            <open>1</open>
+            <description>Ssid: Bezeq Free
+Signal:   -75
+Chanal:   11
+Mac:   62:ee:0c:3b:ac:5b
+Time and Date:   2017-12-01 10:57:58
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:58</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81346387,32.16981779</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>shmulik</name>
+            <open>1</open>
+            <description>Ssid: shmulik
+Signal:   -80
+Chanal:   11
+Mac:   d0:d4:12:64:05:12
+Time and Date:   2017-12-01 10:58:02
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:02</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81351135,32.17004926</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Pantum-AP-9DDCCB</name>
+            <open>1</open>
+            <description>Ssid: Pantum-AP-9DDCCB
+Signal:   -84
+Chanal:   11
+Mac:   28:f3:66:9d:dc:cb
+Time and Date:   2017-12-01 10:58:05
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:05</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81353649,32.17021581</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Daizad</name>
+            <open>1</open>
+            <description>Ssid: Daizad
+Signal:   -72
+Chanal:   7
+Mac:   e8:cc:18:ac:1a:52
+Time and Date:   2017-12-01 10:58:08
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:08</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81356425,32.17039308</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Is</name>
+            <open>1</open>
+            <description>Ssid: Is
+Signal:   -83
+Chanal:   6
+Mac:   16:0c:c3:ee:27:39
+Time and Date:   2017-12-01 10:58:08
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:08</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81356425,32.17039308</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-F028</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-F028
+Signal:   -61
+Chanal:   1
+Mac:   18:1e:78:86:03:15
+Time and Date:   2017-12-01 10:58:11
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:11</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81358945,32.17057165</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>yotam17</name>
+            <open>1</open>
+            <description>Ssid: yotam17
+Signal:   -91
+Chanal:   10
+Mac:   b0:b2:8f:36:a2:b3
+Time and Date:   2017-12-01 10:58:11
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:11</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81358945,32.17057165</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX
+Signal:   -82
+Chanal:   1
+Mac:   c0:ac:54:f7:42:60
+Time and Date:   2017-12-01 10:58:14
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:14</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81362514,32.17076265</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>MNP_HOME_2.4GHz_1</name>
+            <open>1</open>
+            <description>Ssid: MNP_HOME_2.4GHz_1
+Signal:   -81
+Chanal:   6
+Mac:   04:a1:51:e0:5f:ee
+Time and Date:   2017-12-01 10:58:20
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:20</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81352307,32.1710485</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>test012</name>
+            <open>1</open>
+            <description>Ssid: test012
+Signal:   -87
+Chanal:   1
+Mac:   00:12:2a:d2:0c:38
+Time and Date:   2017-12-01 10:58:20
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:20</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81352307,32.1710485</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>nurit</name>
+            <open>1</open>
+            <description>Ssid: nurit
+Signal:   -74
+Chanal:   1
+Mac:   a0:4f:d4:45:1f:a1
+Time and Date:   2017-12-01 10:58:26
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81312098,32.17108533</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>yotam17</name>
+            <open>1</open>
+            <description>Ssid: yotam17
+Signal:   -75
+Chanal:   10
+Mac:   f8:ab:05:e9:6d:3d
+Time and Date:   2017-12-01 10:58:26
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81312098,32.17108533</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>yotam17</name>
+            <open>1</open>
+            <description>Ssid: yotam17
+Signal:   -93
+Chanal:   10
+Mac:   7c:b7:33:ea:b8:ff
+Time and Date:   2017-12-01 10:58:29
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:29</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81293682,32.17110218</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-2017</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-2017
+Signal:   -72
+Chanal:   11
+Mac:   c0:ac:54:f5:7d:bd
+Time and Date:   2017-12-01 10:58:38
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:38</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81267377,32.17074241</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>hot</name>
+            <open>1</open>
+            <description>Ssid: hot
+Signal:   -71
+Chanal:   3
+Mac:   00:1c:10:09:4f:bc
+Time and Date:   2017-12-01 10:58:44
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:44</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81251639,32.17041608</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>TP-LINK_E3CA</name>
+            <open>1</open>
+            <description>Ssid: TP-LINK_E3CA
+Signal:   -77
+Chanal:   9
+Mac:   84:16:f9:e4:e3:ca
+Time and Date:   2017-12-01 10:58:50
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:50</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81274376,32.17027834</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>edimax.setup</name>
+            <open>1</open>
+            <description>Ssid: edimax.setup
+Signal:   -71
+Chanal:   9
+Mac:   74:da:38:c6:57:9b
+Time and Date:   2017-12-01 10:58:50
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:50</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81274376,32.17027834</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>amnon</name>
+            <open>1</open>
+            <description>Ssid: amnon
+Signal:   -78
+Chanal:   6
+Mac:   c0:ac:54:f8:6c:8a
+Time and Date:   2017-12-01 10:59:11
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:11</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81360361,32.17065401</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Partner-4G-B6D4</name>
+            <open>1</open>
+            <description>Ssid: Partner-4G-B6D4
+Signal:   -92
+Chanal:   1
+Mac:   a8:c8:3a:35:b6:d4
+Time and Date:   2017-12-01 10:59:17
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:17</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81359455,32.17103853</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>tal2</name>
+            <open>1</open>
+            <description>Ssid: tal2
+Signal:   -78
+Chanal:   60
+Mac:   90:8d:78:54:22:a1
+Time and Date:   2017-12-01 10:59:23
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:23</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81313135,32.17109229</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>sirocco_2.4o</name>
+            <open>1</open>
+            <description>Ssid: sirocco_2.4o
+Signal:   -83
+Chanal:   11
+Mac:   14:cc:20:09:3c:b9
+Time and Date:   2017-12-01 10:59:26
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81295,32.17110715</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>motti-5ghz</name>
+            <open>1</open>
+            <description>Ssid: motti-5ghz
+Signal:   -88
+Chanal:   40
+Mac:   a4:2b:b0:d4:55:38
+Time and Date:   2017-12-01 10:59:35
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:35</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8126719,32.17074693</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>hot</name>
+            <open>1</open>
+            <description>Ssid: hot
+Signal:   -83
+Chanal:   9
+Mac:   00:14:bf:42:7e:96
+Time and Date:   2017-12-01 10:59:44
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:44</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81237323,32.17013195</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>SIEMENS_LivingRoom</name>
+            <open>1</open>
+            <description>Ssid: SIEMENS_LivingRoom
+Signal:   -77
+Chanal:   1
+Mac:   d4:6e:0e:3c:44:e1
+Time and Date:   2017-12-01 10:59:44
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:44</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81237323,32.17013195</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>hot</name>
+            <open>1</open>
+            <description>Ssid: hot
+Signal:   -86
+Chanal:   11
+Mac:   18:d6:c7:97:bd:2a
+Time and Date:   2017-12-01 10:59:44
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:44</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81237323,32.17013195</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>landau</name>
+            <open>1</open>
+            <description>Ssid: landau
+Signal:   -89
+Chanal:   11
+Mac:   d4:7b:b0:79:65:fc
+Time and Date:   2017-12-01 10:59:47
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:47</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81226934,32.16992123</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-1C-HP DeskJet 3830 series</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-1C-HP DeskJet 3830 series
+Signal:   -77
+Chanal:   6
+Mac:   94:57:a5:4b:4f:41
+Time and Date:   2017-12-01 10:59:50
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:50</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81217399,32.16969314</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BezeqFree</name>
+            <open>1</open>
+            <description>Ssid: BezeqFree
+Signal:   -90
+Chanal:   9
+Mac:   06:ae:db:48:af:4d
+Time and Date:   2017-12-01 10:59:50
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:50</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81217399,32.16969314</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Home</name>
+            <open>1</open>
+            <description>Ssid: Home
+Signal:   -70
+Chanal:   11
+Mac:   82:2a:a8:bf:94:29
+Time and Date:   2017-12-01 10:59:56
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:56</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81198781,32.16928044</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Candan</name>
+            <open>1</open>
+            <description>Ssid: Candan
+Signal:   -86
+Chanal:   1
+Mac:   c0:ff:d4:7b:82:30
+Time and Date:   2017-12-01 10:59:59
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:59</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81188495,32.16907948</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Mehta_Up</name>
+            <open>1</open>
+            <description>Ssid: Mehta_Up
+Signal:   -86
+Chanal:   6
+Mac:   f8:d1:11:b8:3b:7e
+Time and Date:   2017-12-01 11:00:05
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:05</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8118695,32.16887831</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Fuck Off</name>
+            <open>1</open>
+            <description>Ssid: Fuck Off
+Signal:   -77
+Chanal:   11
+Mac:   14:cc:20:da:ab:9a
+Time and Date:   2017-12-01 11:00:19
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:19</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81190459,32.16902986</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Home</name>
+            <open>1</open>
+            <description>Ssid: Home
+Signal:   -85
+Chanal:   1
+Mac:   82:2a:a8:bf:93:e5
+Time and Date:   2017-12-01 11:00:25
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:25</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81209986,32.16942426</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Siemens</name>
+            <open>1</open>
+            <description>Ssid: Siemens
+Signal:   -82
+Chanal:   11
+Mac:   d0:d4:12:5e:db:f2
+Time and Date:   2017-12-01 11:00:34
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:34</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81240174,32.17010919</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BezeqFree</name>
+            <open>1</open>
+            <description>Ssid: BezeqFree
+Signal:   -82
+Chanal:   2
+Mac:   5a:ab:1b:62:0d:fd
+Time and Date:   2017-12-01 11:00:34
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:34</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81240174,32.17010919</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HP-Print-8A-Deskjet 4640 series</name>
+            <open>1</open>
+            <description>Ssid: HP-Print-8A-Deskjet 4640 series
+Signal:   -84
+Chanal:   11
+Mac:   8c:dc:d4:6a:a9:8a
+Time and Date:   2017-12-01 11:00:34
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:34</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81240174,32.17010919</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Gillad-1_2.4</name>
+            <open>1</open>
+            <description>Ssid: Gillad-1_2.4
+Signal:   -77
+Chanal:   11
+Mac:   c4:04:15:64:e8:cc
+Time and Date:   2017-12-01 11:00:40
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:40</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81259485,32.17053537</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Motti11</name>
+            <open>1</open>
+            <description>Ssid: Motti11
+Signal:   -74
+Chanal:   6
+Mac:   a4:2b:b0:d4:55:36
+Time and Date:   2017-12-01 11:00:49
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:49</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81280707,32.17100176</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-747B</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-747B
+Signal:   -91
+Chanal:   1
+Mac:   e8:d1:1b:72:74:81
+Time and Date:   2017-12-01 11:01:01
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:01:01</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81297848,32.1718612</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>lellouche</name>
+            <open>1</open>
+            <description>Ssid: lellouche
+Signal:   -82
+Chanal:   5
+Mac:   a4:2b:b0:ad:2d:34
+Time and Date:   2017-12-01 11:01:19
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:01:19</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81368604,32.17235589</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Ben-Eliyahu_PC</name>
+            <open>1</open>
+            <description>Ssid: Ben-Eliyahu_PC
+Signal:   -92
+Chanal:   10
+Mac:   80:1f:02:d4:9a:92
+Time and Date:   2017-12-01 11:01:23
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:01:23</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81400233,32.17230215</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Efrat</name>
+            <open>1</open>
+            <description>Ssid: Efrat
+Signal:   -75
+Chanal:   1
+Mac:   40:65:a3:35:4c:c4
+Time and Date:   2017-12-01 10:49:08
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:49:08</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81446401702757,32.17218268216534</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Volvo247</name>
+            <open>1</open>
+            <description>Ssid: Volvo247
+Signal:   -81
+Chanal:   4
+Mac:   08:97:58:32:69:c6
+Time and Date:   2017-12-01 10:49:14
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:49:14</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.814448298318844,32.172209259560766</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Chakir</name>
+            <open>1</open>
+            <description>Ssid: Chakir
+Signal:   -86
+Chanal:   1
+Mac:   00:12:2a:35:c8:7c
+Time and Date:   2017-12-01 10:49:44
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:49:44</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.814036899369874,32.17228483399432</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Mevohot_1</name>
+            <open>1</open>
+            <description>Ssid: Mevohot_1
+Signal:   -70
+Chanal:   6
+Mac:   20:0c:c8:1b:a2:48
+Time and Date:   2017-12-01 10:49:56
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:49:56</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81336124587249,32.172382685741084</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Hotbox</name>
+            <open>1</open>
+            <description>Ssid: Hotbox
+Signal:   -91
+Chanal:   11
+Mac:   00:78:9e:f9:e8:58
+Time and Date:   2017-12-01 10:50:11
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:11</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81247911919242,32.1725225188478</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Helen.</name>
+            <open>1</open>
+            <description>Ssid: Helen.
+Signal:   -74
+Chanal:   10
+Mac:   a0:ab:1b:57:cd:42
+Time and Date:   2017-12-01 10:50:20
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:20</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.812042356198646,32.17229408710547</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Ben Ami_2.4</name>
+            <open>1</open>
+            <description>Ssid: Ben Ami_2.4
+Signal:   -73
+Chanal:   11
+Mac:   c4:04:15:60:6a:b5
+Time and Date:   2017-12-01 10:50:29
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:29</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8118405837912,32.171728186062275</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>ronkla2_5</name>
+            <open>1</open>
+            <description>Ssid: ronkla2_5
+Signal:   -85
+Chanal:   48
+Mac:   3c:1e:04:07:2a:ff
+Time and Date:   2017-12-01 10:50:35
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:35</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81168874408503,32.17135803478369</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>mika1</name>
+            <open>1</open>
+            <description>Ssid: mika1
+Signal:   -77
+Chanal:   1
+Mac:   c4:12:f5:fb:c0:3e
+Time and Date:   2017-12-01 10:50:38
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:38</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811600945951724,32.17117720998362</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Gana7_2GExt</name>
+            <open>1</open>
+            <description>Ssid: Gana7_2GExt
+Signal:   -88
+Chanal:   5
+Mac:   64:d9:54:e4:95:37
+Time and Date:   2017-12-01 10:50:47
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:47</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81130191879183,32.17061250500982</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Guymic</name>
+            <open>1</open>
+            <description>Ssid: Guymic
+Signal:   -78
+Chanal:   6
+Mac:   14:ae:db:b7:99:2d
+Time and Date:   2017-12-01 10:50:50
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:50</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811205413681165,32.1704220061369</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-4D4E</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-4D4E
+Signal:   -91
+Chanal:   1
+Mac:   00:78:9e:fb:1e:09
+Time and Date:   2017-12-01 10:50:56
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:56</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81099874038432,32.170053389171805</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Neeman2.4</name>
+            <open>1</open>
+            <description>Ssid: Neeman2.4
+Signal:   -78
+Chanal:   1
+Mac:   20:0c:c8:1d:c8:2b
+Time and Date:   2017-12-01 10:50:59
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:50:59</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81092582224991,32.16988410573102</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Liliup</name>
+            <open>1</open>
+            <description>Ssid: Liliup
+Signal:   -88
+Chanal:   2
+Mac:   74:da:38:c3:12:45
+Time and Date:   2017-12-01 10:51:08
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:08</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81077184677352,32.169491346626565</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>ELCHARAR_2.4</name>
+            <open>1</open>
+            <description>Ssid: ELCHARAR_2.4
+Signal:   -89
+Chanal:   1
+Mac:   20:0c:c8:0f:21:93
+Time and Date:   2017-12-01 10:51:08
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:08</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81077184677352,32.169491346626565</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Alpha125</name>
+            <open>1</open>
+            <description>Ssid: Alpha125
+Signal:   -90
+Chanal:   1
+Mac:   10:fe:ed:74:fc:46
+Time and Date:   2017-12-01 10:51:08
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:08</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81077184677352,32.169491346626565</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>dlink-A09C</name>
+            <open>1</open>
+            <description>Ssid: dlink-A09C
+Signal:   -91
+Chanal:   11
+Mac:   ac:f1:df:76:a0:9c
+Time and Date:   2017-12-01 10:51:11
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:11</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81074036189685,32.16939849690679</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>forestisthebest</name>
+            <open>1</open>
+            <description>Ssid: forestisthebest
+Signal:   -54
+Chanal:   6
+Mac:   c8:d7:19:da:03:16
+Time and Date:   2017-12-01 10:51:26
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:51:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81072496254775,32.16935940800852</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>KaymeraDev</name>
+            <open>1</open>
+            <description>Ssid: KaymeraDev
+Signal:   -78
+Chanal:   1
+Mac:   00:f6:63:15:58:81
+Time and Date:   2017-12-01 10:53:44
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:53:44</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81072496254775,32.16935940800852</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>spielman</name>
+            <open>1</open>
+            <description>Ssid: spielman
+Signal:   -73
+Chanal:   1
+Mac:   7c:b7:33:2b:c4:52
+Time and Date:   2017-12-01 10:53:47
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:53:47</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81072496254775,32.16935940800852</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>evanson</name>
+            <open>1</open>
+            <description>Ssid: evanson
+Signal:   -80
+Chanal:   1
+Mac:   7c:03:4c:fe:f6:68
+Time and Date:   2017-12-01 10:54:11
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:54:11</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81072496254775,32.16935940800852</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BezeqNGN_001489_2.4GHz_1</name>
+            <open>1</open>
+            <description>Ssid: BezeqNGN_001489_2.4GHz_1
+Signal:   -68
+Chanal:   1
+Mac:   c0:a0:bb:cb:59:5b
+Time and Date:   2017-12-01 10:54:23
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:54:23</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81072496254775,32.16935940800852</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>oved-main</name>
+            <open>1</open>
+            <description>Ssid: oved-main
+Signal:   -64
+Chanal:   6
+Mac:   74:da:39:54:b8:1d
+Time and Date:   2017-12-01 10:54:41
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:54:41</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81072496254775,32.16935940800852</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>spielman</name>
+            <open>1</open>
+            <description>Ssid: spielman
+Signal:   -77
+Chanal:   1
+Mac:   f4:f2:6d:34:56:54
+Time and Date:   2017-12-01 10:55:47
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:55:47</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81068174685835,32.169212309411726</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Jamcanup</name>
+            <open>1</open>
+            <description>Ssid: Jamcanup
+Signal:   -87
+Chanal:   2
+Mac:   74:da:38:c3:0d:6b
+Time and Date:   2017-12-01 10:55:50
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:55:50</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8106650271149,32.16917019230133</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Jamcandown</name>
+            <open>1</open>
+            <description>Ssid: Jamcandown
+Signal:   -89
+Chanal:   4
+Mac:   74:da:38:b6:f6:c9
+Time and Date:   2017-12-01 10:55:50
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:55:50</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8106650271149,32.16917019230133</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>edimax_2.4G_ruty</name>
+            <open>1</open>
+            <description>Ssid: edimax_2.4G_ruty
+Signal:   -80
+Chanal:   2
+Mac:   74:da:38:d3:bb:81
+Time and Date:   2017-12-01 10:55:56
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:55:56</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8106650271149,32.16917019230133</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HP-Print-C1-Deskjet 4640 series</name>
+            <open>1</open>
+            <description>Ssid: HP-Print-C1-Deskjet 4640 series
+Signal:   -81
+Chanal:   11
+Mac:   28:80:23:f6:e0:c1
+Time and Date:   2017-12-01 10:56:55
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:56:55</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.810619520712386,32.169012321650136</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>iFOREX</name>
+            <open>1</open>
+            <description>Ssid: iFOREX
+Signal:   -91
+Chanal:   6
+Mac:   f8:d1:11:b1:92:93
+Time and Date:   2017-12-01 10:56:58
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:56:58</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81057058716543,32.168881406149175</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-a8-HP M477 LaserJet</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-a8-HP M477 LaserJet
+Signal:   -91
+Chanal:   1
+Mac:   aa:6b:ad:04:c6:a8
+Time and Date:   2017-12-01 10:57:02
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:02</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81061687133246,32.16878253500298</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX111</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX111
+Signal:   -77
+Chanal:   11
+Mac:   c0:ac:54:f6:ae:5e
+Time and Date:   2017-12-01 10:57:11
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:11</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81129910090613,32.16875525343879</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTFiber-400D</name>
+            <open>1</open>
+            <description>Ssid: HOTFiber-400D
+Signal:   -89
+Chanal:   6
+Mac:   b4:ee:b4:36:dd:b9
+Time and Date:   2017-12-01 10:57:17
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:17</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81174537287164,32.16883769901991</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>LRWN</name>
+            <open>1</open>
+            <description>Ssid: LRWN
+Signal:   -68
+Chanal:   36
+Mac:   0c:f4:d5:29:a2:9c
+Time and Date:   2017-12-01 10:57:19
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:19</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81183319930766,32.16889805537721</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Talfamily</name>
+            <open>1</open>
+            <description>Ssid: Talfamily
+Signal:   -80
+Chanal:   1
+Mac:   e0:ce:c3:86:a7:9e
+Time and Date:   2017-12-01 10:57:19
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:19</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81183319930766,32.16889805537721</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-8156</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-8156
+Signal:   -89
+Chanal:   1
+Mac:   b4:ee:b4:a7:81:5c
+Time and Date:   2017-12-01 10:57:23
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:23</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81193255078027,32.16909112707448</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Fuck Off Yourself</name>
+            <open>1</open>
+            <description>Ssid: Fuck Off Yourself
+Signal:   -79
+Chanal:   9
+Mac:   16:ae:db:c1:ae:55
+Time and Date:   2017-12-01 10:57:26
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81201044802282,32.16927107246911</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Fuck Off ext</name>
+            <open>1</open>
+            <description>Ssid: Fuck Off ext
+Signal:   -80
+Chanal:   11
+Mac:   a4:2b:b0:e0:3a:01
+Time and Date:   2017-12-01 10:57:26
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81201044802282,32.16927107246911</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Mheta_AP</name>
+            <open>1</open>
+            <description>Ssid: Mheta_AP
+Signal:   -90
+Chanal:   6
+Mac:   86:2a:a8:eb:a9:60
+Time and Date:   2017-12-01 10:57:26
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81201044802282,32.16927107246911</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Bezeq Free T00C36</name>
+            <open>1</open>
+            <description>Ssid: Bezeq Free T00C36
+Signal:   -90
+Chanal:   1
+Mac:   5a:0c:c8:0f:21:90
+Time and Date:   2017-12-01 10:57:29
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:29</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81208525807686,32.16943682725201</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>hilda</name>
+            <open>1</open>
+            <description>Ssid: hilda
+Signal:   -71
+Chanal:   6
+Mac:   00:30:4f:91:36:07
+Time and Date:   2017-12-01 10:57:53
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:53</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.813408321637986,32.1695720901851</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-29-HP OfficeJet Pro 8710</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-29-HP OfficeJet Pro 8710
+Signal:   -91
+Chanal:   6
+Mac:   ec:8e:b5:05:57:19
+Time and Date:   2017-12-01 10:57:53
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:57:53</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.813408321637986,32.1695720901851</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>dlink</name>
+            <open>1</open>
+            <description>Ssid: dlink
+Signal:   -67
+Chanal:   6
+Mac:   00:24:01:18:99:57
+Time and Date:   2017-12-01 10:58:02
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:02</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.813514176763185,32.17010132675571</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Bezeq Free</name>
+            <open>1</open>
+            <description>Ssid: Bezeq Free
+Signal:   -94
+Chanal:   6
+Mac:   62:19:8f:46:9f:bf
+Time and Date:   2017-12-01 10:58:02
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:02</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.813514176763185,32.17010132675571</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>orange</name>
+            <open>1</open>
+            <description>Ssid: orange
+Signal:   -74
+Chanal:   1
+Mac:   00:21:04:e7:95:da
+Time and Date:   2017-12-01 10:58:05
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:05</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.813537076757704,32.17025406565039</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-F028</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-F028
+Signal:   -80
+Chanal:   1
+Mac:   00:78:9e:fa:6f:c3
+Time and Date:   2017-12-01 10:58:08
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:08</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81356387819144,32.17042884309843</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX111</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX111
+Signal:   -87
+Chanal:   1
+Mac:   c0:ac:54:f7:3c:c2
+Time and Date:   2017-12-01 10:58:17
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:17</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81362985551846,32.17098714928447</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>My_Internet</name>
+            <open>1</open>
+            <description>Ssid: My_Internet
+Signal:   -77
+Chanal:   10
+Mac:   fc:75:16:2e:5a:47
+Time and Date:   2017-12-01 10:58:20
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:20</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81350325265134,32.17106789784238</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Yotam _ work _ room</name>
+            <open>1</open>
+            <description>Ssid: Yotam _ work _ room
+Signal:   -68
+Chanal:   9
+Mac:   d8:5d:4c:d1:4d:b0
+Time and Date:   2017-12-01 10:58:23
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:23</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81330158971711,32.17107862941617</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>sirocco_2.4o</name>
+            <open>1</open>
+            <description>Ssid: sirocco_2.4o
+Signal:   -79
+Chanal:   11
+Mac:   c4:e9:84:83:1a:0a
+Time and Date:   2017-12-01 10:58:26
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.813083395926654,32.17110086640514</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>tal</name>
+            <open>1</open>
+            <description>Ssid: tal
+Signal:   -79
+Chanal:   1
+Mac:   90:8d:78:54:22:a2
+Time and Date:   2017-12-01 10:58:26
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.813083395926654,32.17110086640514</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>044870715</name>
+            <open>1</open>
+            <description>Ssid: 044870715
+Signal:   -81
+Chanal:   6
+Mac:   14:ae:db:b7:ab:ad
+Time and Date:   2017-12-01 10:58:26
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.813083395926654,32.17110086640514</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Oded 2.4Ghz</name>
+            <open>1</open>
+            <description>Ssid: Oded 2.4Ghz
+Signal:   -69
+Chanal:   11
+Mac:   00:12:2a:e1:6c:48
+Time and Date:   2017-12-01 10:58:38
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:58:38</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81268528377859,32.17070417266147</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Daizad</name>
+            <open>1</open>
+            <description>Ssid: Daizad
+Signal:   -90
+Chanal:   3
+Mac:   e8:cc:18:ac:1b:e1
+Time and Date:   2017-12-01 10:59:02
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:02</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.813533118254576,32.17024204862788</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Beni</name>
+            <open>1</open>
+            <description>Ssid: Beni
+Signal:   -71
+Chanal:   9
+Mac:   c4:12:f5:f4:82:42
+Time and Date:   2017-12-01 10:59:14
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:14</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81367243117691,32.17094894909989</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Baruch_2.4</name>
+            <open>1</open>
+            <description>Ssid: Baruch_2.4
+Signal:   -90
+Chanal:   6
+Mac:   10:5a:f7:08:27:71
+Time and Date:   2017-12-01 10:59:14
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:14</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81367243117691,32.17094894909989</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Yotam_Shir</name>
+            <open>1</open>
+            <description>Ssid: Yotam_Shir
+Signal:   -87
+Chanal:   8
+Mac:   00:26:5a:24:f4:f0
+Time and Date:   2017-12-01 10:59:20
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:20</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81334830357392,32.1711226542225</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>claire</name>
+            <open>1</open>
+            <description>Ssid: claire
+Signal:   -90
+Chanal:   6
+Mac:   cc:b2:55:67:2b:85
+Time and Date:   2017-12-01 10:59:32
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:32</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81275918581424,32.17092410916535</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Bezeq Free 672B84</name>
+            <open>1</open>
+            <description>Ssid: Bezeq Free 672B84
+Signal:   -92
+Chanal:   6
+Mac:   62:b2:55:67:2b:86
+Time and Date:   2017-12-01 10:59:32
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:32</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81275918581424,32.17092410916535</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>WR</name>
+            <open>1</open>
+            <description>Ssid: WR
+Signal:   -89
+Chanal:   11
+Mac:   00:30:4f:82:7b:30
+Time and Date:   2017-12-01 10:59:56
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:56</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8119993015223,32.16921657591955</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-651B</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-651B
+Signal:   -77
+Chanal:   1
+Mac:   54:64:d9:5f:59:83
+Time and Date:   2017-12-01 10:59:59
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T10:59:59</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81191817927795,32.169027594463216</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>frank</name>
+            <open>1</open>
+            <description>Ssid: frank
+Signal:   -65
+Chanal:   6
+Mac:   e8:94:f6:e2:6e:4b
+Time and Date:   2017-12-01 11:00:34
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:34</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81245570309557,32.17019624834832</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Laufer-wifi</name>
+            <open>1</open>
+            <description>Ssid: Laufer-wifi
+Signal:   -89
+Chanal:   11
+Mac:   4c:60:de:51:8b:ca
+Time and Date:   2017-12-01 11:00:44
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:44</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.812767664505046,32.17081209129427</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HP-Print-AF-Officejet Pro 6830</name>
+            <open>1</open>
+            <description>Ssid: HP-Print-AF-Officejet Pro 6830
+Signal:   -70
+Chanal:   6
+Mac:   28:80:23:40:5f:af
+Time and Date:   2017-12-01 11:00:47
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:00:47</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81282029540289,32.17095455549593</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Lahav</name>
+            <open>1</open>
+            <description>Ssid: Lahav
+Signal:   -83
+Chanal:   11
+Mac:   08:3e:5d:5c:72:5e
+Time and Date:   2017-12-01 11:01:20
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:01:20</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81383247774181,32.172359339129684</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>love</name>
+            <open>1</open>
+            <description>Ssid: love
+Signal:   -58
+Chanal:   1
+Mac:   14:ae:db:58:73:75
+Time and Date:   2017-12-01 11:01:26
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:01:26</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.814265874458584,32.17229583572982</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BezeqFree</name>
+            <open>1</open>
+            <description>Ssid: BezeqFree
+Signal:   -57
+Chanal:   1
+Mac:   06:ae:db:58:73:75
+Time and Date:   2017-12-01 11:04:18
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:04:18</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81408016821385,32.17227246645649</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Lahav</name>
+            <open>1</open>
+            <description>Ssid: Lahav
+Signal:   -81
+Chanal:   11
+Mac:   fc:b4:e6:d2:86:9e
+Time and Date:   2017-12-01 11:04:21
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:04:21</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81390382396507,32.17230692344676</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX1234</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX1234
+Signal:   -81
+Chanal:   1
+Mac:   00:78:9e:f9:f5:5b
+Time and Date:   2017-12-01 11:04:45
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:04:45</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81234245317759,32.17257421641877</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-56-HP OfficeJet 6950</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-56-HP OfficeJet 6950
+Signal:   -90
+Chanal:   11
+Mac:   30:e1:71:be:67:57
+Time and Date:   2017-12-01 11:04:45
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:04:45</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81234245317759,32.17257421641877</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Gil Kitchen</name>
+            <open>1</open>
+            <description>Ssid: Gil Kitchen
+Signal:   -83
+Chanal:   6
+Mac:   80:1f:02:a3:7d:62
+Time and Date:   2017-12-01 11:04:48
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:04:48</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81218573168659,32.172567936910234</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>kenley-up</name>
+            <open>1</open>
+            <description>Ssid: kenley-up
+Signal:   -87
+Chanal:   6
+Mac:   88:dc:96:3b:f5:e0
+Time and Date:   2017-12-01 11:04:51
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:04:51</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81206365704524,32.17244369050431</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>varda</name>
+            <open>1</open>
+            <description>Ssid: varda
+Signal:   -80
+Chanal:   1
+Mac:   c4:12:f5:85:27:c2
+Time and Date:   2017-12-01 11:04:54
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:04:54</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81198974378003,32.17225037592235</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Liza</name>
+            <open>1</open>
+            <description>Ssid: Liza
+Signal:   -91
+Chanal:   36
+Mac:   8c:59:c3:ea:db:4b
+Time and Date:   2017-12-01 11:05:00
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:00</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81183741979604,32.171773657455525</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-1966</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-1966
+Signal:   -75
+Chanal:   6
+Mac:   6c:2e:85:fe:da:b8
+Time and Date:   2017-12-01 11:05:06
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:06</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8116686534985,32.17134387611023</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>ronkla2</name>
+            <open>1</open>
+            <description>Ssid: ronkla2
+Signal:   -80
+Chanal:   6
+Mac:   3c:1e:04:07:2a:fe
+Time and Date:   2017-12-01 11:05:06
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:06</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8116686534985,32.17134387611023</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>shlomi</name>
+            <open>1</open>
+            <description>Ssid: shlomi
+Signal:   -65
+Chanal:   1
+Mac:   d8:5d:4c:d9:c4:68
+Time and Date:   2017-12-01 11:05:18
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:18</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81119993629276,32.17043064941609</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>gononsmarthome</name>
+            <open>1</open>
+            <description>Ssid: gononsmarthome
+Signal:   -89
+Chanal:   3
+Mac:   18:cc:23:00:18:45
+Time and Date:   2017-12-01 11:05:18
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:18</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81119993629276,32.17043064941609</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>stephane</name>
+            <open>1</open>
+            <description>Ssid: stephane
+Signal:   -64
+Chanal:   1
+Mac:   00:24:2b:cf:13:21
+Time and Date:   2017-12-01 11:05:21
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:21</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81108803927924,32.17019380074371</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Rozenkrants</name>
+            <open>1</open>
+            <description>Ssid: Rozenkrants
+Signal:   -89
+Chanal:   1
+Mac:   86:2a:a8:a1:a0:b5
+Time and Date:   2017-12-01 11:05:24
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:24</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81096823595285,32.1699449632106</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>oved-main_2EX</name>
+            <open>1</open>
+            <description>Ssid: oved-main_2EX
+Signal:   -80
+Chanal:   6
+Mac:   74:da:38:54:b8:1c
+Time and Date:   2017-12-01 11:05:27
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:27</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.810860989133886,32.16969384158719</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>bait</name>
+            <open>1</open>
+            <description>Ssid: bait
+Signal:   -92
+Chanal:   10
+Mac:   10:be:f5:3f:b2:ce
+Time and Date:   2017-12-01 11:05:27
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:27</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.810860989133886,32.16969384158719</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Lili</name>
+            <open>1</open>
+            <description>Ssid: Lili
+Signal:   -79
+Chanal:   11
+Mac:   c4:12:f5:f9:5c:7c
+Time and Date:   2017-12-01 11:05:30
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:30</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81076504710256,32.169457779876055</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-2E6E</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-2E6E
+Signal:   -81
+Chanal:   11
+Mac:   b0:b2:8f:1e:ea:68
+Time and Date:   2017-12-01 11:05:30
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:30</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81076504710256,32.169457779876055</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>RS_GUEST</name>
+            <open>1</open>
+            <description>Ssid: RS_GUEST
+Signal:   -91
+Chanal:   9
+Mac:   e4:6f:13:71:f5:ce
+Time and Date:   2017-12-01 11:05:39
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:39</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.810540283347045,32.16885854901348</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTFiber-400D</name>
+            <open>1</open>
+            <description>Ssid: HOTFiber-400D
+Signal:   -83
+Chanal:   6
+Mac:   40:65:a3:2b:62:22
+Time and Date:   2017-12-01 11:05:57
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:57</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81174970350504,32.16881183895412</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HP-Setup&gt;77-M277 LaserJet</name>
+            <open>1</open>
+            <description>Ssid: HP-Setup&gt;77-M277 LaserJet
+Signal:   -87
+Chanal:   1
+Mac:   92:cd:b6:2b:e9:77
+Time and Date:   2017-12-01 11:05:57
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:57</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81174970350504,32.16881183895412</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>InnovationEndeavors-guest</name>
+            <open>1</open>
+            <description>Ssid: InnovationEndeavors-guest
+Signal:   -91
+Chanal:   9
+Mac:   14:ae:db:48:af:4d
+Time and Date:   2017-12-01 11:06:12
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:06:12</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8122124147935,32.16970424697143</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>snapper1</name>
+            <open>1</open>
+            <description>Ssid: snapper1
+Signal:   -91
+Chanal:   1
+Mac:   00:78:9e:fa:0e:db
+Time and Date:   2017-12-01 11:06:15
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:06:15</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81228859490431,32.16988799418102</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>ter123</name>
+            <open>1</open>
+            <description>Ssid: ter123
+Signal:   -69
+Chanal:   6
+Mac:   70:4d:7b:0c:89:50
+Time and Date:   2017-12-01 11:06:18
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:06:18</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81236874860562,32.17005822708653</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>TP-LINK_76C08E</name>
+            <open>1</open>
+            <description>Ssid: TP-LINK_76C08E
+Signal:   -84
+Chanal:   1
+Mac:   14:cc:20:76:c0:8e
+Time and Date:   2017-12-01 11:06:30
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:06:30</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.812720955098236,32.17081505526214</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Bezeq Free GA32E3</name>
+            <open>1</open>
+            <description>Ssid: Bezeq Free GA32E3
+Signal:   -62
+Chanal:   1
+Mac:   52:b0:ce:ac:32:98
+Time and Date:   2017-12-01 11:07:03
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:07:03</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81347918498145,32.1723824503716</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Orit</name>
+            <open>1</open>
+            <description>Ssid: Orit
+Signal:   -57
+Chanal:   6
+Mac:   c4:a8:1d:12:7d:4c
+Time and Date:   2017-12-01 11:07:12
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:07:12</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8140756807789,32.17228718061519</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Km</name>
+            <open>1</open>
+            <description>Ssid: Km
+Signal:   -85
+Chanal:   9
+Mac:   48:ee:0c:3d:eb:b8
+Time and Date:   2017-12-01 11:07:18
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:07:18</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81441454466233,32.17225793952015</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HUAWEI-009D</name>
+            <open>1</open>
+            <description>Ssid: HUAWEI-009D
+Signal:   -86
+Chanal:   4
+Mac:   14:9d:09:80:00:9d
+Time and Date:   2017-12-01 11:07:18
+ID:   SM-G950F</description>
+            <TimeStamp>
+                <when>2017-12-01T11:07:18</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81441454466233,32.17225793952015</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HUAWEI-00F1</name>
+            <open>1</open>
+            <description>Ssid: HUAWEI-00F1
+Signal:   -85
+Chanal:   6
+Mac:   14:9d:09:80:00:f1
+Time and Date:   2017-12-01 11:03:43
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:03:43</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81443004,32.17223176</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-CC-HP DeskJet 4670 series</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-CC-HP DeskJet 4670 series
+Signal:   -67
+Chanal:   6
+Mac:   70:5a:0f:b2:64:cd
+Time and Date:   2017-12-01 11:04:39
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:04:39</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81271468,32.17247957</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>GFCM</name>
+            <open>1</open>
+            <description>Ssid: GFCM
+Signal:   -92
+Chanal:   4
+Mac:   14:ae:db:32:d5:c2
+Time and Date:   2017-12-01 11:04:51
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:04:51</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81205701,32.17237857</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Shani - Green</name>
+            <open>1</open>
+            <description>Ssid: Shani - Green
+Signal:   -88
+Chanal:   6
+Mac:   54:b8:0a:34:78:d0
+Time and Date:   2017-12-01 11:05:03
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:03</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81172407,32.17153243</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>SEW132_23574336</name>
+            <open>1</open>
+            <description>Ssid: SEW132_23574336
+Signal:   -78
+Chanal:   3
+Mac:   08:97:58:31:e0:c6
+Time and Date:   2017-12-01 11:05:06
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:06</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81162405,32.17131792</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>David</name>
+            <open>1</open>
+            <description>Ssid: David
+Signal:   -96
+Chanal:   9
+Mac:   c4:12:f5:82:92:78
+Time and Date:   2017-12-01 11:05:15
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:15</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81125367,32.17063751</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name></name>
+            <open>1</open>
+            <description>Ssid: 
+Signal:   -86
+Chanal:   1
+Mac:   fa:8f:ca:35:6e:e9
+Time and Date:   2017-12-01 11:05:24
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:24</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81090236,32.16991824</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>simon</name>
+            <open>1</open>
+            <description>Ssid: simon
+Signal:   -79
+Chanal:   8
+Mac:   e4:6f:13:73:0a:c2
+Time and Date:   2017-12-01 11:05:42
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:42</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81062936,32.16875936</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HTC</name>
+            <open>1</open>
+            <description>Ssid: HTC
+Signal:   -86
+Chanal:   4
+Mac:   06:c2:3e:e4:21:85
+Time and Date:   2017-12-01 11:05:42
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:05:42</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81062936,32.16875936</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-A5-HP DeskJet 3700 series</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-A5-HP DeskJet 3700 series
+Signal:   -87
+Chanal:   6
+Mac:   40:b0:34:62:33:a6
+Time and Date:   2017-12-01 11:06:09
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:06:09</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81211179,32.1695048</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>UFI_UF230_B3F</name>
+            <open>1</open>
+            <description>Ssid: UFI_UF230_B3F
+Signal:   -58
+Chanal:   6
+Mac:   00:0b:6c:4d:1b:3f
+Time and Date:   2017-12-01 11:06:27
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:06:27</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81264147,32.17062832</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-75-HP DeskJet 4670 series</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-75-HP DeskJet 4670 series
+Signal:   -85
+Chanal:   6
+Mac:   b0:5a:da:fa:44:76
+Time and Date:   2017-12-01 11:06:39
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:06:39</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81293238,32.17144111</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-1A14</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-1A14
+Signal:   -86
+Chanal:   6
+Mac:   00:07:26:4f:07:ae
+Time and Date:   2017-12-01 11:06:58
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:06:58</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81321284,32.1724394</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Basement</name>
+            <open>1</open>
+            <description>Ssid: Basement
+Signal:   -87
+Chanal:   3
+Mac:   f4:f2:6d:af:45:26
+Time and Date:   2017-12-01 11:07:10
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:07:10</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81393684,32.17230093</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-1234</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-1234
+Signal:   -75
+Chanal:   6
+Mac:   7c:03:4c:ba:f5:5a
+Time and Date:   2017-12-01 11:09:20
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:09:20</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81348839,32.17237924</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>alfa</name>
+            <open>1</open>
+            <description>Ssid: alfa
+Signal:   -96
+Chanal:   11
+Mac:   f4:f2:6d:5e:d0:48
+Time and Date:   2017-12-01 11:09:44
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:09:44</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81192728,32.17206721</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>BezeqNGN_10072E_5GHz_1</name>
+            <open>1</open>
+            <description>Ssid: BezeqNGN_10072E_5GHz_1
+Signal:   -82
+Chanal:   48
+Mac:   c4:04:15:60:6a:b6
+Time and Date:   2017-12-01 11:09:47
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:09:47</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81183239,32.17180755</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>TP-LINK-BET</name>
+            <open>1</open>
+            <description>Ssid: TP-LINK-BET
+Signal:   -96
+Chanal:   4
+Mac:   f8:d1:11:ce:e5:e6
+Time and Date:   2017-12-01 11:09:56
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:09:56</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81150977,32.17106538</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>G10</name>
+            <open>1</open>
+            <description>Ssid: G10
+Signal:   -94
+Chanal:   11
+Mac:   c0:ac:54:f8:0c:ac
+Time and Date:   2017-12-01 11:09:56
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:09:56</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81150977,32.17106538</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Hetz2</name>
+            <open>1</open>
+            <description>Ssid: Hetz2
+Signal:   -83
+Chanal:   1
+Mac:   74:da:38:6c:89:7b
+Time and Date:   2017-12-01 11:10:04
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:10:04</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81118089,32.17043936</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-85-HP OfficeJet Pro 6960</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-85-HP OfficeJet Pro 6960
+Signal:   -89
+Chanal:   6
+Mac:   98:e7:f4:0a:dd:86
+Time and Date:   2017-12-01 11:10:04
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:10:04</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81118089,32.17043936</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Avisky</name>
+            <open>1</open>
+            <description>Ssid: Avisky
+Signal:   -91
+Chanal:   11
+Mac:   00:78:9e:fa:b2:d0
+Time and Date:   2017-12-01 11:10:32
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:10:32</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.811185,32.16871788</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Talfamily2</name>
+            <open>1</open>
+            <description>Ssid: Talfamily2
+Signal:   -62
+Chanal:   5
+Mac:   90:8d:78:b6:28:f6
+Time and Date:   2017-12-01 11:10:37
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:10:37</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81168165,32.16879785</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>HOTBOX-C18E</name>
+            <open>1</open>
+            <description>Ssid: HOTBOX-C18E
+Signal:   -93
+Chanal:   1
+Mac:   e0:ce:c3:8c:c1:94
+Time and Date:   2017-12-01 11:10:50
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:10:50</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.8121884,32.16968439</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Floor 2</name>
+            <open>1</open>
+            <description>Ssid: Floor 2
+Signal:   -94
+Chanal:   2
+Mac:   74:da:38:b6:f3:7a
+Time and Date:   2017-12-01 11:11:14
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:11:14</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81290244,32.17146616</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>DIRECT-F6-HP DeskJet 3830 series</name>
+            <open>1</open>
+            <description>Ssid: DIRECT-F6-HP DeskJet 3830 series
+Signal:   -92
+Chanal:   11
+Mac:   30:e1:71:fb:1e:f7
+Time and Date:   2017-12-01 11:11:44
+ID:   Lenovo PB2-690Y</description>
+            <TimeStamp>
+                <when>2017-12-01T11:11:44</when>
+            </TimeStamp>
+            <Point>
+                <coordinates>34.81407594,32.17231097</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
