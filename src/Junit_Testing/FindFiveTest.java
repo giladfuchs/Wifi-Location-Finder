@@ -10,7 +10,8 @@ public class FindFiveTest {
 
 	@Test
 	public void test() {
-		//456//78/g
+		//456//78/gnnzxx
+	
 		double [] arr=new double[100];
 		for (int i = 0; i < arr.length; i++) {
 			arr[i]=Math.random();	
