@@ -23,7 +23,7 @@ public class FilterOr implements FilterInterFace
 	 * @throws ParseException
 	 *This function filter the data by the user requirement
 	 */
-	public List<Row> filter(List<Row> listInput,List<Row> listOutput, String desPath) throws ParseException 
+	public List<Row> filter(List<Row> listInput, List<Row> listOutput) throws ParseException 
 	{
 		Scanner reader = new Scanner(System.in);
 		int filter=0;
@@ -77,11 +77,11 @@ public class FilterOr implements FilterInterFace
 				System.out.println("Enter the end time     (example:  28/10/2017  20:32:00)");
 				String EndDate = reader.next();	
 				EndDate += reader.nextLine();	
-				CalculateByTime time=new CalculateByTime();
+			
 				/**
 				 * send the list and the data the user wrote and set it up by CalculateByTime class
 				 */
-				listOutput = time.CalculateByTime1(listInput,listOutput,StartDate,EndDate);
+				listOutput = CalculateByTime1(listInput,listOutput,StartDate,EndDate);
 				break;
 			}
 			case 2: {
@@ -92,11 +92,11 @@ public class FilterOr implements FilterInterFace
 				System.out.println("Enter the ID");
 				String ID = reader.next();					
 				ID += reader.nextLine();
-				CalculateByID id=new CalculateByID();
+			
 				/**
 				 * send the list and the data the user wrote and set it up by CalculateByID
 				 */
-				listOutput =id.CalculateByID1(listInput,listOutput,ID);
+				listOutput =CalculateByID1(listInput,listOutput,ID);
 				break;
 			}
 			case 3: {
@@ -137,11 +137,11 @@ public class FilterOr implements FilterInterFace
 						reader.next();
 					}						
 				}									
-				CalculateByLocation loc=new CalculateByLocation();
+			
 				/**
 				 * send the list and the data the user wrote and set it up by CalculateByLocation
 				 */
-				listOutput = loc.CalculateByLocation1(listInput,listOutput,lon,lat,radius);
+				listOutput = CalculateByLocation1(listInput,listOutput,lon,lat,radius);
 				break;
 			}
 			default:
@@ -151,13 +151,8 @@ public class FilterOr implements FilterInterFace
 			System.out.println();
 		}				
 		reader.close();		
-		/**
-		 * After the user has finished to filter,
-		 * The program use the function MacQ3 and then it's return.
-		 */
-		
-		ReadAndWriteCSV write = new ReadAndWriteCSV();
-		write.WriteListIntoFile(listOutput,desPath);	
+	
+			
 		return listOutput;	
 	}
 	/**
@@ -295,5 +290,6 @@ public class FilterOr implements FilterInterFace
 			}
 			return listOutput;		 		
 		}
-
+		
+	
 }
