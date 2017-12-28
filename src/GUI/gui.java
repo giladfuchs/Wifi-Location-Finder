@@ -1,11 +1,23 @@
 package GUI;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
+import javax.swing.SpinnerDateModel;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.table.TableModel;
+
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
 
 import Convert.Q2;
 import Filter.Q3;
@@ -19,13 +31,23 @@ import java.awt.HeadlessException;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
-
+import java.util.Calendar;
+import java.util.Date;
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
 import java.awt.event.ActionEvent;
+import com.toedter.calendar.JMonthChooser;
+import com.toedter.calendar.JDayChooser;
+import com.toedter.components.JLocaleChooser;
+import com.sun.xml.internal.fastinfoset.sax.Properties;
+import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JDateChooser;
 public class gui {
 
 	private JFrame frame;
@@ -66,9 +88,53 @@ public class gui {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel InputOutputLbl = new JLabel("\u05E7\u05DC\u05D8 \u05E4\u05DC\u05D8");
+		JDateChooser dateChooserMin = new JDateChooser();
+		dateChooserMin.getCalendarButton().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				System.out.println("timeee");
+			}
+		});
+		dateChooserMin.setBounds(298, 109, 95, 20);
+		frame.getContentPane().add(dateChooserMin);
+ 	
+		Date dateMin = new Date();
+		Date dateMax = new Date();
+		SpinnerDateModel smhMin = new SpinnerDateModel(dateMin, null, null, Calendar.HOUR_OF_DAY);
+		SpinnerDateModel smhMax = new SpinnerDateModel(dateMax, null, null, Calendar.HOUR_OF_DAY);
+		JSpinner spinnerMin = new JSpinner(smhMin); 
+		JSpinner spinnerMax = new JSpinner(smhMax); 
+		JSpinner.DateEditor deMin = new JSpinner.DateEditor(spinnerMin, "hh:mm:ss");
+		JSpinner.DateEditor deMax = new JSpinner.DateEditor(spinnerMax, "hh:mm:ss");
+		spinnerMin.setEditor(deMin);
+		spinnerMax.setEditor(deMax);
+		spinnerMin.setBounds(443,153,60,30); 
+		spinnerMax.setBounds(322,153,60,30); 
+		frame.getContentPane().add(spinnerMin);  		   
+		frame.getContentPane().add(spinnerMax);				
+        
+		spinnerMin.addChangeListener(new ChangeListener() {  
+	        public void stateChanged(ChangeEvent e) {
+	        	Date dateMin = (Date) spinnerMin.getValue();	        	
+	        	long HMin = dateMin.getHours();
+	        	long MMin = dateMin.getMinutes();
+	        	long SMin = dateMin.getSeconds();
+	        	
+	        	Date dateMax = (Date) spinnerMax.getValue();	        	
+	        	long HMax = dateMax.getHours();
+	        	long MMax = dateMax.getMinutes();
+	        	long SMax = dateMax.getSeconds();
+	        		                	
+	        	System.out.println("min  -----------  H = "+HMin+" M = "+MMin+" S = "+SMin);
+	        	System.out.println("max  ----  H = "+HMax+" M = "+MMax+" S = "+SMax);
+	        
+	        }
+			
+	     });  
+		    
+		JLabel InputOutputLbl = new JLabel("Inout Output");
 		InputOutputLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
-		InputOutputLbl.setBounds(113, 31, 61, 45);
+		InputOutputLbl.setBounds(92, 31, 95, 45);
 		frame.getContentPane().add(InputOutputLbl);
 				
 		JButton inputDirBut = new JButton("Get files from dir");
@@ -180,7 +246,7 @@ public class gui {
 		saveKMLBut.setBounds(52, 341, 171, 25);
 		frame.getContentPane().add(saveKMLBut);
 		
-		JLabel filterLbl = new JLabel("\u05E1\u05D9\u05E0\u05D5\u05DF");
+		JLabel filterLbl = new JLabel("Filter");
 		filterLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
 		filterLbl.setBounds(371, 31, 61, 45);
 		frame.getContentPane().add(filterLbl);
@@ -210,6 +276,18 @@ public class gui {
 		FilterCharLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		FilterCharLbl.setBounds(235, 404, 120, 45);
 		frame.getContentPane().add(FilterCharLbl);
+		
+		JDateChooser dateChooserMax = new JDateChooser();
+		dateChooserMax.setBounds(429, 109, 95, 20);
+		frame.getContentPane().add(dateChooserMax);
+		
+		JLabel dateChooserMinLbl = new JLabel("Min Date");
+		dateChooserMinLbl.setBounds(315, 80, 56, 16);
+		frame.getContentPane().add(dateChooserMinLbl);
+		
+		JLabel dateChooserMaxLbl = new JLabel("Max Date");
+		dateChooserMaxLbl.setBounds(443, 80, 56, 16);
+		frame.getContentPane().add(dateChooserMaxLbl);
 	}
 	private String getFilePath()
 	{
