@@ -25,6 +25,7 @@ public class FilterNot implements FilterInterFace
 	 */
 	public List<Row> filter(List<Row> listInput, List<Row> listOutput) throws ParseException  
 	{
+		System.out.println("fsafsa");
 		Scanner reader = new Scanner(System.in);
 		int filter=0;
 		boolean firstTime=true;
