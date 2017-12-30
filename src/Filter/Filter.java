@@ -11,11 +11,12 @@ import Read_Write.CopyListToList;
 import Read_Write.ReadAndWriteCSV;
 
 public class Filter {
-	public List<Row> filtermain(List<Row> listInput,List<Row> listOutput) throws ParseException 
+	public List<Row> filtermain(List<Row> listInput,List<Row> listOutput, String desPathAfterFilterCSV, String desPathAfterFilterKML) throws ParseException 
 	{
 		
-		Scanner reader = new Scanner(System.in);
+	
 		int filter=0;
+	
 		boolean firstTime=true;
 		CopyListToList copy=new CopyListToList();
 		FilterAnd And=new FilterAnd();
@@ -23,29 +24,13 @@ public class Filter {
 		FilterOr Or=new FilterOr();
 		while(true)
 		{
+			filter++;
 			System.out.println("Filter by: "); 
-			System.out.println("fsdfdsfsd");
+			
 			System.out.println("or 1 , not 2 , and 3 , Exit press -1");	
 
-			while (true){
-				/**
-				 * Ask the user about the method he want to filter
-				 */
-				try {
-					filter = reader.nextInt();
-					break;
-				} catch (InputMismatchException e) {					
-					System.out.println("please enter a number");
-					System.out.println(); 
-					System.out.println("Filter by: "); 
-					
-					System.out.println("or 1 , not 2 , and 3 , Exit press -1");	
-					reader.next();
-				}
-				System.out.println();
-			}
-
-			if(filter == -1)
+	
+			if(filter == 2)
 			{
 				/**
 				 *Break the while loop 
@@ -58,26 +43,28 @@ public class Filter {
 			
 			switch (filter)  
 			{
-			case 1: {
-				listOutput=Or.filter(listInput,listOutput);
-				
-			}
 			case 2: {
+				listOutput=Or.filter(listInput,listOutput);
+				break;
+			}
+			case 1: {
 				listOutput=Not.filter(listInput,listOutput);
+				break;
 			}
 			case 3: {
 				listOutput=And.filter(listInput,listOutput);
+				break;
 				}									
 			default:
 				System.out.println("please enter valid number");
-			
+				break;
 			}
 			
 							
 			firstTime = false;									
 			System.out.println();
 		}			
-		reader.close();		
+
 
 		return listOutput;	
 	}

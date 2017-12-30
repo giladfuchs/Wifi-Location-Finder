@@ -20,7 +20,7 @@ public class Q3 {
 	 * @throws ParseException
 	 */
 
-	public List<Row> ReadFile(String srcPath) throws ParseException
+	public void ReadFile(String srcPath, String desPathAfterFilterCSV, String desPathAfterFilterKML) throws ParseException
 	{
 		File file = new File(srcPath);
 
@@ -33,9 +33,10 @@ public class Q3 {
 		if(!listInput.isEmpty()){
 			System.out.println("-------");
 			Filter f = new Filter();
-			listOutput = f.filtermain(listInput,listOutput);	
+			listOutput = f.filtermain(listInput,listOutput,desPathAfterFilterCSV,desPathAfterFilterKML);
+			read.WriteListIntoFile(listOutput, desPathAfterFilterCSV);
 		}		
-		return listOutput;
+		
 	}
 
 }

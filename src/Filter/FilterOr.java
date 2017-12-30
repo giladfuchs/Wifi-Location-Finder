@@ -2,7 +2,6 @@ package Filter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -11,7 +10,6 @@ import java.util.Scanner;
 import Objects.Row;
 import Read_Write.CopyListToList;
 
-import Read_Write.ReadAndWriteCSV;
 
 public class FilterOr implements FilterInterFace
 {
@@ -25,12 +23,12 @@ public class FilterOr implements FilterInterFace
 	 */
 	public List<Row> filter(List<Row> listInput, List<Row> listOutput) throws ParseException 
 	{
-		System.out.println("fsafsa");
+
 		Scanner reader = new Scanner(System.in);
 		int filter=0;
 		boolean firstTime=true;
 		CopyListToList copy=new CopyListToList();
-		
+
 		while(true)
 		{
 			System.out.println("Filter by: "); 
@@ -63,7 +61,7 @@ public class FilterOr implements FilterInterFace
 					listOutput = copy.CopyListToList1(listInput);				
 				break;
 			}
-			
+
 			switch (filter)  
 			{
 			case 1: {
@@ -78,7 +76,7 @@ public class FilterOr implements FilterInterFace
 				System.out.println("Enter the end time     (example:  28/10/2017  20:32:00)");
 				String EndDate = reader.next();	
 				EndDate += reader.nextLine();	
-			
+
 				/**
 				 * send the list and the data the user wrote and set it up by CalculateByTime class
 				 */
@@ -93,7 +91,7 @@ public class FilterOr implements FilterInterFace
 				System.out.println("Enter the ID");
 				String ID = reader.next();					
 				ID += reader.nextLine();
-			
+
 				/**
 				 * send the list and the data the user wrote and set it up by CalculateByID
 				 */
@@ -138,7 +136,7 @@ public class FilterOr implements FilterInterFace
 						reader.next();
 					}						
 				}									
-			
+
 				/**
 				 * send the list and the data the user wrote and set it up by CalculateByLocation
 				 */
@@ -152,8 +150,8 @@ public class FilterOr implements FilterInterFace
 			System.out.println();
 		}				
 		reader.close();		
-	
-			
+
+
 		return listOutput;	
 	}
 	/**
@@ -174,10 +172,13 @@ public class FilterOr implements FilterInterFace
 			 */
 			if(id.equals(listInput.get(i).getHead().getID())) //take the only row with the same id
 			{		
+				Duplicate dup=new Duplicate();
+				if(dup.duplicate(listOutput, listInput.get(i).getHead().getID(),  listInput.get(i).getHead().getTime())){
 				Row row = new Row(listInput.get(i).getElement(),listInput.get(i).getHead());
 				listOutput.add(row);
 				find = false;
-			}
+				}
+				}
 		}
 		if(find){
 			System.out.println("The filter didnt find this ID");
@@ -185,112 +186,118 @@ public class FilterOr implements FilterInterFace
 		}
 		return listOutput;				
 	}
-	
-		/**
-		 * This function finds all the Mac's that close geographic to Lon,Lat and Radios
-		 * lon = x, lat = y
-		 * @param listInput
-		 * @param listOutput
-		 * @param Lon
-		 * @param Lat
-		 * @param Radius
-		 * @return listOutput
-		 */
-		public  List<Row> CalculateByLocation1(List<Row> listInput, List<Row> listOutput,  double Lon ,double Lat,double Radius) 
-		{	
-			boolean find = true;
-			for(int i=1;i<listInput.size();i++)
-			{
-				/**
-				 * Convert String to Double
-				 * Create distance by equation "Sqrt((x1-x2)^2 + (y1-y2)^2)"
-				 * if distance is less than Radius, add row to listOutput
-				 */
-				double currentLat = Double.parseDouble(listInput.get(i).getHead().getLat());  
-				double currentLon = Double.parseDouble(listInput.get(i).getHead().getLon());			
-				double distance = Math.sqrt(Math.pow(Lon - currentLon,2) + Math.pow(Lat - currentLat,2)); 
-				if( distance <=  Radius)
-				{				
+
+	/**
+	 * This function finds all the Mac's that close geographic to Lon,Lat and Radios
+	 * lon = x, lat = y
+	 * @param listInput
+	 * @param listOutput
+	 * @param Lon
+	 * @param Lat
+	 * @param Radius
+	 * @return listOutput
+	 */
+	public  List<Row> CalculateByLocation1(List<Row> listInput, List<Row> listOutput,  double Lon ,double Lat,double Radius) 
+	{	
+		boolean find = true;
+		for(int i=1;i<listInput.size();i++)
+		{
+			/**
+			 * Convert String to Double
+			 * Create distance by equation "Sqrt((x1-x2)^2 + (y1-y2)^2)"
+			 * if distance is less than Radius, add row to listOutput
+			 */
+			double currentLat = Double.parseDouble(listInput.get(i).getHead().getLat());  
+			double currentLon = Double.parseDouble(listInput.get(i).getHead().getLon());			
+			double distance = Math.sqrt(Math.pow(Lon - currentLon,2) + Math.pow(Lat - currentLat,2)); 
+			if( distance <=  Radius)
+			{		
+				Duplicate dup=new Duplicate();
+				if(dup.duplicate(listOutput, listInput.get(i).getHead().getID(),  listInput.get(i).getHead().getTime())){		
 					Row row = new Row(listInput.get(i).getElement(),listInput.get(i).getHead());
 					listOutput.add(row);
 					find = false;
-				}			
-			}	
-			if(find){
-				System.out.println("The filter didnt find this Location");
-				return listInput;	
-			}
-			return listOutput;		
+				}	
+			}		
+		}	
+		if(find){
+			System.out.println("The filter didnt find this Location");
+			return listInput;	
 		}
+		return listOutput;		
+	}
+	/**
+	 * This function finds all the Mac's that in the range of startDate to endDate
+	 * @param listInput
+	 * @param listOutput
+	 * @param startDate
+	 * @param endDate
+	 * @return listOutput
+	 */
+
+	public List<Row> CalculateByTime1(List<Row> listInput, List<Row> listOutput,String startDate,String endDate)
+	{
+		boolean find = true;
 		/**
-		 * This function finds all the Mac's that in the range of startDate to endDate
-		 * @param listInput
-		 * @param listOutput
-		 * @param startDate
-		 * @param endDate
-		 * @return listOutput
+		 * These are the Date formats we use
 		 */
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss");	 
+		DateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		DateFormat dateFormat3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-		public List<Row> CalculateByTime1(List<Row> listInput, List<Row> listOutput,String startDate,String endDate)
-		{
-			boolean find = true;
-			/**
-			 * These are the Date formats we use
-			 */
-			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss");	 
-			DateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-			DateFormat dateFormat3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		/**
+		 * Convert from String to Date by dateFormat
+		 */
+		Date dateStart,dateEnd;	    
+		try {
+			dateStart = dateFormat.parse(startDate);  //convert string to Date by dateFormat
+			dateEnd = dateFormat.parse(endDate);
+		} catch (ParseException e) {
+			System.out.println("The date you entered isnt correct");			
+			return listInput;	
+		} 
 
-			/**
-			 * Convert from String to Date by dateFormat
-			 */
-			Date dateStart,dateEnd;	    
-			try {
-				dateStart = dateFormat.parse(startDate);  //convert string to Date by dateFormat
-				dateEnd = dateFormat.parse(endDate);
-			} catch (ParseException e) {
-				System.out.println("The date you entered isnt correct");			
-				return listInput;	
-			} 
+		try {
+			for(int i=1;i<listInput.size();i++)
+			{	
+				Date dateCurrent;
+				/**
+				 * If the format of the Date we import from CSV file is without seconds
+				 * 		add to the date ':00' which describes seconds 
+				 * Convert according to the DateFormat
+				 */
+				if(listInput.get(i).getHead().getTime().charAt(2) == '/') // check the date format
+				{
+					String s = listInput.get(i).getHead().getTime()+":00";
+					listInput.get(i).getHead().setTime(s);
+					dateCurrent = dateFormat2.parse(listInput.get(i).getHead().getTime());		
+				}
+				else
+					dateCurrent = dateFormat3.parse(listInput.get(i).getHead().getTime());			
 
-			try {
-				for(int i=1;i<listInput.size();i++)
+				/**
+				 * if the date in the range, add row to listOutput
+				 */
+				if(dateStart.before(dateCurrent) && dateEnd.after(dateCurrent))//take the only row in the range of the time
 				{	
-					Date dateCurrent;
-					/**
-					 * If the format of the Date we import from CSV file is without seconds
-					 * 		add to the date ':00' which describes seconds 
-					 * Convert according to the DateFormat
-					 */
-					if(listInput.get(i).getHead().getTime().charAt(2) == '/') // check the date format
-					{
-						String s = listInput.get(i).getHead().getTime()+":00";
-						listInput.get(i).getHead().setTime(s);
-						dateCurrent = dateFormat2.parse(listInput.get(i).getHead().getTime());		
-					}
-					else
-						dateCurrent = dateFormat3.parse(listInput.get(i).getHead().getTime());			
-
-					/**
-					 * if the date in the range, add row to listOutput
-					 */
-					if(dateStart.before(dateCurrent) && dateEnd.after(dateCurrent))//take the only row in the range of the time
-					{				
+					Duplicate dup=new Duplicate();
+					if(dup.duplicate(listOutput, listInput.get(i).getHead().getID(),  listInput.get(i).getHead().getTime())){
 						Row row = new Row(listInput.get(i).getElement(),listInput.get(i).getHead());
 						listOutput.add(row);
 						find = false;
-					}				
-				}
+					}
+				}				
 			}
-			catch (ParseException e) {			
-				e.printStackTrace();			
-			}
-			if(find){
-				System.out.println("The filter didnt find this Date");
-				return listInput;	
-			}
-			return listOutput;		 		
 		}
-		
-	
+		catch (ParseException e) {			
+			e.printStackTrace();			
+		}
+		if(find){
+			System.out.println("The filter didnt find this Date");
+			return listInput;	
+		}
+		return listOutput;		 		
+	}
+
+
 }

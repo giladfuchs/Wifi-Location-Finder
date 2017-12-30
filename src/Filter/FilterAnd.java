@@ -31,7 +31,7 @@ public class FilterAnd implements FilterInterFace {
 		while(true)
 		{
 			System.out.println("Filter by: "); 
-			System.out.println("fsafsa");
+			
 			System.out.println("Time press 1 , ID press 2 , Location press 3 , Exit press -1");	
 
 			while (true){
@@ -158,7 +158,7 @@ public class FilterAnd implements FilterInterFace {
 			System.out.println();
 		}				
 		reader.close();		
-		
+		System.out.println("99999999999999999999");
 		return listOutput;	
 	}
 	/**

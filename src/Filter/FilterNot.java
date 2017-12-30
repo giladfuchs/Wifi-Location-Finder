@@ -25,7 +25,7 @@ public class FilterNot implements FilterInterFace
 	 */
 	public List<Row> filter(List<Row> listInput, List<Row> listOutput) throws ParseException  
 	{
-		System.out.println("fsafsa");
+	
 		Scanner reader = new Scanner(System.in);
 		int filter=0;
 		boolean firstTime=true;
@@ -277,7 +277,7 @@ public class FilterNot implements FilterInterFace
 					/**
 					 * if the date in the range, add row to listOutput
 					 */
-					if(!dateStart.before(dateCurrent) && !dateEnd.after(dateCurrent))//take the only row in the range of the time
+					if(!dateStart.before(dateCurrent) || !dateEnd.after(dateCurrent))//take the only row in the range of the time
 					{				
 						Row row = new Row(listInput.get(i).getElement(),listInput.get(i).getHead());
 						listOutput.add(row);
