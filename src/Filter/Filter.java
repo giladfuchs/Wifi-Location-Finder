@@ -11,7 +11,7 @@ import Read_Write.CopyListToList;
 import Read_Write.ReadAndWriteCSV;
 
 public class Filter {
-	public List<Row> filtermain(List<Row> listInput,List<Row> listOutput, String desPathAfterFilterCSV, String desPathAfterFilterKML) throws ParseException 
+	public List<Row> filtermain(List<Row> listInput,List<Row> listOutput) throws ParseException 
 	{
 		
 	
