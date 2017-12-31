@@ -12,9 +12,7 @@ import Read_Write.ReadAndWriteCSV;
 
 public class Filter {
 	public List<Row> filtermain(List<Row> listInput,List<Row> listOutput) throws ParseException 
-	{
-		
-	
+	{		
 		int filter=0;
 	
 		boolean firstTime=true;
@@ -25,11 +23,9 @@ public class Filter {
 		while(true)
 		{
 			filter++;
-			System.out.println("Filter by: "); 
-			
+			System.out.println("Filter by: "); 		
 			System.out.println("or 1 , not 2 , and 3 , Exit press -1");	
 
-	
 			if(filter == 2)
 			{
 				/**

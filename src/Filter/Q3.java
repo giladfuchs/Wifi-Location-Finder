@@ -21,8 +21,7 @@ public class Q3 {
 	 */
 
 	public List<Row> ReadFile(String srcPath) throws ParseException
-	{
-		
+	{		
 		File file = new File(srcPath);
 
 		ReadAndWriteCSV read = new ReadAndWriteCSV();
@@ -33,8 +32,8 @@ public class Q3 {
 
 		if(!listInput.isEmpty()){
 			System.out.println("-------");
-			Filter f = new Filter();
-			listOutput = f.filtermain(listInput,listOutput);	
+			//Filter f = new Filter();
+			//listOutput = f.filtermain(listInput,listOutput);	
 		}		
 		return listOutput;
 	}

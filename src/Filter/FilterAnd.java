@@ -30,8 +30,7 @@ public class FilterAnd implements FilterInterFace {
 		
 		while(true)
 		{
-			System.out.println("Filter by: "); 
-			
+			System.out.println("Filter by: "); 			
 			System.out.println("Time press 1 , ID press 2 , Location press 3 , Exit press -1");	
 
 			while (true){
@@ -85,7 +84,7 @@ public class FilterAnd implements FilterInterFace {
 				String EndDate = reader.next();	
 				EndDate += reader.nextLine();	
 				
-				/**33
+				/**
 				 * send the list and the data the user wrote and set it up by CalculateByTime class
 				 */
 				listOutput = CalculateByTime1(listInput,listOutput,StartDate,EndDate);
