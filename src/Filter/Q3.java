@@ -33,7 +33,7 @@ public class Q3 {
 		if(!listInput.isEmpty()){
 			System.out.println("-------");
 			Filter f = new Filter();
-			listOutput = f.filter(listInput,listOutput);	
+			listOutput = f.filtermain(listInput,listOutput);	
 		}		
 		return listOutput;
 	}
