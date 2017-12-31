@@ -85,7 +85,7 @@ public class FilterAnd implements FilterInterFace {
 				String EndDate = reader.next();	
 				EndDate += reader.nextLine();	
 				
-				/**
+				/**33
 				 * send the list and the data the user wrote and set it up by CalculateByTime class
 				 */
 				listOutput = CalculateByTime1(listInput,listOutput,StartDate,EndDate);
