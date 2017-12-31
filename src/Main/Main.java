@@ -6,13 +6,14 @@ import Filter.Q3;
 
 public class Main {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException  {
 		/**
 		 * Main function
 		 * @param dirPath get the path to upload wigelewifi file
 		 * @param desPath get the path and name for the file he will create by the requirement of q2
 		 * @param srcPath get the path to upload the csv file we create 
 		 */
+		System.out.println("fsdfsd");
 		String dirPath = "C:/OOP/WigleWifi_files";
 		String desPath = "C:/OOP/List_of_wifi.csv";		          
 		/**
