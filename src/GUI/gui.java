@@ -97,76 +97,18 @@ public class gui {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+								
 		/**
-		 * Button of start date
-		 */				
-		JDateChooser dateChooserMin = new JDateChooser();
-    	dateChooserMin.setBounds(298, 109, 95, 20);
-    	frame.getContentPane().add(dateChooserMin);
-    	
-		/**
-		 * Button of end date
-		 */
-		JDateChooser dateChooserMax = new JDateChooser();
-		dateChooserMax.setBounds(429, 109, 95, 20);
-		frame.getContentPane().add(dateChooserMax);
-						
-		/**
-		 * Buttons of start time and end time
-		 */			
-		Date dateMin = new Date();
-		Date dateMax = new Date();
-		SpinnerDateModel smhMin = new SpinnerDateModel(dateMin, null, null, Calendar.HOUR_OF_DAY);
-		SpinnerDateModel smhMax = new SpinnerDateModel(dateMax, null, null, Calendar.HOUR_OF_DAY);
-		JSpinner spinnerMin = new JSpinner(smhMin); 
-		JSpinner spinnerMax = new JSpinner(smhMax); 
-		JSpinner.DateEditor deMin = new JSpinner.DateEditor(spinnerMin, "hh:mm:ss a");
-		JSpinner.DateEditor deMax = new JSpinner.DateEditor(spinnerMax, "hh:mm:ss a");
-		spinnerMin.setEditor(deMin);
-		spinnerMax.setEditor(deMax);
-		spinnerMax.setBounds(443,153,60,30); 
-		spinnerMin.setBounds(322,153,60,30); 
-		frame.getContentPane().add(spinnerMin);  		   
-		frame.getContentPane().add(spinnerMax);				      
-		SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");								 
-				
-			
-		/**
-		 * Button of filter
-		 */			
-		JButton AndBut = new JButton("And");
-		AndBut.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) 
-			{
-				Date time = (Date)spinnerMin.getValue();
-	        	String formattedDate = format.format(time);
-	        	System.out.println("formattedDate start = "+formattedDate);  
-	        	
-	        	time = (Date)spinnerMax.getValue();
-	        	formattedDate = format.format(time);
-	        	System.out.println("formattedDate end = "+formattedDate);  	        		        	
-	        		        	
-			    Date dateFromDateChooser = dateChooserMin.getDate();
-			    String dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
-			    System.err.println("start date  " + dateString);
-			    
-			    dateFromDateChooser = dateChooserMax.getDate();
-			    dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
-			    System.err.println("end date  " + dateString);			    			    				    			
-			}
-		});
-		AndBut.setBounds(353, 407, 171, 25);
-		frame.getContentPane().add(AndBut);
-						
-		/**
-		 * INPUT - OUTPUT
+		 * **************** INPUT - OUTPUT ***************
 		 */	
 		    
 		JLabel InputOutputLbl = new JLabel("Inout Output");
 		InputOutputLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
 		InputOutputLbl.setBounds(92, 31, 95, 45);
 		frame.getContentPane().add(InputOutputLbl);
-				
+		/**
+		 * Button of Get files from directory 
+		 */			
 		JButton inputDirBut = new JButton("Get files from dir");
 		inputDirBut.addActionListener(new ActionListener() 
 		{
@@ -201,7 +143,9 @@ public class gui {
 		});
 		inputDirBut.setBounds(52, 109, 171, 25);
 		frame.getContentPane().add(inputDirBut);
-		
+		/**
+		 * Button of Get file 
+		 */	
 		JButton inputFileBut = new JButton("Get file");
 		inputFileBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
@@ -231,7 +175,9 @@ public class gui {
 		});
 		inputFileBut.setBounds(52, 169, 171, 25);
 		frame.getContentPane().add(inputFileBut);
-		
+		/**
+		 * Button of Save as CSV
+		 */	
 		JButton saveCSVBut = new JButton("Save as CSV");
 		saveCSVBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
@@ -253,7 +199,9 @@ public class gui {
 		});
 		saveCSVBut.setBounds(52, 283, 171, 25);
 		frame.getContentPane().add(saveCSVBut);
-		
+		/**
+		 * Button of Save as KML
+		 */	
 		JButton saveKMLBut = new JButton("Save as KML");
 		saveKMLBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
@@ -275,12 +223,10 @@ public class gui {
 		});
 		saveKMLBut.setBounds(52, 341, 171, 25);
 		frame.getContentPane().add(saveKMLBut);
-		
-		JLabel filterLbl = new JLabel("Filter");
-		filterLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
-		filterLbl.setBounds(371, 31, 61, 45);
-		frame.getContentPane().add(filterLbl);
-		
+				
+		/**
+		 * Button of Delete
+		 */	
 		JButton deleteBut = new JButton("Delete");
 		deleteBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
@@ -294,84 +240,206 @@ public class gui {
 		
 		JLabel amountListsLbl = new JLabel("amount of lists");
 		amountListsLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		amountListsLbl.setBounds(136, 450, 87, 45);
+		amountListsLbl.setBounds(12, 451, 87, 45);
 		frame.getContentPane().add(amountListsLbl);
 		
 		JLabel amountMACLbl = new JLabel("amount of MAC");
 		amountMACLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		amountMACLbl.setBounds(37, 450, 87, 45);
+		amountMACLbl.setBounds(12, 411, 87, 45);
 		frame.getContentPane().add(amountMACLbl);
 		
 		JLabel FilterCharLbl = new JLabel("Filter characteristics");
 		FilterCharLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		FilterCharLbl.setBounds(235, 450, 120, 45);
-		frame.getContentPane().add(FilterCharLbl);				
+		FilterCharLbl.setBounds(12, 486, 120, 45);
+		frame.getContentPane().add(FilterCharLbl);	
 		
+		/**
+		 * **************** FILTER ***************
+		 */	
+		
+		JLabel filterLbl = new JLabel("Filter");
+		filterLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
+		filterLbl.setBounds(408, 31, 61, 45);
+		frame.getContentPane().add(filterLbl);
+
+		/**
+		 * Filter by time
+		 */
+		
+		/**
+		 * Button of start date
+		 */	
 		JLabel dateChooserMinLbl = new JLabel("Min Date");
-		dateChooserMinLbl.setBounds(315, 80, 56, 16);
+		dateChooserMinLbl.setBounds(337, 140, 56, 16);
 		frame.getContentPane().add(dateChooserMinLbl);
 		
-		JLabel dateChooserMaxLbl = new JLabel("Max Date");
-		dateChooserMaxLbl.setBounds(443, 80, 56, 16);
-		frame.getContentPane().add(dateChooserMaxLbl);
+		JDateChooser dateChooserMin = new JDateChooser();
+    	dateChooserMin.setBounds(314, 169, 95, 20);
+    	frame.getContentPane().add(dateChooserMin);
+    	
+		/**
+		 * Button of end date
+		 */
+    	JLabel dateChooserMaxLbl = new JLabel("Max Date");
+		dateChooserMaxLbl.setBounds(453, 140, 56, 16);
+		frame.getContentPane().add(dateChooserMaxLbl);	
+		
+		JDateChooser dateChooserMax = new JDateChooser();
+		dateChooserMax.setBounds(434, 169, 95, 20);
+		frame.getContentPane().add(dateChooserMax);
+						
+		/**
+		 * Buttons of start time and end time
+		 */			
+		Date dateMin = new Date();
+		Date dateMax = new Date();
+		SpinnerDateModel smhMin = new SpinnerDateModel(dateMin, null, null, Calendar.HOUR_OF_DAY);
+		SpinnerDateModel smhMax = new SpinnerDateModel(dateMax, null, null, Calendar.HOUR_OF_DAY);
+		JSpinner spinnerMin = new JSpinner(smhMin); 
+		JSpinner spinnerMax = new JSpinner(smhMax); 
+		JSpinner.DateEditor deMin = new JSpinner.DateEditor(spinnerMin, "hh:mm:ss a");
+		JSpinner.DateEditor deMax = new JSpinner.DateEditor(spinnerMax, "hh:mm:ss a");
+		spinnerMin.setEditor(deMin);
+		spinnerMax.setEditor(deMax);
+		spinnerMax.setBounds(453,202,60,30); 
+		spinnerMin.setBounds(337,202,60,30); 
+		frame.getContentPane().add(spinnerMin);  		   
+		frame.getContentPane().add(spinnerMax);				      
+		
+		/**
+		 * Filter by name
+		 */
+		
+		JLabel nameLbl = new JLabel("Name");
+		nameLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		nameLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		nameLbl.setBounds(398, 276, 57, 36);
+		frame.getContentPane().add(nameLbl);
+		
+		nameTxt = new JTextField();
+		nameTxt.setBounds(353, 312, 144, 22);
+		frame.getContentPane().add(nameTxt);
+		nameTxt.setColumns(10);
+				
+		
+		/**
+		 * Filter by location
+		 */		
+		JLabel locationLbl = new JLabel("Location ");
+		locationLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		locationLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		locationLbl.setBounds(385, 357, 84, 36);
+		frame.getContentPane().add(locationLbl);
+		
+		LocaionAltTxt = new JTextField();
+		LocaionAltTxt.setBounds(291, 436, 75, 22);
+		frame.getContentPane().add(LocaionAltTxt);
+		LocaionAltTxt.setColumns(10);
+		
+		LocaionLonTxt = new JTextField();
+		LocaionLonTxt.setColumns(10);
+		LocaionLonTxt.setBounds(380, 436, 75, 22);
+		frame.getContentPane().add(LocaionLonTxt);
+		
+		LocaionRadiosTxt = new JTextField();
+		LocaionRadiosTxt.setColumns(10);
+		LocaionRadiosTxt.setBounds(467, 436, 75, 22);
+		frame.getContentPane().add(LocaionRadiosTxt);
+		
+		JLabel altLbl = new JLabel("Alt");
+		altLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		altLbl.setBounds(314, 399, 38, 36);
+		frame.getContentPane().add(altLbl);
+		
+		JLabel LonLbl = new JLabel("Lon");
+		LonLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		LonLbl.setBounds(398, 399, 38, 36);
+		frame.getContentPane().add(LonLbl);
+		
+		JLabel radiosLbl = new JLabel("Radios");
+		radiosLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		radiosLbl.setBounds(488, 399, 59, 36);
+		frame.getContentPane().add(radiosLbl);
+						
+		/**
+		 * Button of And
+		 */			
+		JButton AndBut = new JButton("And");		
+		AndBut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				/**
+				 * Values of filter time
+				 */	
+				SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");	
+				Date time = (Date)spinnerMin.getValue();
+	        	String formattedDate = format.format(time);
+	        	System.out.println("formattedDate start = "+formattedDate);  
+	        	
+	        	time = (Date)spinnerMax.getValue();
+	        	formattedDate = format.format(time);
+	        	System.out.println("formattedDate end = "+formattedDate);  	        		        	
+	        		        	
+			    Date dateFromDateChooser = dateChooserMin.getDate();
+			    String dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
+			    System.err.println("start date  " + dateString);
+			    
+			    dateFromDateChooser = dateChooserMax.getDate();
+			    dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
+			    System.err.println("end date  " + dateString);	
+			    
+			    /**
+				 * Values of filter name
+				 */
+			    String strName = nameTxt.getText();
+				System.out.println("strName = "+strName);
+				
+				/**
+				 * Values of filter location
+				 */
+				
+				String strAlt = LocaionAltTxt.getText();
+				System.out.println("strAlt = "+strAlt);
+				String strLon = LocaionLonTxt.getText();
+				System.out.println("strLon = "+strLon);
+				String strRadios = LocaionRadiosTxt.getText();
+				System.out.println("strRadios = "+strRadios);
+								
+			}
+		});
+		AndBut.setBounds(385, 508, 95, 25);
+		frame.getContentPane().add(AndBut);
+		
+		/**
+		 * Button of Or
+		 */	
 		
 		JButton OrBut = new JButton("Or");
 		OrBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		OrBut.setBounds(353, 445, 171, 25);
+		OrBut.setBounds(488, 508, 87, 25);
 		frame.getContentPane().add(OrBut);
 		
+		/**
+		 * Button of Not
+		 */	
 		JButton NotBut = new JButton("Not");
-		NotBut.setBounds(353, 483, 171, 25);
+		NotBut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		NotBut.setBounds(291, 508, 87, 25);
 		frame.getContentPane().add(NotBut);
 		
-		JLabel nameLbl = new JLabel("Name :");
-		nameLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		nameLbl.setBounds(298, 216, 57, 36);
-		frame.getContentPane().add(nameLbl);
+		JLabel dateLbl = new JLabel("Date");
+		dateLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		dateLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		dateLbl.setBounds(398, 89, 57, 36);
+		frame.getContentPane().add(dateLbl);
 		
-		nameTxt = new JTextField();
-		nameTxt.setBounds(408, 224, 116, 22);
-		frame.getContentPane().add(nameTxt);
-		nameTxt.setColumns(10);
-		
-		JLabel locationLbl = new JLabel("Location :");
-		locationLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		locationLbl.setBounds(298, 272, 84, 36);
-		frame.getContentPane().add(locationLbl);
-		
-		LocaionAltTxt = new JTextField();
-		LocaionAltTxt.setBounds(386, 321, 75, 22);
-		frame.getContentPane().add(LocaionAltTxt);
-		LocaionAltTxt.setColumns(10);
-		
-		LocaionLonTxt = new JTextField();
-		LocaionLonTxt.setColumns(10);
-		LocaionLonTxt.setBounds(474, 321, 75, 22);
-		frame.getContentPane().add(LocaionLonTxt);
-		
-		LocaionRadiosTxt = new JTextField();
-		LocaionRadiosTxt.setColumns(10);
-		LocaionRadiosTxt.setBounds(563, 321, 75, 22);
-		frame.getContentPane().add(LocaionRadiosTxt);
-		
-		JLabel altLbl = new JLabel("Alt");
-		altLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		altLbl.setBounds(412, 276, 38, 36);
-		frame.getContentPane().add(altLbl);
-		
-		JLabel LonLbl = new JLabel("Lon");
-		LonLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		LonLbl.setBounds(486, 276, 38, 36);
-		frame.getContentPane().add(LonLbl);
-		
-		JLabel radiosLbl = new JLabel("Radios");
-		radiosLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		radiosLbl.setBounds(563, 276, 59, 36);
-		frame.getContentPane().add(radiosLbl);
-				
+			
 	}
 	private String getFilePath()
 	{
