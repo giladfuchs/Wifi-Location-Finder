@@ -1,8 +1,11 @@
 package Main;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 
 import Convert.Q2;
 import Filter.Q3;
+import Objects.Row;
 
 public class Main {
 
@@ -20,18 +23,19 @@ public class Main {
 		 *  read files from directory and write to file
 		 *  @param b get true while the function create output file
 		 */
+		List<Row> listOutput = new ArrayList<Row>(); 
 		Q2 q2 = new Q2();
-		boolean b = q2.ReadDir(dirPath,desPath);
+		listOutput = q2.ReadDir(dirPath);
 		/**
 		 *  read file -> filter by time&ID&location -> filter by MAC -> write to kml
 		 */
-		if(b){
+		//if(b){
 			String filePath = "C:/OOP/List_of_wifi.csv";
 			String desPathAfterFilterCSV = "C:/OOP/List_of_wifi_after_filter.csv";
 			String desPathAfterFilterKML = "C:/OOP/final.kml";
 			Q3 q3 = new Q3();
 			q3.ReadFile(filePath);//,desPathAfterFilterCSV,desPathAfterFilterKML);     
-		}
+		//}
 		
 	}
 }

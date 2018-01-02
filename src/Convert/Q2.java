@@ -14,23 +14,25 @@ public class Q2
 	 * @param destination
 	 * @return false if directory is empty, else true
 	 */
-	public boolean ReadDir(String dirPath,String destination) // read files from directory
-	{
-		if(dirPath.equals("/WigleWifi_files") || destination.equals(".csv"))
-			return false;
+	public List<Row> ReadDir(String dirPath) // read files from directory
+	{		
 		File folder = new File(dirPath);
 		File[] listOfFiles = folder.listFiles();
 
 		List<Spot> listInput = new ArrayList<Spot>();  //input csv
 		List<Row> listOutput = new ArrayList<Row>();   //output csv	
-				
+		
+		System.out.println("dirPath = "+dirPath);
+		if(dirPath.equals(""))
+			return listOutput;
+		
 		ReadAndWriteCSV read = new ReadAndWriteCSV();
-		ReadAndWriteCSV write = new ReadAndWriteCSV();
+		//ReadAndWriteCSV write = new ReadAndWriteCSV();
 		CalculateQ2 C = new CalculateQ2();
 		/**
 		 * scan all the files in directory 
 		 * each correct file transfer to Calculate function
-		 * after scan all files, write to new file CSV
+		 * after scan all files, return list
 		 */
 		for (File file : listOfFiles) 
 		{
@@ -41,13 +43,10 @@ public class Q2
 					C.Calculate(listInput,listOutput);          // creates the output from the input
 			}
 		}	
-		if(listOutput.isEmpty())
-			return false;
-		else{
-			write.WriteListIntoFile(listOutput,destination);
-			return true;
-		}
-
+		//if(listOutput.isEmpty())
+		//	return null;
+		//else			
+			return listOutput;		
 	}
 	
 	

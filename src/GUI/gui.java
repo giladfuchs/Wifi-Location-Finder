@@ -138,36 +138,31 @@ public class gui {
 				JFileChooser chooserGetDir = new JFileChooser();
 				chooserGetDir.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);			
 				int returnNameDir = chooserGetDir.showOpenDialog(null);
-				String pathGetDir = "";
-				String pathDestFile = "";				
+				String pathGetDir = "";			
 				if (returnNameDir == JFileChooser.APPROVE_OPTION) {					 	
-					File f = chooserGetDir.getCurrentDirectory();
+					File f = chooserGetDir.getSelectedFile();
 					pathGetDir = f.getAbsolutePath();
 				}					
 				pathGetDir = pathGetDir.replace("\\","/");
-
-				pathDestFile = getFilePath();
-				System.out.println("pathGetDir = "+pathGetDir);
-				System.out.println("pathDestFile = "+pathDestFile);
-				String dirPath = pathGetDir+"/WigleWifi_files";   // לשנות אחרי זה בקיו2
-				String desPath = pathDestFile+".csv";		
+																		
+				System.out.println("pathGetDir = "+pathGetDir);				
+				String dirPath = pathGetDir;
 				Q2 q2 = new Q2();
-				boolean b = q2.ReadDir(dirPath,desPath);
-				if(!b)
+				listOutput = q2.ReadDir(dirPath);
+				if(listOutput == null)
 					JOptionPane.showMessageDialog(frame, "The files are empty ! or you didnt choose path !");				
 			}
 		});
 		inputDirBut.setBounds(52, 109, 171, 25);
 		frame.getContentPane().add(inputDirBut);
+		
 		/**
 		 * Button of Get file 
-		 */	
-		
+		 */			
 		JButton inputFileBut = new JButton("Get file");
 		inputFileBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
-			{
-
+			{												
 				JFileChooser  chooserGetDir = new JFileChooser();
 				chooserGetDir.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				int returnNameDir = chooserGetDir.showOpenDialog(inputDirBut);
@@ -409,7 +404,7 @@ public class gui {
 						String Id=nameTxt.getText();
 
 						//listOutput=fil.CalculateByLocation1(listOutput, listInput, Lon, Lat, Radius);
-						Undo.add(fil.CalculateByID1(Undo.get(countfilter),listOutput,  Id));
+						//Undo.add(fil.CalculateByID1(Undo.get(countfilter),listOutput,  Id));
 						
 					}
 					 if(kind.equals("Time")){
@@ -417,15 +412,29 @@ public class gui {
 						SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");	
 						Date time = (Date)spinnerMin.getValue();
 						String formattedDate = format.format(time);
-						System.out.println("formattedDate start = "+formattedDate); 
+						//System.out.println("formattedDate start = "+formattedDate); 
 						
 						Date dateFromDateChooser = dateChooserMin.getDate();
 						String dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
-						System.err.println("start date  " + dateString);
+						System.out.println("start date  " + dateString);						
 						
 						String timeStr = dateString+" "+formattedDate;
 						System.out.println("timeStr  " + timeStr);
-						// Undo.add(fil.CalculateByTime1(Undo.get(countfilter), listOutput, startDate, endDate));
+						//timeStr = timeStr.replace("-","/");
+						//System.out.println("timeStr2  " + timeStr);
+						
+						time = (Date)spinnerMax.getValue();
+						formattedDate = format.format(time);
+						//System.out.println("formattedDate end = "+formattedDate);  	        		        	
+								
+						dateFromDateChooser = dateChooserMax.getDate();
+						dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
+						System.out.println("end date  " + dateString);	
+						
+						String timeEnd = dateString+" "+formattedDate;
+						System.out.println("timeEnd  " + timeEnd);
+						
+						//Undo.add(fil.CalculateByTime1(Undo.get(countfilter), listOutput, timeStr, timeStr));
 					}
 					else if(kind.equals("Location"))
 					{
@@ -601,6 +610,12 @@ public class gui {
 		FilterType.setSelectedIndex(-1);
 		FilterType.setBounds(577, 206, 95, 22);
 		frame.getContentPane().add(FilterType);
+		
+		JLabel algorithmLbl = new JLabel("Algorithm");
+		algorithmLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		algorithmLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
+		algorithmLbl.setBounds(816, 31, 112, 45);
+		frame.getContentPane().add(algorithmLbl);
 
 
 	}
