@@ -542,13 +542,13 @@ public class gui {
 				}
 				if(kind.equals("ID"));{
 					String Id=nameTxt.getText();
-
+					System.out.println("fsdssd");
 					//listOutput=fil.CalculateByLocation1(listOutput, listInput, Lon, Lat, Radius);
 					Undo.add(fil.CalculateByID1(Undo.get(countfilter),listOutput,  Id));
 					
 				}
 				 if(kind.equals("Time")){
-				
+				System.out.println("fsdssd");
 					//listInput=fil.CalculateByTime1(listInput, listOutput, startDate, endDate);
 				}
 				else if(kind.equals("Location"))
