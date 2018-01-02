@@ -31,6 +31,7 @@ import Filter.FilterNot;
 import Filter.FilterOr;
 import Filter.Q3;
 import Objects.Row;
+import Read_Write.CopyListToList;
 import Read_Write.ReadAndWriteCSV;
 import Read_Write.WriteToKML;
 import javafx.stage.DirectoryChooser;
@@ -222,7 +223,7 @@ public class gui {
 				else if(listOutput.isEmpty())
 					JOptionPane.showMessageDialog(frame,"Data Structure is empty !");
 				else
-					write.WriteListIntoFile(listOutput,desPath2);					
+					write.WriteListIntoFile(Undo.get(countfilter),desPath2);					
 			}
 		});
 		saveCSVBut.setBounds(52, 283, 171, 25);
@@ -396,29 +397,46 @@ public class gui {
 		AndBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
+				if(!flag){
+					CopyListToList copy=new CopyListToList();
+					Undo.add(copy.CopyListToList1(listInput));
+					countfilter++;
+					flag=true;
+				}
 				 kind=(String)FilterType.getSelectedItem();
 					FilterAnd fil=new FilterAnd();
 					if(kind.equals("ID"));{
 						String Id=nameTxt.getText();
 
 						//listOutput=fil.CalculateByLocation1(listOutput, listInput, Lon, Lat, Radius);
-						listInput=fil.CalculateByID1(listInput,listOutput,  Id);
-						System.out.println(listInput.get(0).getHead().getLat());
+						Undo.add(fil.CalculateByID1(Undo.get(countfilter),listOutput,  Id));
+						
 					}
 					 if(kind.equals("Time")){
 					
-						//listInput=fil.CalculateByTime1(listInput, listOutput, startDate, endDate);
+						SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");	
+						Date time = (Date)spinnerMin.getValue();
+						String formattedDate = format.format(time);
+						System.out.println("formattedDate start = "+formattedDate); 
+						
+						Date dateFromDateChooser = dateChooserMin.getDate();
+						String dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
+						System.err.println("start date  " + dateString);
+						
+						String timeStr = dateString+" "+formattedDate;
+						System.out.println("timeStr  " + timeStr);
+						// Undo.add(fil.CalculateByTime1(Undo.get(countfilter), listOutput, startDate, endDate));
 					}
 					else if(kind.equals("Location"))
 					{
 						double Lat = Double.parseDouble(LocaionAltTxt.getText());
 						double Lon=Double.parseDouble(LocaionLonTxt.getText());
 						double Radius=Double.parseDouble(LocaionRadiosTxt.getText());
-						listInput=fil.CalculateByLocation1(listInput, listOutput, Lon, Lat, Radius);
+						Undo.add(fil.CalculateByLocation1(Undo.get(countfilter), listOutput, Lon, Lat, Radius));
 
 					}
 				
-				
+				countfilter++;
 				
 				
 				/**
@@ -473,6 +491,13 @@ public class gui {
 		JButton OrBut = new JButton("Or");
 		OrBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				if(flag){
+					flag=false;
+				while(listInput.size()>0)
+					listInput.remove(0);
+					
+				}
+				
 				
 				 kind=(String)FilterType.getSelectedItem();
 				FilterOr fil=new FilterOr();
@@ -480,7 +505,7 @@ public class gui {
 					String Id=nameTxt.getText();
 
 					//listOutput=fil.CalculateByLocation1(listOutput, listInput, Lon, Lat, Radius);
-					listInput=fil.CalculateByID1(listInput,listOutput,  Id);
+					listInput=fil.CalculateByID1(Undo.get(countfilter),listInput,  Id);
 					System.out.println(listInput.get(0).getHead().getLat());
 				}
 				 if(kind.equals("Time")){
@@ -492,7 +517,7 @@ public class gui {
 					double Lat = Double.parseDouble(LocaionAltTxt.getText());
 					double Lon=Double.parseDouble(LocaionLonTxt.getText());
 					double Radius=Double.parseDouble(LocaionRadiosTxt.getText());
-					listInput=fil.CalculateByLocation1(listInput, listOutput, Lon, Lat, Radius);
+					listInput=fil.CalculateByLocation1(Undo.get(countfilter),listInput, Lon, Lat, Radius);
 
 				}
 
@@ -509,12 +534,18 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				 kind=(String)FilterType.getSelectedItem();
 				FilterNot fil=new FilterNot();
+				if(!flag){
+					CopyListToList copy=new CopyListToList();
+					Undo.add(copy.CopyListToList1(listInput));
+					countfilter++;
+					flag=true;
+				}
 				if(kind.equals("ID"));{
 					String Id=nameTxt.getText();
 
 					//listOutput=fil.CalculateByLocation1(listOutput, listInput, Lon, Lat, Radius);
-					listInput=fil.CalculateByID1(listInput,listOutput,  Id);
-					System.out.println(listInput.get(0).getHead().getLat());
+					Undo.add(fil.CalculateByID1(Undo.get(countfilter),listOutput,  Id));
+					
 				}
 				 if(kind.equals("Time")){
 				
@@ -525,9 +556,10 @@ public class gui {
 					double Lat = Double.parseDouble(LocaionAltTxt.getText());
 					double Lon=Double.parseDouble(LocaionLonTxt.getText());
 					double Radius=Double.parseDouble(LocaionRadiosTxt.getText());
-					listInput=fil.CalculateByLocation1(listInput, listOutput, Lon, Lat, Radius);
+					Undo.add(fil.CalculateByLocation1(Undo.get(countfilter), listOutput, Lon, Lat, Radius));
 
 				} 
+				 countfilter++;
 			}
 		});
 		NotBut.setBounds(291, 508, 87, 25);
@@ -547,9 +579,9 @@ public class gui {
 				int returnVal = fc.showOpenDialog(btnReadFile);
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
 					ReadAndWriteCSV read=new ReadAndWriteCSV();
-					listInput=read.ReadFileIntoList3(fc.getSelectedFile().getAbsolutePath().replace("\\","/"));
-					Undo.add(listInput);
-					System.out.println(listInput.get(0).getHead().getAlt());
+				
+					Undo.add(read.ReadFileIntoList3(fc.getSelectedFile().getAbsolutePath().replace("\\","/")));
+					System.out.println(Undo.get(0).get(0).getHead().getAlt());
 				}
 			}
 		});
