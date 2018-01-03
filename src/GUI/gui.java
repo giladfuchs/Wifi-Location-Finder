@@ -215,10 +215,13 @@ public class gui {
 				ReadAndWriteCSV write = new ReadAndWriteCSV();
 				if(desPath == "")
 					JOptionPane.showMessageDialog(frame,"You didnt choose a path !");
-				else if(listOutput.isEmpty())
+				else if(listOutput.isEmpty()){
 					JOptionPane.showMessageDialog(frame,"Data Structure is empty !");
-				else
-					write.WriteListIntoFile(Undo.get(countfilter),desPath2);					
+					System.out.println(countfilter);
+				}
+				else{
+					write.WriteListIntoFile(Undo.get(countfilter),desPath2);	
+				}
 			}
 		});
 		saveCSVBut.setBounds(52, 283, 171, 25);
@@ -400,11 +403,11 @@ public class gui {
 				}
 				 kind=(String)FilterType.getSelectedItem();
 					FilterAnd fil=new FilterAnd();
-					if(kind.equals("ID"));{
+					if(kind.equals("ID")){
 						String Id=nameTxt.getText();
 
 						//listOutput=fil.CalculateByLocation1(listOutput, listInput, Lon, Lat, Radius);
-						//Undo.add(fil.CalculateByID1(Undo.get(countfilter),listOutput,  Id));
+						Undo.add(fil.CalculateByID1(Undo.get(countfilter),listOutput,  Id));
 						
 					}
 					 if(kind.equals("Time")){
@@ -444,7 +447,8 @@ public class gui {
 						Undo.add(fil.CalculateByLocation1(Undo.get(countfilter), listOutput, Lon, Lat, Radius));
 
 					}
-				
+					 System.out.println(countfilter);
+					 System.out.println(Undo.get(countfilter).get(0).getHead().getAlt());
 				countfilter++;
 				
 				
@@ -502,20 +506,21 @@ public class gui {
 			public void actionPerformed(ActionEvent arg0) {
 				if(flag){
 					flag=false;
+					System.out.println("8888888");
 				while(listInput.size()>0)
 					listInput.remove(0);
 					
 				}
 				
-				
+				System.out.println(listInput.size());
 				 kind=(String)FilterType.getSelectedItem();
 				FilterOr fil=new FilterOr();
-				if(kind.equals("ID"));{
+				if(kind.equals("ID")){
 					String Id=nameTxt.getText();
 
 					//listOutput=fil.CalculateByLocation1(listOutput, listInput, Lon, Lat, Radius);
 					listInput=fil.CalculateByID1(Undo.get(countfilter),listInput,  Id);
-					System.out.println(listInput.get(0).getHead().getLat());
+					//System.out.println(listInput.get(0).getHead().getLat());
 				}
 				 if(kind.equals("Time")){
 				
