@@ -30,6 +30,7 @@ import Filter.FilterInterFace;
 import Filter.FilterNot;
 import Filter.FilterOr;
 import Filter.Q3;
+import GUI.NioFileSupport.MyWatchQueueReader;
 import Objects.Row;
 import Read_Write.CopyListToList;
 import Read_Write.ReadAndWriteCSV;
@@ -47,6 +48,10 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.WatchService;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -63,6 +68,11 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.SwingConstants;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+
+import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;;
+
 public class gui {
 
 	private JFrame frame;
@@ -94,10 +104,11 @@ public class gui {
 	private JTextField LocaionAltTxt;
 	private JTextField LocaionLonTxt;
 	private JTextField LocaionRadiosTxt;
-	private FilterInterFace [] f=new FilterInterFace[5];
+	private Filter filter=new Filter();
 	private JComboBox FilterType;
 	private String kind;
 	private int countfilter=0;
+	private int IndexOr=0;
 	private boolean flag=true;
 	public gui() {		
 		initialize();
@@ -147,10 +158,12 @@ public class gui {
 																		
 				System.out.println("pathGetDir = "+pathGetDir);				
 				String dirPath = pathGetDir;
-				Q2 q2 = new Q2();
-				listOutput = q2.ReadDir(dirPath);
-				if(listOutput == null)
-					JOptionPane.showMessageDialog(frame, "The files are empty ! or you didnt choose path !");				
+				try {
+					filter.readq2(dirPath);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}				
 			}
 		});
 		inputDirBut.setBounds(52, 109, 171, 25);
@@ -396,9 +409,6 @@ public class gui {
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				if(!flag){
-					CopyListToList copy=new CopyListToList();
-					Undo.add(copy.CopyListToList1(listInput));
-					countfilter++;
 					flag=true;
 				}
 				 kind=(String)FilterType.getSelectedItem();
@@ -504,23 +514,30 @@ public class gui {
 		JButton OrBut = new JButton("Or");
 		OrBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				boolean no_change=true;
 				if(flag){
-					flag=false;
-					System.out.println("8888888");
-				while(listInput.size()>0)
-					listInput.remove(0);
 					
+					IndexOr=countfilter;
+					Undo.add(new ArrayList<Row>());
+					countfilter++;
 				}
 				
 				System.out.println(listInput.size());
 				 kind=(String)FilterType.getSelectedItem();
 				FilterOr fil=new FilterOr();
+				
 				if(kind.equals("ID")){
 					String Id=nameTxt.getText();
 
-					//listOutput=fil.CalculateByLocation1(listOutput, listInput, Lon, Lat, Radius);
-					listInput=fil.CalculateByID1(Undo.get(countfilter),listInput,  Id);
-					//System.out.println(listInput.get(0).getHead().getLat());
+					
+					Undo.add(fil.CalculateByID1(Undo.get(IndexOr),Undo.get(countfilter),  Id));
+					if(Undo.get(Undo.size()-1).get(0).getHead().getCount().equals("no_change")){
+						
+						no_change=false;
+						System.out.println(Undo.get(0).get(0).getHead().getCount()+"  \n"+Undo.get(1).get(0).getHead().getCount());
+						Undo.remove(Undo.size()-1);
+					}
+					
 				}
 				 if(kind.equals("Time")){
 				
@@ -531,9 +548,17 @@ public class gui {
 					double Lat = Double.parseDouble(LocaionAltTxt.getText());
 					double Lon=Double.parseDouble(LocaionLonTxt.getText());
 					double Radius=Double.parseDouble(LocaionRadiosTxt.getText());
-					listInput=fil.CalculateByLocation1(Undo.get(countfilter),listInput, Lon, Lat, Radius);
+					Undo.add(fil.CalculateByLocation1(Undo.get(IndexOr),Undo.get(countfilter), Lon, Lat, Radius));
 
 				}
+				 if(no_change){
+				 if(flag){
+					 flag=false;
+					 Undo.remove(countfilter);
+				 }
+					 else
+						 countfilter++;
+				 }
 
 			}
 		});
@@ -548,17 +573,10 @@ public class gui {
 			public void actionPerformed(ActionEvent e) {
 				 kind=(String)FilterType.getSelectedItem();
 				FilterNot fil=new FilterNot();
-				if(!flag){
-					CopyListToList copy=new CopyListToList();
-					Undo.add(copy.CopyListToList1(listInput));
-					countfilter++;
-					flag=true;
-				}
+			
 				if(kind.equals("ID"));{
 					String Id=nameTxt.getText();
-					System.out.println("fsdssd");
-					//listOutput=fil.CalculateByLocation1(listOutput, listInput, Lon, Lat, Radius);
-					Undo.add(fil.CalculateByID1(Undo.get(countfilter),listOutput,  Id));
+					filter.filtermain(3, Id);
 					
 				}
 				 if(kind.equals("Time")){
@@ -593,9 +611,14 @@ public class gui {
 				int returnVal = fc.showOpenDialog(btnReadFile);
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
 					ReadAndWriteCSV read=new ReadAndWriteCSV();
-				
-					Undo.add(read.ReadFileIntoList3(fc.getSelectedFile().getAbsolutePath().replace("\\","/")));
-					System.out.println(Undo.get(0).get(0).getHead().getAlt());
+					
+					try {
+						filter.read(fc.getSelectedFile().getAbsolutePath().replace("\\","/"));
+					} catch (ParseException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		
 				}
 			}
 		});
@@ -658,5 +681,43 @@ public class gui {
 		}								
 		pathDestFile = pathDestFile.replace("\\","/");
 		return pathDestFile;
+	}
+	
+	private void startListen(String path)
+	{
+		//String DIRECTORY_TO_WATCH = "c:/OOP/WigleWifi_files";
+		// get the directory we want to watch, using the Paths singleton class
+        Path toWatch = Paths.get(path);
+        if(toWatch == null) 
+            throw new UnsupportedOperationException("Directory not found");       
+
+        // make a new watch service that we can register interest in
+        // directories and files with.
+        WatchService myWatcher = null;
+		try {
+			myWatcher = toWatch.getFileSystem().newWatchService();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+        // start the file watcher thread below
+        MyWatchQueueReader fileWatcher = new MyWatchQueueReader(myWatcher);
+        Thread th = new Thread(fileWatcher, "FileWatcher");
+        th.start();
+        
+        // register a file
+        try {
+			toWatch.register(myWatcher, ENTRY_CREATE, ENTRY_MODIFY,ENTRY_DELETE);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+        /*try {
+			th.join();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}*/
 	}
 }

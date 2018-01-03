@@ -15,3 +15,5 @@
 /filter$1.class
 /filter.class
 /gui$MyComboBoxRenderer.class
+/NioFileSupport$MyWatchQueueReader.class
+/NioFileSupport.class

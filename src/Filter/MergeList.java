@@ -8,7 +8,7 @@ import Objects.Row;
 public class MergeList {
 	public List<Row> merge(List<List<Row>> Undo,int i){
 		List<Row> ListOutput=new ArrayList<Row>();
-		for (int j = i; j < Undo.size(); j++) {
+		for (int j = Undo.size()-2; j < Undo.size(); j++) {
 			for (int j2 = 0; j2 < Undo.get(j).size(); j2++) {
 				Duplicate dup=new Duplicate();
 				if(dup.duplicate(ListOutput,Undo.get(j).get(j2).getHead().getID(),  Undo.get(j).get(j2).getHead().getTime())){
