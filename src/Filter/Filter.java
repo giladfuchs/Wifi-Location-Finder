@@ -41,6 +41,7 @@ public class Filter {
 		return( m.macbase(DataBase.get(0), mac));
 		
 	}
+	
 	public void write(String desPath2){
 		read.WriteListIntoFile(DataBase.get(countfilter),desPath2);
 	}
