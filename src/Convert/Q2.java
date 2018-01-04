@@ -43,9 +43,9 @@ public class Q2
 					C.Calculate(listInput,listOutput);          // creates the output from the input
 			}
 		}	
-		//if(listOutput.isEmpty())
-		//	return null;
-		//else			
+		if(listOutput.isEmpty())
+			return null;
+		else			
 			return listOutput;		
 	}
 	

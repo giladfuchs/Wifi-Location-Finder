@@ -13,7 +13,7 @@ public class Algo2mac {
 		String src2 = "C:/OOP/Algorithm/_comb_all_BM3_.csv"; 
 		String des = "C:/OOP/Algorithm/Algo2_BM3_TS2_4.csv";
 		int imagine = 3;
-		alg2(src1,src2,des,imagine);
+		//alg2(src1,src2,des,imagine);
 	}
 	/**
 	 * 

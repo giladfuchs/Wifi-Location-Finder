@@ -13,17 +13,17 @@ public class Algo1MacW {
 	 * @param dest 
 	 */
 
-	public  void MacW(List<Listmac> output, String dest){
+	public  void MacW(List<Mac> Input){
 
-		List<Listmac> output2 = new ArrayList<Listmac>();
+		
 		/**
 		 * Create a new list and change the value of lat,lon, alt to lat/signal^2
 		 */
-		for (int i = 0; i < output.size(); i++) {
+		
 			List<Mac> listMacOut=new ArrayList<Mac>();
-			for (int j = 0; j < output.get(i).getSamemac().size(); j++) {
-				double x=1/(Math.pow(output.get(i).getSamemac().get(j).getSignal(),2));
-				Mac m=new Mac(output.get(i).getSamemac().get(j).getLat()*x,output.get(i).getSamemac().get(j).getLon()*x,output.get(i).getSamemac().get(j).getAlt()*x,x);
+			for (int i = 0; i < Input.size(); i++) {
+				double x=1/(Math.pow(Input.get(i).getSignal(),2));
+				Mac m=new Mac(Input.get(i).getLat()*x,Input.get(i).getLon()*x,Input.get(i).getAlt()*x,x);
 				listMacOut.add(m);
 			}
 			/**
@@ -36,20 +36,12 @@ public class Algo1MacW {
 				wlat+=listMacOut.get(j).getLat();
 				wsig+=listMacOut.get(j).getSignal();
 			}
-			List<Mac> tmp=new ArrayList<Mac>();
+			
 			/**
 			 * insert the mac after the calculate,and put it in a List to prepare to export it to csv file.
 			 */
-			Mac fin=new Mac(wlat/wsig,wlon/wsig,walt/wsig,output.get(i).getSamemac().get(0).getSignal());
-			tmp.add(fin);
-			Listmac t=new Listmac(tmp,output.get(i).getTime(),output.get(i).getName(),output.get(i).getId(),
-					output.get(i).getFerq());
-			output2.add(t);
+			Mac fin=new Mac(wlat/wsig,wlon/wsig,walt/wsig,2);
+		
 		}
-		/**
-		 * export it to csv file
-		 */
-		ReadAndWriteCSV a=new ReadAndWriteCSV();
-		a.WriteListmacIntoFile(output2,dest);	
 
-	}}
+	}

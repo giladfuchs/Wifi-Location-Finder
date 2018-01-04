@@ -15,21 +15,7 @@ import Read_Write.ReadAndWriteCSV;
 
 public class FilterNot implements FilterInterFace
 {
-	/**
-	 * @param listInput
-	 * @param listOutput
-	 * @param desPath2 
-	 * @return listOutput
-	 * @throws ParseException
-	 *This function filter the data by the user requirement
-	 */
-	public List<Row> filter(List<Row> listInput, List<Row> listOutput) throws ParseException  
-	{
-	
-		
-			
-		return listOutput;	
-	}
+
 	/**
 	 * This function finds all the Mac's that equal to id
 	 * @param listInput
@@ -95,7 +81,10 @@ public class FilterNot implements FilterInterFace
 			}	
 			if(find){
 				System.out.println("The filter didnt find this Location");
-				return listInput;	
+				Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
+				listOutput.add(row);
+				listOutput.get(0).getHead().setCount("no_change");
+						
 			}
 			return listOutput;		
 		}
@@ -127,7 +116,10 @@ public class FilterNot implements FilterInterFace
 				dateEnd = dateFormat.parse(endDate);
 			} catch (ParseException e) {
 				System.out.println("The date you entered isnt correct");			
-				return listInput;	
+				Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
+				listOutput.add(row);
+				listOutput.get(0).getHead().setCount("no_change");
+				return listOutput;	
 			} 
 
 			try {
@@ -164,7 +156,9 @@ public class FilterNot implements FilterInterFace
 			}
 			if(find){
 				System.out.println("The filter didnt find this Date");
-				return listInput;	
+				Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
+				listOutput.add(row);
+				listOutput.get(0).getHead().setCount("no_change");		
 			}
 			return listOutput;		 		
 		}

@@ -19,10 +19,15 @@ public class Filter {
 	private boolean flag=true;
 	private String change="";
 	ReadAndWriteCSV read = new ReadAndWriteCSV();
-	public void readq2(String dirPath) throws ParseException{
+	public boolean readq2(String dirPath) throws ParseException{
 		Q2 q2 = new Q2();
-		DataBase.add( q2.ReadDir(dirPath));
-
+		List<Row> first = q2.ReadDir(dirPath);
+		if(first == null)
+			return false;
+		else
+			DataBase.add(first);
+		return true;
+		
 	}
 	public void write(String desPath2){
 		read.WriteListIntoFile(DataBase.get(countfilter),desPath2);
