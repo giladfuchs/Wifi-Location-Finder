@@ -224,8 +224,10 @@ public class gui {
 				 */						
 				String desPath = getFilePath();
 				String desPath2 = desPath+".csv";
+				filter.write(desPath2);
+				
 
-				ReadAndWriteCSV write = new ReadAndWriteCSV();
+				/*ReadAndWriteCSV write = new ReadAndWriteCSV();
 				if(desPath == "")
 					JOptionPane.showMessageDialog(frame,"You didnt choose a path !");
 				else if(listOutput.isEmpty()){
@@ -235,6 +237,7 @@ public class gui {
 				else{
 					write.WriteListIntoFile(Undo.get(countfilter),desPath2);	
 				}
+				*/
 			}
 		});
 		saveCSVBut.setBounds(52, 283, 171, 25);
@@ -416,39 +419,38 @@ public class gui {
 					if(kind.equals("ID")){
 						String Id=nameTxt.getText();
 
-						//listOutput=fil.CalculateByLocation1(listOutput, listInput, Lon, Lat, Radius);
-						Undo.add(fil.CalculateByID1(Undo.get(countfilter),listOutput,  Id));
+						filter.filtermain(1, Id);
 						
 					}
-					 if(kind.equals("Time")){
-					
-						SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");	
-						Date time = (Date)spinnerMin.getValue();
-						String formattedDate = format.format(time);
-						//System.out.println("formattedDate start = "+formattedDate); 
-						
-						Date dateFromDateChooser = dateChooserMin.getDate();
-						String dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
-						System.out.println("start date  " + dateString);						
-						
-						String timeStr = dateString+" "+formattedDate;
-						System.out.println("timeStr  " + timeStr);
-						//timeStr = timeStr.replace("-","/");
-						//System.out.println("timeStr2  " + timeStr);
-						
-						time = (Date)spinnerMax.getValue();
-						formattedDate = format.format(time);
-						//System.out.println("formattedDate end = "+formattedDate);  	        		        	
-								
-						dateFromDateChooser = dateChooserMax.getDate();
-						dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
-						System.out.println("end date  " + dateString);	
-						
-						String timeEnd = dateString+" "+formattedDate;
-						System.out.println("timeEnd  " + timeEnd);
-						
-						//Undo.add(fil.CalculateByTime1(Undo.get(countfilter), listOutput, timeStr, timeStr));
-					}
+//					 if(kind.equals("Time")){
+//					
+//						SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");	
+//						Date time = (Date)spinnerMin.getValue();
+//						String formattedDate = format.format(time);
+//						//System.out.println("formattedDate start = "+formattedDate); 
+//						
+//						Date dateFromDateChooser = dateChooserMin.getDate();
+//						String dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
+//						System.out.println("start date  " + dateString);						
+//						
+//						String timeStr = dateString+" "+formattedDate;
+//						System.out.println("timeStr  " + timeStr);
+//						//timeStr = timeStr.replace("-","/");
+//						//System.out.println("timeStr2  " + timeStr);
+//						
+//						time = (Date)spinnerMax.getValue();
+//						formattedDate = format.format(time);
+//						//System.out.println("formattedDate end = "+formattedDate);  	        		        	
+//								
+//						dateFromDateChooser = dateChooserMax.getDate();
+//						dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
+//						System.out.println("end date  " + dateString);	
+//						
+//						String timeEnd = dateString+" "+formattedDate;
+//						System.out.println("timeEnd  " + timeEnd);
+//						
+//						//Undo.add(fil.CalculateByTime1(Undo.get(countfilter), listOutput, timeStr, timeStr));
+//					}
 					else if(kind.equals("Location"))
 					{
 						double Lat = Double.parseDouble(LocaionAltTxt.getText());
@@ -457,8 +459,7 @@ public class gui {
 						Undo.add(fil.CalculateByLocation1(Undo.get(countfilter), listOutput, Lon, Lat, Radius));
 
 					}
-					 System.out.println(countfilter);
-					 System.out.println(Undo.get(countfilter).get(0).getHead().getAlt());
+					
 				countfilter++;
 				
 				
@@ -515,12 +516,7 @@ public class gui {
 		OrBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				boolean no_change=true;
-				if(flag){
-					
-					IndexOr=countfilter;
-					Undo.add(new ArrayList<Row>());
-					countfilter++;
-				}
+			
 				
 				System.out.println(listInput.size());
 				 kind=(String)FilterType.getSelectedItem();
@@ -528,16 +524,8 @@ public class gui {
 				
 				if(kind.equals("ID")){
 					String Id=nameTxt.getText();
-
-					
-					Undo.add(fil.CalculateByID1(Undo.get(IndexOr),Undo.get(countfilter),  Id));
-					if(Undo.get(Undo.size()-1).get(0).getHead().getCount().equals("no_change")){
-						
-						no_change=false;
-						System.out.println(Undo.get(0).get(0).getHead().getCount()+"  \n"+Undo.get(1).get(0).getHead().getCount());
-						Undo.remove(Undo.size()-1);
-					}
-					
+					filter.filtermain(2, Id);
+	
 				}
 				 if(kind.equals("Time")){
 				
@@ -551,14 +539,7 @@ public class gui {
 					Undo.add(fil.CalculateByLocation1(Undo.get(IndexOr),Undo.get(countfilter), Lon, Lat, Radius));
 
 				}
-				 if(no_change){
-				 if(flag){
-					 flag=false;
-					 Undo.remove(countfilter);
-				 }
-					 else
-						 countfilter++;
-				 }
+				
 
 			}
 		});
