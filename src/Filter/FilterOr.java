@@ -164,7 +164,7 @@ public class FilterOr implements FilterInterFace
 	public List<Row> CalculateByID1(List<Row> listInput,List<Row> listOutput,String id)
 	{
 		boolean find = true;
-		for(int i=1;i<listInput.size();i++)
+		for(int i=0;i<listInput.size();i++)
 		{
 			/**
 			 * check each row from listInput if equal to id
@@ -172,17 +172,19 @@ public class FilterOr implements FilterInterFace
 			 */
 			if(id.equals(listInput.get(i).getHead().getID())) //take the only row with the same id
 			{		
-				Duplicate dup=new Duplicate();
-				if(dup.duplicate(listOutput, listInput.get(i).getHead().getID(),  listInput.get(i).getHead().getTime())){
+				
 				Row row = new Row(listInput.get(i).getElement(),listInput.get(i).getHead());
 				listOutput.add(row);
 				find = false;
-				}
+				
 				}
 		}
+		System.out.println();
 		if(find){
+			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
+			listOutput.add(row);
 			System.out.println("The filter didnt find this ID");
-			return listInput;	
+			listOutput.get(0).getHead().setCount("no_change");	
 		}
 		return listOutput;				
 	}
@@ -222,7 +224,10 @@ public class FilterOr implements FilterInterFace
 		}	
 		if(find){
 			System.out.println("The filter didnt find this Location");
-			return listInput;	
+			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
+			listOutput.add(row);
+			System.out.println("The filter didnt find this ID");
+			listOutput.get(0).getHead().setCount("no_change");	
 		}
 		return listOutput;		
 	}
@@ -294,7 +299,10 @@ public class FilterOr implements FilterInterFace
 		}
 		if(find){
 			System.out.println("The filter didnt find this Date");
-			return listInput;	
+			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
+			listOutput.add(row);
+			System.out.println("The filter didnt find this ID");
+			listOutput.get(0).getHead().setCount("no_change");	
 		}
 		return listOutput;		 		
 	}
