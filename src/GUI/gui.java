@@ -127,9 +127,16 @@ public class gui {
 	private JTextField algo1LocaionRadiosTxt;
 	private JTextField algo1LocaionLonTxt;
 	private JTextField algo1LocaionAltTxt;
-	private double wlat=0;
-	private double wlon=0;
-	private double walt=0;
+	private String wlat;
+	private String wlon;
+	private String walt;
+	private JTextField amountMACTxt;
+	private JTextField amountListsTxt;
+	private JTextField FilterCharTxt;
+	private JTextField informationTxt;
+	private JLabel informationLbl;
+	private List<String> listInformation = new ArrayList<String>(); 
+	
 	public gui() {		
 		initialize();
 	}
@@ -140,7 +147,7 @@ public class gui {
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1080, 629);
+		frame.setBounds(100, 100, 1500, 629);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -352,6 +359,24 @@ public class gui {
 		FilterCharLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		FilterCharLbl.setBounds(12, 486, 120, 45);
 		frame.getContentPane().add(FilterCharLbl);	
+		
+		amountMACTxt = new JTextField();
+		amountMACTxt.setEditable(false);
+		amountMACTxt.setColumns(10);
+		amountMACTxt.setBounds(131, 422, 75, 22);
+		frame.getContentPane().add(amountMACTxt);
+		
+		amountListsTxt = new JTextField();
+		amountListsTxt.setEditable(false);
+		amountListsTxt.setColumns(10);
+		amountListsTxt.setBounds(131, 462, 75, 22);
+		frame.getContentPane().add(amountListsTxt);
+		
+		FilterCharTxt = new JTextField();
+		FilterCharTxt.setEditable(false);
+		FilterCharTxt.setColumns(10);
+		FilterCharTxt.setBounds(131, 497, 75, 22);
+		frame.getContentPane().add(FilterCharTxt);
 
 		/**
 		 * **************** FILTER ***************
@@ -479,8 +504,10 @@ public class gui {
 						System.out.println("strName = "+strName);
 						if(strName.equals(""))
 							JOptionPane.showMessageDialog(frame,"You didnt enter a name !");
-						else
+						else{
 							filter.filtermain(false,not, 1,strName,"","");
+							listInformation.get(0) = "777";
+						}
 					}					
 					else if(dateRadioBut.isSelected()){
 
@@ -517,6 +544,7 @@ public class gui {
 					else
 						JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter !");
 				}
+				informationTxt.setText("8888");
 		/*		if(!flag){
 					flag=true;
 				}
@@ -572,15 +600,28 @@ public class gui {
 				
 			}
 		});
+		
+		/**
+		 * Button of Undo
+		 */	
 		AndBut.setBounds(385, 508, 95, 25);
 		frame.getContentPane().add(AndBut);
-
+		
+		JButton UndoBut = new JButton("Undo");
+		UndoBut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				filter.undo();
+			}
+		});
+		UndoBut.setBounds(278, 508, 95, 25);
+		frame.getContentPane().add(UndoBut);
 		/**
 		 * CheckBox of Not
 		 */	
 
 		NotCheckBox = new JCheckBox("not");
-		NotCheckBox.setBounds(310, 506, 56, 25);
+		NotCheckBox.setBounds(584, 506, 56, 25);
 		frame.getContentPane().add(NotCheckBox);	
 		
 		/**
@@ -771,18 +812,33 @@ public class gui {
 				String mac = MACTxt.getText();
 				System.out.println(mac);
 				Mac fin= filter.mac(mac);
-					walt=fin.getAlt();
-					wlat=fin.getLat();
-					wlon=fin.getLon();
+				walt=fin.getAlt();
+				wlat=fin.getLat();
+				wlon=fin.getLon();
 			
-				algo1LocaionRadiosTxt.setText(""+wlat);
-				algo1LocaionLonTxt.setText(""+wlon);
-				algo1LocaionAltTxt.setText(""+walt);			
+				algo1LocaionRadiosTxt.setText(wlat);
+				algo1LocaionLonTxt.setText(wlon);
+				algo1LocaionAltTxt.setText(walt);			
 			}
 		});
 		algo1RunBut.setBounds(671, 136, 87, 25);
 		frame.getContentPane().add(algo1RunBut);
 		
+		/**
+		 * *********************INFORMATION*************
+		 */	
+		
+		informationTxt = new JTextField();
+		informationTxt.setEditable(false);
+		informationTxt.setColumns(10);
+		informationTxt.setBounds(1075, 91, 320, 408);
+		frame.getContentPane().add(informationTxt);
+		
+		informationLbl = new JLabel("Information");
+		informationLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		informationLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
+		informationLbl.setBounds(1186, 31, 112, 45);
+		frame.getContentPane().add(informationLbl);
 		
 		/**
 		 * Button of Exit
@@ -794,8 +850,9 @@ public class gui {
 			}
 		});				
 		exitBut.setFont(new Font("Tahoma", Font.BOLD, 18));
-		exitBut.setBounds(879, 532, 171, 25);
+		exitBut.setBounds(1299, 531, 171, 25);
 		frame.getContentPane().add(exitBut);
+		
 				
 		
 	}
@@ -875,6 +932,7 @@ public class gui {
 	private String getStartDate()
 	{
 		SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");	
+		System.out.println("spinnerMin  " + spinnerMin.getValue());
 		Date time = (Date)spinnerMin.getValue();
 		String formattedDate = format.format(time);
 		
@@ -904,6 +962,4 @@ public class gui {
 		
 		return timeEnd;		
 	}
-
-	
 }

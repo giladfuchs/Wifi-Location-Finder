@@ -39,6 +39,10 @@ public class Filter {
 	public void write(String desPath2){
 		read.WriteListIntoFile(DataBase.get(countfilter),desPath2);
 	}
+	public void undo(){
+		DataBase.remove(countfilter);
+		countfilter--;
+	}
 	public void read(String srcPath) throws ParseException{
 
 		System.out.println(srcPath);
