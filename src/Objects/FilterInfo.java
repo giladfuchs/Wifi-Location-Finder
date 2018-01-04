@@ -9,7 +9,7 @@ public class FilterInfo {
 		this.kind=kind;
 		this.mode=mode;
 		this.data=data;
-		if(type)
+		if(!type)
 			this.type="Regular";
 		else
 			this.type="Not";
@@ -40,6 +40,6 @@ public class FilterInfo {
 	}
 	@Override
 	public String toString() {
-		return "FilterInfo [" + kind + " , " + type + " , " + mode + " data " + data + "]\n";
+		return "[" + kind + " , " + type + " , " + mode + " data " + data + "]\n";
 	}
 }

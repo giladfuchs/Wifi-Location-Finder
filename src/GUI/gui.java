@@ -102,8 +102,7 @@ public class gui {
 	/**
 	 * Create the application.
 	 * listOutput is the Data Structure
-	 */
-	private List<List<Row>> Undo = new ArrayList< List<Row>>(); 
+	 */	
 	private List<FilterInfo> listInfo = new ArrayList<FilterInfo>(); 
 	private List<Row> listInput = new ArrayList<Row>(); 	
 	private JTextField nameTxt;
@@ -469,6 +468,8 @@ public class gui {
 		AndBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
+				boolean flagAnd = false;
+				int n = filter.getCountfilter();
 				if(DataStructureEmpty == false)
 					JOptionPane.showMessageDialog(frame,"Data structure is empty !");
 				else{
@@ -483,6 +484,7 @@ public class gui {
 						else{
 							filter.filtermain(false,not, 1,strName,"","");
 							listInfo.add(new FilterInfo("And",not, "Name", strName));
+							flagAnd = true;
 						}
 					}					
 					else if(dateRadioBut.isSelected()){
@@ -490,14 +492,19 @@ public class gui {
 						System.out.println("date");
 						String startDate= getStartDate();
 						String endDate= getEndDate();
+						String time = startDate+" "+endDate;
+						
 						System.out.println("startDate = "+startDate);
 						System.out.println("endDate = "+endDate);
 						if(startDate.equals(""))
 							JOptionPane.showMessageDialog(frame,"You didnt enter a start date !");
 						else if(endDate.equals(""))
 							JOptionPane.showMessageDialog(frame,"You didnt enter a end date !"); 
-						else
+						else{
 							filter.filtermain(false,not, 2,startDate,endDate,"");
+							listInfo.add(new FilterInfo("And",not, "Date", time));
+							flagAnd = true;
+						}
 					}					
 					else if(locationRadioBut.isSelected()){
 
@@ -508,72 +515,27 @@ public class gui {
 						System.out.println("strLon = "+strLon);
 						String strRadios = LocaionRadiosTxt.getText();
 						System.out.println("strRadios = "+strRadios);
+						String location = "alt = "+strAlt+" Lon = "+strLon+" Radios = "+strRadios;
 						if(strAlt.equals(""))
 							JOptionPane.showMessageDialog(frame,"You didnt enter Alt !");
 						else if(strLon.equals(""))
 							JOptionPane.showMessageDialog(frame,"You didnt enter Lon !");
 						else if(strRadios.equals(""))
 							JOptionPane.showMessageDialog(frame,"You didnt enter Radios !");
-						else					
+						else{					
 							filter.filtermain(false,not, 3,strAlt,strLon,strRadios);
+							listInfo.add(new FilterInfo("And",not, "Location", location));
+							flagAnd = true;
+						}					
 					}
 					else
 						JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter !");
 				}
+				if(flagAnd == true && n+1!=filter.getCountfilter())
+					listInfo.remove(listInfo.size()-1);
 				informationTxt.setText(listInfo.toString());
-		/*		if(!flag){
-					flag=true;
-				}
-				 kind=(String)FilterType.getSelectedItem();
-					FilterAnd fil=new FilterAnd();
-					if(kind.equals("ID")){
-						String Id=nameTxt.getText();
-
-						filter.filtermain(1, Id);
-						
-					}*/
-//					 if(kind.equals("Time")){
-//					
-//						SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");	
-//						Date time = (Date)spinnerMin.getValue();
-//						String formattedDate = format.format(time);
-//						//System.out.println("formattedDate start = "+formattedDate); 
-//						
-//						Date dateFromDateChooser = dateChooserMin.getDate();
-//						String dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
-//						System.out.println("start date  " + dateString);						
-//						
-//						String timeStr = dateString+" "+formattedDate;
-//						System.out.println("timeStr  " + timeStr);
-//						//timeStr = timeStr.replace("-","/");
-//						//System.out.println("timeStr2  " + timeStr);
-//						
-//						time = (Date)spinnerMax.getValue();
-//						formattedDate = format.format(time);
-//						//System.out.println("formattedDate end = "+formattedDate);  	        		        	
-//								
-//						dateFromDateChooser = dateChooserMax.getDate();
-//						dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);
-//						System.out.println("end date  " + dateString);	
-//						
-//						String timeEnd = dateString+" "+formattedDate;
-//						System.out.println("timeEnd  " + timeEnd);
-//						
-//						//Undo.add(fil.CalculateByTime1(Undo.get(countfilter), listOutput, timeStr, timeStr));
-//					}
-					/*else if(kind.equals("Location"))
-					{
-						double Lat = Double.parseDouble(LocaionAltTxt.getText());
-						double Lon=Double.parseDouble(LocaionLonTxt.getText());
-						double Radius=Double.parseDouble(LocaionRadiosTxt.getText());
-						Undo.add(fil.CalculateByLocation1(Undo.get(countfilter), listOutput, Lon, Lat, Radius));
-
-					}
-					
-				countfilter++;
-				*/
-				
-				
+				flagAnd = false;
+		
 			}
 		});
 		
@@ -587,7 +549,14 @@ public class gui {
 		UndoBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				filter.undo();
+				if(filter.getCountfilter() > 0)
+				{
+					filter.undo();
+					listInfo.remove(listInfo.size()-1);
+					informationTxt.setText(listInfo.toString());
+				}else
+					JOptionPane.showMessageDialog(frame,"Cant do undo !");
+				
 			}
 		});
 		UndoBut.setBounds(278, 508, 95, 25);
@@ -625,8 +594,10 @@ public class gui {
 		 */	
 		JButton OrBut = new JButton("Or");
 		OrBut.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-					
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				boolean flagOr = false;
+				int n = filter.getCountfilter();
 				if(DataStructureEmpty == false)
 					JOptionPane.showMessageDialog(frame,"Data structure is empty !");
 				else{
@@ -637,16 +608,20 @@ public class gui {
 						String strName = nameTxt.getText();
 						System.out.println("strName = "+strName);
 						filter.filtermain(true,not, 1,strName,"","");
+						listInfo.add(new FilterInfo("Or",not, "Name", strName));
+						flagOr = true;
 					}					
 					else if(dateRadioBut.isSelected()){
-
 
 						System.out.println("date");
 						String startDate= getStartDate();
 						String endDate= getEndDate();
 						System.out.println("startDate = "+startDate);
 						System.out.println("endDate = "+endDate);
+						String time = startDate+" "+endDate;
 						filter.filtermain(true,not, 2,startDate,endDate,"");
+						listInfo.add(new FilterInfo("Or",not, "Date", time));
+						flagOr = true;
 					}					
 					else if(locationRadioBut.isSelected()){
 
@@ -657,35 +632,18 @@ public class gui {
 						System.out.println("strLon = "+strLon);
 						String strRadios = LocaionRadiosTxt.getText();
 						System.out.println("strRadios = "+strRadios);
+						String location = "alt = "+strAlt+" Lon = "+strLon+" Radios = "+strRadios;
 						filter.filtermain(true,not, 3,strAlt,strLon,strRadios);
+						listInfo.add(new FilterInfo("Or",not, "location", location));
+						flagOr = true;
 					}
 					else
 						JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter !");
-				}
-				/*
-				 //kind=(String)FilterType.getSelectedItem();
-				
-				//boolean not=NotCheckBox.isSelected();
-				System.out.println("not = "+not);
-				if(kind.equals("ID")){
-					String Id=nameTxt.getText();
-					
-	
-				}
-				 if(kind.equals("Time")){
-				
-					//listInput=fil.CalculateByTime1(listInput, listOutput, startDate, endDate);
-				}
-				else if(kind.equals("Location"))
-				{
-					double Lat = Double.parseDouble(LocaionAltTxt.getText());
-					double Lon=Double.parseDouble(LocaionLonTxt.getText());
-					double Radius=Double.parseDouble(LocaionRadiosTxt.getText());
-					
-
-				}
-				*/
-
+				}				
+				if(flagOr == true && n+1!=filter.getCountfilter())
+					listInfo.remove(listInfo.size()-1);
+				informationTxt.setText(listInfo.toString());
+				flagOr = false;
 			}
 		});
 		OrBut.setBounds(488, 508, 87, 25);
@@ -1010,7 +968,7 @@ public class gui {
 		
 		informationTxt = new JTextArea();
 		informationTxt.setEditable(false);
-		informationTxt.setBounds(1075, 91, 320, 408);
+		informationTxt.setBounds(1075, 91, 365, 408);
 		frame.getContentPane().add(informationTxt);
 		
 		informationLbl = new JLabel("Information");
