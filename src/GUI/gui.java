@@ -135,7 +135,10 @@ public class gui {
 	private JTextField FilterCharTxt;
 	private JTextField informationTxt;
 	private JLabel informationLbl;
-	private List<String> listInformation = new ArrayList<String>(); 
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField algo2NumberRowTxt;
 	
 	public gui() {		
 		initialize();
@@ -230,47 +233,7 @@ public class gui {
 		});
 		btnReadFile.setBounds(52, 164, 171, 25);
 		frame.getContentPane().add(btnReadFile);
-		/*JButton inputFileBut = new JButton("Get file");
-		inputFileBut.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) 
-			{												
-				JFileChooser  chooserGetDir = new JFileChooser();
-				chooserGetDir.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-				int returnNameDir = chooserGetDir.showOpenDialog(inputDirBut);
-				String pathGetDir;
-				String pathDestFile;	
-				if(returnNameDir == JFileChooser.APPROVE_OPTION) {
-					File f = chooserGetDir.getSelectedFile();
-					pathGetDir = f.getAbsolutePath();
-				}
-				/** 
-				 * This button reads file from directory path the user choose			
-				 */	/*					
-				String desPath = getFilePath();
-				File f = new File(desPath);
-				/**
-				 * Check the user choose a CSV file
-				 *//*
-				if(desPath == "")
-					JOptionPane.showMessageDialog(frame,"You didnt choose a path !");
-				else if (!(f.isFile() && f.getName().endsWith("csv")))
-					JOptionPane.showMessageDialog(frame,"Wrong file ! choose only CSV !");					
-				else{
-					Q3 q3 = new Q3();
-					try {						 
-						listOutput = q3.ReadFile(desPath);
-
-					} catch (ParseException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}		
-				}
-
-			}
-		});
-		inputFileBut.setBounds(666, 283, 171, 25);
-		frame.getContentPane().add(inputFileBut);
-		*/
+		
 		/**
 		 * Button of Save as CSV
 		 */	
@@ -289,7 +252,6 @@ public class gui {
 					filter.write(desPath2);
 				}
 				
-
 				/*ReadAndWriteCSV write = new ReadAndWriteCSV();
 				if(desPath == "")
 					JOptionPane.showMessageDialog(frame,"You didnt choose a path !");
@@ -805,6 +767,9 @@ public class gui {
 		algo1LocaionAltTxt.setEditable(false);
 		frame.getContentPane().add(algo1LocaionAltTxt);
 		
+		/**
+		 * Run of algorithm 1
+		 */
 		JButton algo1RunBut = new JButton("Run");
 		algo1RunBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
@@ -812,9 +777,9 @@ public class gui {
 				String mac = MACTxt.getText();
 				System.out.println(mac);
 				Mac fin= filter.mac(mac);
-				walt=fin.getAlt();
-				wlat=fin.getLat();
-				wlon=fin.getLon();
+				walt=""+fin.getAlt();
+				wlat=""+fin.getLat();
+				wlon=""+fin.getLon();
 			
 				algo1LocaionRadiosTxt.setText(wlat);
 				algo1LocaionLonTxt.setText(wlon);
@@ -823,6 +788,17 @@ public class gui {
 		});
 		algo1RunBut.setBounds(671, 136, 87, 25);
 		frame.getContentPane().add(algo1RunBut);
+		
+		/**
+		 * Run of algorithm 2
+		 */
+		JButton algo2ChooseFileBut = new JButton("Choose File");
+		algo2ChooseFileBut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		algo2ChooseFileBut.setBounds(816, 311, 150, 25);
+		frame.getContentPane().add(algo2ChooseFileBut);
 		
 		/**
 		 * *********************INFORMATION*************
@@ -852,6 +828,63 @@ public class gui {
 		exitBut.setFont(new Font("Tahoma", Font.BOLD, 18));
 		exitBut.setBounds(1299, 531, 171, 25);
 		frame.getContentPane().add(exitBut);
+		
+		JLabel algo2Lbl = new JLabel("Algorithm 2");
+		algo2Lbl.setHorizontalAlignment(SwingConstants.CENTER);
+		algo2Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2Lbl.setBounds(840, 253, 95, 36);
+		frame.getContentPane().add(algo2Lbl);
+		
+		JLabel label = new JLabel("Location");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		label.setBounds(973, 501, 57, 36);
+		frame.getContentPane().add(label);
+		
+		JLabel label_1 = new JLabel("Lat");
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		label_1.setBounds(879, 501, 59, 36);
+		frame.getContentPane().add(label_1);
+		
+		textField = new JTextField();
+		textField.setEditable(false);
+		textField.setColumns(10);
+		textField.setBounds(870, 534, 75, 22);
+		frame.getContentPane().add(textField);
+		
+		textField_1 = new JTextField();
+		textField_1.setEditable(false);
+		textField_1.setColumns(10);
+		textField_1.setBounds(783, 534, 75, 22);
+		frame.getContentPane().add(textField_1);
+		
+		JLabel label_2 = new JLabel("Lon");
+		label_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		label_2.setBounds(808, 501, 38, 36);
+		frame.getContentPane().add(label_2);
+		
+		JLabel label_3 = new JLabel("Alt");
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		label_3.setBounds(730, 501, 38, 36);
+		frame.getContentPane().add(label_3);
+		
+		textField_2 = new JTextField();
+		textField_2.setEditable(false);
+		textField_2.setColumns(10);
+		textField_2.setBounds(694, 534, 75, 22);
+		frame.getContentPane().add(textField_2);
+		
+		
+		
+		algo2NumberRowTxt = new JTextField();
+		algo2NumberRowTxt.setColumns(10);
+		algo2NumberRowTxt.setBounds(724, 313, 75, 22);
+		frame.getContentPane().add(algo2NumberRowTxt);
+		
+		JLabel algo2NumberRowLbl = new JLabel("Row Number");
+		algo2NumberRowLbl.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		algo2NumberRowLbl.setBounds(720, 277, 95, 36);
+		frame.getContentPane().add(algo2NumberRowLbl);
 		
 				
 		
