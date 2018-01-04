@@ -53,7 +53,7 @@ public class FilterNot implements FilterInterFace
 				find = false;
 			}
 		}
-		if(find){
+		if(find ){
 			System.out.println("The filter didnt find this ID");
 			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
 			listOutput.add(row);

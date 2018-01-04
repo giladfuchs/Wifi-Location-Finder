@@ -36,7 +36,7 @@ public class FilterAnd implements FilterInterFace {
 	public List<Row> CalculateByID1(List<Row> listInput,List<Row> listOutput,String id)
 	{
 		boolean find = true;
-		for(int i=1;i<listInput.size();i++)
+		for(int i=0;i<listInput.size();i++)
 		{
 			/**
 			 * check each row from listInput if equal to id
@@ -49,7 +49,7 @@ public class FilterAnd implements FilterInterFace {
 				find = false;
 			}
 		}
-		if(find){
+		if(find ){
 			System.out.println("The filter didnt find this ID");
 			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
 			listOutput.add(row);

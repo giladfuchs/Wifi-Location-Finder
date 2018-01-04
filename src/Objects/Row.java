@@ -50,4 +50,11 @@ public class Row
 		return "Row [element=" + element + ", head=" + head + "]";
 	}
 
+	public boolean isEquals(Row another)
+	{
+		if(this.getHead().getID().equals(another.getHead().getID()) && 
+				this.getHead().getTime().equals(another.getHead().getTime()))
+			return true;
+		return false;
+	}
 }

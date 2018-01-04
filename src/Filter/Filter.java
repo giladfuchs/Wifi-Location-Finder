@@ -13,7 +13,7 @@ import Read_Write.ReadAndWriteCSV;
 
 
 public class Filter {
-	private List<List<Row>> Undo = new ArrayList< List<Row>>(); 
+	private List<List<Row>> DataBase = new ArrayList< List<Row>>(); 
 	private int countfilter=0;
 	private int indexOr=0;
 	private boolean flag=true;
@@ -21,75 +21,119 @@ public class Filter {
 	ReadAndWriteCSV read = new ReadAndWriteCSV();
 	public void readq2(String dirPath) throws ParseException{
 		Q2 q2 = new Q2();
-		Undo.add( q2.ReadDir(dirPath));
+		DataBase.add( q2.ReadDir(dirPath));
 
 	}
 	public void write(String desPath2){
-		read.WriteListIntoFile(Undo.get(3),desPath2);
+		read.WriteListIntoFile(DataBase.get(countfilter),desPath2);
 	}
 	public void read(String srcPath) throws ParseException{
-	
-System.out.println(srcPath);
-		Undo.add(read.ReadFileIntoList3(srcPath));
-		change=Undo.get(0).get(0).getHead().getCount();
+
+		System.out.println(srcPath);
+		DataBase.add(read.ReadFileIntoList3(srcPath));
+		change=DataBase.get(0).get(0).getHead().getCount();
 	}
-	public void filtermain(int mode,String id) 
+	public void filtermain(boolean andor,boolean not, int filterType, String s1,String s2,String s3) 
 	{		
-		
-		
-			System.out.println(countfilter);
-		
-		switch (mode)  
+		FilterNot Not=new FilterNot();
+		FilterAnd And=new FilterAnd();
+		System.out.println(countfilter);
+
+		switch (filterType)  
 		{
 		case 1: {
-			flag=true;
-			FilterAnd And=new FilterAnd();
-			Undo.add(And.CalculateByID1(Undo.get(countfilter),new ArrayList<Row>(),  id));
+
+			if(andor){
+				if(flag)
+					indexOr=countfilter;
+				if(!not)
+					DataBase.add(And.CalculateByID1(DataBase.get(indexOr),new ArrayList<Row>(),  s1));
+				else
+					DataBase.add(Not.CalculateByID1(DataBase.get(indexOr),new ArrayList<Row>(),  s1));
+				if(!flag){
+					MergeList mer=new MergeList();
+					mer.merge(DataBase.get(countfilter), DataBase.get(countfilter+1));
+				}
+				flag=false;
+			}
+			else{
+				flag=true;
+				if(!not)
+					DataBase.add(And.CalculateByID1(DataBase.get(countfilter),new ArrayList<Row>(),  s1));
+				else
+					DataBase.add(Not.CalculateByID1(DataBase.get(countfilter),new ArrayList<Row>(),  s1));
+			}
 
 			break;
 		}
 		case 2: {
-			
-			FilterOr Or=new FilterOr();
-			if(flag){
-			
-				indexOr=countfilter;
-			
-				
+
+			if(andor){
+				if(flag)
+					indexOr=countfilter;
+				if(!not)
+					DataBase.add(And.CalculateByTime1(DataBase.get(indexOr),new ArrayList<Row>(), s1,s2));
+				else
+					DataBase.add(Not.CalculateByTime1(DataBase.get(indexOr),new ArrayList<Row>(),s1,s2));
+				if(!flag){
+					MergeList mer=new MergeList();
+					mer.merge(DataBase.get(countfilter), DataBase.get(countfilter+1));
+				}
+				flag=false;
 			}
-			Undo.add(Or.CalculateByID1(Undo.get(indexOr),new ArrayList<Row>(),  id));
-			if(!flag){
-				MergeList mer=new MergeList();
-				mer.merge(Undo.get(countfilter), Undo.get(countfilter+1));
+			else{
+				flag=true;
+				if(!not)
+					DataBase.add(Not.CalculateByTime1(DataBase.get(countfilter),new ArrayList<Row>(), s1,s2));
+				else
+					DataBase.add(Not.CalculateByTime1(DataBase.get(countfilter),new ArrayList<Row>(), s1,s2));
 			}
-			flag=false;
 
 			break;
+		
 		}
 		case 3: {
-			flag=true;
-			FilterNot Not=new FilterNot();
-			Undo.add(Not.CalculateByID1(Undo.get(countfilter),new ArrayList<Row>(),  id));
+			if(andor){
+				if(flag)
+					indexOr=countfilter;
+				if(!not)
+					DataBase.add(And.CalculateByLocation1(DataBase.get(indexOr),new ArrayList<Row>(), Double.parseDouble(s1),Double.parseDouble(s2),Double.parseDouble(s3)));
+				else
+					DataBase.add(Not.CalculateByLocation1(DataBase.get(indexOr),new ArrayList<Row>(),Double.parseDouble(s1),Double.parseDouble(s2),Double.parseDouble(s3)));
+				if(!flag){
+					MergeList mer=new MergeList();
+					mer.merge(DataBase.get(countfilter), DataBase.get(countfilter+1));
+				}
+				flag=false;
+			}
+			else{
+				flag=true;
+				if(!not)
+					DataBase.add(Not.CalculateByLocation1(DataBase.get(countfilter),new ArrayList<Row>(),Double.parseDouble(s1),Double.parseDouble(s2),Double.parseDouble(s3)));
+				else
+					DataBase.add(Not.CalculateByLocation1(DataBase.get(countfilter),new ArrayList<Row>(),Double.parseDouble(s1),Double.parseDouble(s2),Double.parseDouble(s3)));
+			}
+
+
 			break;
 
 
 		}
 		}
-		System.out.println(Undo.size());
-		
-		for (int i = 0; i < Undo.size(); i++) {
-			System.out.println(Undo.get(i).get(0).getHead().getCount());
+		System.out.println(DataBase.size());
+
+		for (int i = 0; i < DataBase.size(); i++) {
+			//System.out.println(DataBase.get(i).get(0).getHead().getCount());
 		}
-		
-		if(Undo.get(0).get(0).getHead().getCount().equals("no_change")){
-			System.out.println(Undo.get(0).get(0).getHead().getCount()+"  \n"+Undo.get(1).get(0).getHead().getCount());
-			Undo.get(0).get(0).getHead().setCount(change);
-			Undo.remove(Undo.size()-1);
+
+		if(DataBase.get(0).get(0).getHead().getCount().equals("no_change" ) ){
+			DataBase.get(0).get(0).getHead().setCount(change);
+			DataBase.remove(DataBase.size()-1);
 		}
 		else
 			countfilter++;
-		
-		
+
+
 
 	}
 }
