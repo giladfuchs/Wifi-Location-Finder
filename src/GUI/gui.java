@@ -31,6 +31,7 @@ import Filter.FilterInterFace;
 import Filter.FilterNot;
 import Filter.Q3;
 import GUI.NioFileSupport.MyWatchQueueReader;
+import Objects.FilterInfo;
 import Objects.Mac;
 import Objects.Row;
 import Read_Write.CopyListToList;
@@ -74,6 +75,8 @@ import javax.swing.JComboBox;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
+import javax.swing.JEditorPane;
+import javax.swing.JTextArea;
 
 
 public class gui {
@@ -101,7 +104,7 @@ public class gui {
 	 * listOutput is the Data Structure
 	 */
 	private List<List<Row>> Undo = new ArrayList< List<Row>>(); 
-	private List<Row> listOutput = new ArrayList<Row>(); 
+	private List<FilterInfo> listInfo = new ArrayList<FilterInfo>(); 
 	private List<Row> listInput = new ArrayList<Row>(); 	
 	private JTextField nameTxt;
 	private JTextField LocaionAltTxt;
@@ -114,6 +117,7 @@ public class gui {
 	private int IndexOr=0;
 	private boolean flag=true;
 	private boolean DataStructureEmpty=false;
+	private String destination;
 	
 	private JRadioButton dateRadioBut;
 	private JRadioButton nameRadioBut;
@@ -133,12 +137,22 @@ public class gui {
 	private JTextField amountMACTxt;
 	private JTextField amountListsTxt;
 	private JTextField FilterCharTxt;
-	private JTextField informationTxt;
+	private JTextArea informationTxt;
 	private JLabel informationLbl;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField algo2LocaionRadiosTxt;
+	private JTextField algo2LocaionLonTxt;
+	private JTextField algo2LocaionAltTxt;
 	private JTextField algo2NumberRowTxt;
+	private JLabel algo2NumberRowLbl;
+	private JTextField algo2MAC1Txt;
+	private JTextField algo2Signal1Txt;
+	private JTextField algo2MAC2Txt;
+	private JTextField algo2Signal2Txt;
+	private JTextField algo2MAC3Txt;
+	private JTextField algo2Signal3Txt;
+	private JRadioButton algo2FirstRadioBut;
+	private JRadioButton algo2SecondRadioBut;
+		
 	
 	public gui() {		
 		initialize();
@@ -280,13 +294,13 @@ public class gui {
 				String desPath = getFilePath();
 				String desPath2 = desPath+".kml";
 
-				WriteToKML kml=new WriteToKML();
+				/*WriteToKML kml=new WriteToKML();
 				if(desPath == "")
 					JOptionPane.showMessageDialog(frame,"You didnt choose a path !");
 				else if(listOutput.isEmpty())
 					JOptionPane.showMessageDialog(frame,"Data Structure is empty !");
 				else
-					kml.createKMLFile(listOutput,desPath2);
+					kml.createKMLFile(listOutput,desPath2);*/
 			}
 		});
 		saveKMLBut.setBounds(52, 341, 171, 25);
@@ -299,8 +313,8 @@ public class gui {
 		deleteBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				listOutput.clear();
-				JOptionPane.showMessageDialog(frame,"Data Structure is now empty !");
+				/*listOutput.clear();
+				JOptionPane.showMessageDialog(frame,"Data Structure is now empty !");*/
 				DataStructureEmpty = false;
 			}
 		});
@@ -468,7 +482,7 @@ public class gui {
 							JOptionPane.showMessageDialog(frame,"You didnt enter a name !");
 						else{
 							filter.filtermain(false,not, 1,strName,"","");
-							listInformation.get(0) = "777";
+							listInfo.add(new FilterInfo("And",not, "Name", strName));
 						}
 					}					
 					else if(dateRadioBut.isSelected()){
@@ -506,7 +520,7 @@ public class gui {
 					else
 						JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter !");
 				}
-				informationTxt.setText("8888");
+				informationTxt.setText(listInfo.toString());
 		/*		if(!flag){
 					flag=true;
 				}
@@ -711,6 +725,9 @@ public class gui {
 		/**
 		 * ********************Algorithms************************
 		 */	
+		/**
+		 * algorithm 1
+		 */
 		JLabel algo1Lbl = new JLabel("Algorithm 1");
 		algo1Lbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo1Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -790,23 +807,209 @@ public class gui {
 		frame.getContentPane().add(algo1RunBut);
 		
 		/**
+		 *  algorithm 2
+		 */
+		
+		JLabel algo2Lbl = new JLabel("Algorithm 2");
+		algo2Lbl.setHorizontalAlignment(SwingConstants.CENTER);
+		algo2Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2Lbl.setBounds(840, 253, 95, 36);
+		frame.getContentPane().add(algo2Lbl);
+		
+		JLabel algo2LocationLbl = new JLabel("Location");
+		algo2LocationLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		algo2LocationLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2LocationLbl.setBounds(973, 501, 57, 36);
+		frame.getContentPane().add(algo2LocationLbl);
+		
+		JLabel algo2LatLbl = new JLabel("Lat");
+		algo2LatLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2LatLbl.setBounds(879, 501, 59, 36);
+		frame.getContentPane().add(algo2LatLbl);
+		
+		algo2LocaionRadiosTxt = new JTextField();
+		algo2LocaionRadiosTxt.setEditable(false);
+		algo2LocaionRadiosTxt.setColumns(10);
+		algo2LocaionRadiosTxt.setBounds(870, 534, 75, 22);
+		frame.getContentPane().add(algo2LocaionRadiosTxt);
+		
+		algo2LocaionLonTxt = new JTextField();
+		algo2LocaionLonTxt.setEditable(false);
+		algo2LocaionLonTxt.setColumns(10);
+		algo2LocaionLonTxt.setBounds(783, 534, 75, 22);
+		frame.getContentPane().add(algo2LocaionLonTxt);
+		
+		JLabel algo2LonLbl = new JLabel("Lon");
+		algo2LonLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2LonLbl.setBounds(808, 501, 38, 36);
+		frame.getContentPane().add(algo2LonLbl);
+		
+		JLabel algo2AltLbl = new JLabel("Alt");
+		algo2AltLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2AltLbl.setBounds(730, 501, 38, 36);
+		frame.getContentPane().add(algo2AltLbl);
+		
+		algo2LocaionAltTxt = new JTextField();
+		algo2LocaionAltTxt.setEditable(false);
+		algo2LocaionAltTxt.setColumns(10);
+		algo2LocaionAltTxt.setBounds(694, 534, 75, 22);
+		frame.getContentPane().add(algo2LocaionAltTxt);
+		
+		algo2MAC1Txt = new JTextField();
+		algo2MAC1Txt.setColumns(10);
+		algo2MAC1Txt.setBounds(870, 399, 96, 22);
+		frame.getContentPane().add(algo2MAC1Txt);
+		
+		algo2Signal1Txt = new JTextField();
+		algo2Signal1Txt.setColumns(10);
+		algo2Signal1Txt.setBounds(750, 399, 96, 22);
+		frame.getContentPane().add(algo2Signal1Txt);
+		
+		algo2MAC2Txt = new JTextField();
+		algo2MAC2Txt.setColumns(10);
+		algo2MAC2Txt.setBounds(870, 431, 96, 22);
+		frame.getContentPane().add(algo2MAC2Txt);
+		
+		algo2Signal2Txt = new JTextField();
+		algo2Signal2Txt.setColumns(10);
+		algo2Signal2Txt.setBounds(750, 431, 96, 22);
+		frame.getContentPane().add(algo2Signal2Txt);
+		
+		algo2MAC3Txt = new JTextField();
+		algo2MAC3Txt.setColumns(10);
+		algo2MAC3Txt.setBounds(870, 462, 96, 22);
+		frame.getContentPane().add(algo2MAC3Txt);
+		
+		algo2Signal3Txt = new JTextField();
+		algo2Signal3Txt.setColumns(10);
+		algo2Signal3Txt.setBounds(750, 462, 96, 22);
+		frame.getContentPane().add(algo2Signal3Txt);				
+	
+		JLabel algo2MACLbl = new JLabel("MAC");
+		algo2MACLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		algo2MACLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2MACLbl.setBounds(889, 357, 57, 36);
+		frame.getContentPane().add(algo2MACLbl);
+		
+		JLabel algo2SiganlLbl = new JLabel("Signal");
+		algo2SiganlLbl.setHorizontalAlignment(SwingConstants.CENTER);
+		algo2SiganlLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2SiganlLbl.setBounds(770, 357, 57, 36);
+		frame.getContentPane().add(algo2SiganlLbl);
+		
+		JLabel algo2MAC1Lbl = new JLabel("1");
+		algo2MAC1Lbl.setHorizontalAlignment(SwingConstants.CENTER);
+		algo2MAC1Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2MAC1Lbl.setBounds(973, 399, 57, 25);
+		frame.getContentPane().add(algo2MAC1Lbl);
+		
+		JLabel algo2MAC2Lbl = new JLabel("2");
+		algo2MAC2Lbl.setHorizontalAlignment(SwingConstants.CENTER);
+		algo2MAC2Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2MAC2Lbl.setBounds(973, 431, 57, 25);
+		frame.getContentPane().add(algo2MAC2Lbl);
+		
+		JLabel algo2MAC3Lbl = new JLabel("3");
+		algo2MAC3Lbl.setHorizontalAlignment(SwingConstants.CENTER);
+		algo2MAC3Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo2MAC3Lbl.setBounds(973, 459, 57, 25);
+		frame.getContentPane().add(algo2MAC3Lbl);
+		algo2NumberRowTxt = new JTextField();
+		algo2NumberRowTxt.setColumns(10);
+		algo2NumberRowTxt.setBounds(730, 319, 75, 22);
+		frame.getContentPane().add(algo2NumberRowTxt);
+		
+		algo2NumberRowLbl = new JLabel("Row Number");
+		algo2NumberRowLbl.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		algo2NumberRowLbl.setBounds(730, 298, 75, 25);
+		frame.getContentPane().add(algo2NumberRowLbl);
+		
+			
+		/**
 		 * Run of algorithm 2
 		 */
-		JButton algo2ChooseFileBut = new JButton("Choose File");
-		algo2ChooseFileBut.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		
+		JButton algo2RunBut = new JButton("Run");
+		algo2RunBut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				if(algo2FirstRadioBut.isSelected())
+				{
+					String numberOfRow = algo2NumberRowTxt.getText();
+					System.out.println("numberOfRow = "+numberOfRow);
+					System.out.println("destination = "+destination);	
+				}else if(algo2SecondRadioBut.isSelected())
+				{
+					String mac1 = algo2MAC1Txt.getText();
+					String mac2 = algo2MAC2Txt.getText();
+					String mac3 = algo2MAC3Txt.getText();
+					String signal1 = algo2Signal1Txt.getText();
+					String signal2 = algo2Signal2Txt.getText();
+					String signal3 = algo2Signal3Txt.getText();
+				}
+				else
+					JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter in algorithm 2!");
+						
 			}
 		});
-		algo2ChooseFileBut.setBounds(816, 311, 150, 25);
+		algo2RunBut.setBounds(730, 260, 87, 25);
+		frame.getContentPane().add(algo2RunBut);
+		
+		/**
+		 * Choose file of algorithm 2
+		 */
+		
+		JButton algo2ChooseFileBut = new JButton("Choose File");
+		algo2ChooseFileBut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				JFileChooser  fc = new JFileChooser();
+				fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+				int returnVal = fc.showOpenDialog(btnReadFile);
+				if(returnVal == JFileChooser.APPROVE_OPTION) 
+				{										
+					File f = fc.getSelectedFile();
+					String desPath = f.getAbsolutePath();
+					System.out.println("desPath = "+desPath);						
+					if (!(f.isFile() && f.getName().endsWith("csv")))
+						JOptionPane.showMessageDialog(frame,"Wrong file ! choose only CSV !");			
+					else{					
+						desPath = fc.getSelectedFile().getAbsolutePath().replace("\\","/");
+						destination = desPath;
+						System.out.println("desPath2 = "+desPath);	
+					}
+				}
+			}
+		});
+		algo2ChooseFileBut.setBounds(816, 319, 150, 25);
 		frame.getContentPane().add(algo2ChooseFileBut);
+		
+		/**
+		 * Radio buttons of algorithm 2
+		 */	
+		
+		ButtonGroup buttonGroup2 = new ButtonGroup();
+		
+		algo2FirstRadioBut = new JRadioButton("1");
+		algo2FirstRadioBut.setBounds(1006, 283, 44, 25);
+		algo2SecondRadioBut = new JRadioButton("2");
+		algo2SecondRadioBut.setBounds(1008, 364, 38, 25);
+		
+		frame.getContentPane().add(algo2FirstRadioBut);	
+		frame.getContentPane().add(algo2SecondRadioBut);
+				
+		buttonGroup2.add(algo2FirstRadioBut);
+		buttonGroup2.add(algo2SecondRadioBut);
+							
+		frame.getContentPane().add(algo2FirstRadioBut);				
+		frame.getContentPane().add(algo2SecondRadioBut);				
 		
 		/**
 		 * *********************INFORMATION*************
 		 */	
 		
-		informationTxt = new JTextField();
+		informationTxt = new JTextArea();
 		informationTxt.setEditable(false);
-		informationTxt.setColumns(10);
 		informationTxt.setBounds(1075, 91, 320, 408);
 		frame.getContentPane().add(informationTxt);
 		
@@ -829,62 +1032,9 @@ public class gui {
 		exitBut.setBounds(1299, 531, 171, 25);
 		frame.getContentPane().add(exitBut);
 		
-		JLabel algo2Lbl = new JLabel("Algorithm 2");
-		algo2Lbl.setHorizontalAlignment(SwingConstants.CENTER);
-		algo2Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2Lbl.setBounds(840, 253, 95, 36);
-		frame.getContentPane().add(algo2Lbl);
-		
-		JLabel label = new JLabel("Location");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		label.setBounds(973, 501, 57, 36);
-		frame.getContentPane().add(label);
-		
-		JLabel label_1 = new JLabel("Lat");
-		label_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		label_1.setBounds(879, 501, 59, 36);
-		frame.getContentPane().add(label_1);
-		
-		textField = new JTextField();
-		textField.setEditable(false);
-		textField.setColumns(10);
-		textField.setBounds(870, 534, 75, 22);
-		frame.getContentPane().add(textField);
-		
-		textField_1 = new JTextField();
-		textField_1.setEditable(false);
-		textField_1.setColumns(10);
-		textField_1.setBounds(783, 534, 75, 22);
-		frame.getContentPane().add(textField_1);
-		
-		JLabel label_2 = new JLabel("Lon");
-		label_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		label_2.setBounds(808, 501, 38, 36);
-		frame.getContentPane().add(label_2);
-		
-		JLabel label_3 = new JLabel("Alt");
-		label_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		label_3.setBounds(730, 501, 38, 36);
-		frame.getContentPane().add(label_3);
-		
-		textField_2 = new JTextField();
-		textField_2.setEditable(false);
-		textField_2.setColumns(10);
-		textField_2.setBounds(694, 534, 75, 22);
-		frame.getContentPane().add(textField_2);
 		
 		
 		
-		algo2NumberRowTxt = new JTextField();
-		algo2NumberRowTxt.setColumns(10);
-		algo2NumberRowTxt.setBounds(724, 313, 75, 22);
-		frame.getContentPane().add(algo2NumberRowTxt);
-		
-		JLabel algo2NumberRowLbl = new JLabel("Row Number");
-		algo2NumberRowLbl.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		algo2NumberRowLbl.setBounds(720, 277, 95, 36);
-		frame.getContentPane().add(algo2NumberRowLbl);
 		
 				
 		
