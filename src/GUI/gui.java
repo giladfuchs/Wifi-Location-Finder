@@ -677,7 +677,7 @@ public class gui {
 		frame.getContentPane().add(exitBut);
 
 		/**
-		 * Algorithms
+		 * ********************Algorithms************************
 		 */	
 		JLabel algo1Lbl = new JLabel("Algorithm 1");
 		algo1Lbl.setHorizontalAlignment(SwingConstants.CENTER);
