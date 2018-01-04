@@ -185,8 +185,29 @@ public class gui {
 		
 		/**
 		 * Button of Get file 
-		 */			
-		JButton inputFileBut = new JButton("Get file");
+		 */		
+		JButton btnReadFile = new JButton("Read File");
+		btnReadFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser  fc = new JFileChooser();
+				fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+				int returnVal = fc.showOpenDialog(btnReadFile);
+				if(returnVal == JFileChooser.APPROVE_OPTION) {
+					ReadAndWriteCSV read=new ReadAndWriteCSV();
+					
+					try {
+						filter.read(fc.getSelectedFile().getAbsolutePath().replace("\\","/"));
+					} catch (ParseException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		
+				}
+			}
+		});
+		btnReadFile.setBounds(52, 164, 171, 25);
+		frame.getContentPane().add(btnReadFile);
+		/*JButton inputFileBut = new JButton("Get file");
 		inputFileBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{												
@@ -201,12 +222,12 @@ public class gui {
 				}
 				/** 
 				 * This button reads file from directory path the user choose			
-				 */						
+				 */	/*					
 				String desPath = getFilePath();
 				File f = new File(desPath);
 				/**
 				 * Check the user choose a CSV file
-				 */
+				 *//*
 				if(desPath == "")
 					JOptionPane.showMessageDialog(frame,"You didnt choose a path !");
 				else if (!(f.isFile() && f.getName().endsWith("csv")))
@@ -224,8 +245,9 @@ public class gui {
 
 			}
 		});
-		inputFileBut.setBounds(52, 169, 171, 25);
+		inputFileBut.setBounds(666, 283, 171, 25);
 		frame.getContentPane().add(inputFileBut);
+		*/
 		/**
 		 * Button of Save as CSV
 		 */	
@@ -620,31 +642,11 @@ public class gui {
 		dateLbl.setBounds(398, 89, 57, 36);
 		frame.getContentPane().add(dateLbl);
 
-		JButton btnReadFile = new JButton("Read File");
-		btnReadFile.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JFileChooser  fc = new JFileChooser();
-				fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-				int returnVal = fc.showOpenDialog(btnReadFile);
-				if(returnVal == JFileChooser.APPROVE_OPTION) {
-					ReadAndWriteCSV read=new ReadAndWriteCSV();
-					
-					try {
-						filter.read(fc.getSelectedFile().getAbsolutePath().replace("\\","/"));
-					} catch (ParseException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
 		
-				}
-			}
-		});
-		btnReadFile.setBounds(653, 311, 97, 25);
-		frame.getContentPane().add(btnReadFile);
 
 
 
-		String[] options = {"Time", "ID", "Location"};
+		/*String[] options = {"Time", "ID", "Location"};
 		FilterType = new JComboBox(options);
 		FilterType.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -654,7 +656,7 @@ public class gui {
 		FilterType.setRenderer(new MyComboBoxRenderer("Choose filter"));
 		FilterType.setSelectedIndex(-1);
 		FilterType.setBounds(550, 110, 95, 22);
-		frame.getContentPane().add(FilterType);
+		frame.getContentPane().add(FilterType);*/
 		
 		JLabel algorithmLbl = new JLabel("Algorithm");
 		algorithmLbl.setHorizontalAlignment(SwingConstants.CENTER);
