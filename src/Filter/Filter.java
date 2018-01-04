@@ -7,7 +7,9 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import Algorithms.Algo1mac;
 import Convert.Q2;
+import Objects.Mac;
 import Objects.Row;
 import Read_Write.ReadAndWriteCSV;
 
@@ -27,6 +29,11 @@ public class Filter {
 		else
 			DataBase.add(first);
 		return true;
+		
+	}
+	public Mac mac(String mac){
+		Algo1mac m=new Algo1mac();
+		return( m.macbase(DataBase.get(0), mac));
 		
 	}
 	public void write(String desPath2){

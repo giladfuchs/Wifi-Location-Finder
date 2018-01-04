@@ -2,6 +2,7 @@ package Algorithms;
 import java.util.ArrayList;
 import java.util.List;
 
+import GUI.gui;
 import Objects.Listmac;
 import Objects.Mac;
 import Read_Write.ReadAndWriteCSV;
@@ -11,9 +12,10 @@ public class Algo1MacW {
 	 * 	
 	 * @param output The List he receive from the Function macbase 
 	 * @param dest 
+	 * @return 
 	 */
 
-	public  void MacW(List<Mac> Input){
+	public  Mac MacW(List<Mac> Input){
 
 		
 		/**
@@ -41,6 +43,7 @@ public class Algo1MacW {
 			 * insert the mac after the calculate,and put it in a List to prepare to export it to csv file.
 			 */
 			Mac fin=new Mac(wlat/wsig,wlon/wsig,walt/wsig,2);
+			return fin;
 		
 		}
 

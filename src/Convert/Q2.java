@@ -24,7 +24,7 @@ public class Q2
 		
 		System.out.println("dirPath = "+dirPath);
 		if(dirPath.equals(""))
-			return listOutput;
+			return null;
 		
 		ReadAndWriteCSV read = new ReadAndWriteCSV();
 		//ReadAndWriteCSV write = new ReadAndWriteCSV();

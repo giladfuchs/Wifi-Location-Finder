@@ -29,9 +29,9 @@ import Filter.Filter;
 import Filter.FilterAnd;
 import Filter.FilterInterFace;
 import Filter.FilterNot;
-import Filter.FilterOr;
 import Filter.Q3;
 import GUI.NioFileSupport.MyWatchQueueReader;
+import Objects.Mac;
 import Objects.Row;
 import Read_Write.CopyListToList;
 import Read_Write.ReadAndWriteCSV;
@@ -124,7 +124,12 @@ public class gui {
 	private JSpinner spinnerMax;
 	private JCheckBox NotCheckBox;
 	private JTextField MACTxt;
-	
+	private JTextField algo1LocaionRadiosTxt;
+	private JTextField algo1LocaionLonTxt;
+	private JTextField algo1LocaionAltTxt;
+	private double wlat=0;
+	private double wlon=0;
+	private double walt=0;
 	public gui() {		
 		initialize();
 	}
@@ -174,8 +179,8 @@ public class gui {
 				System.out.println("pathGetDir = "+pathGetDir);				
 				String dirPath = pathGetDir;
 				try {
-					filter.readq2(dirPath);
-					DataStructureEmpty = true;
+					if(filter.readq2(dirPath) == true)
+						DataStructureEmpty = true;
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -736,10 +741,48 @@ public class gui {
 		algo1LonLbl.setBounds(808, 169, 38, 36);
 		frame.getContentPane().add(algo1LonLbl);
 		
-		JLabel algo1RadiosLbl = new JLabel("Radios");
-		algo1RadiosLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo1RadiosLbl.setBounds(879, 169, 59, 36);
-		frame.getContentPane().add(algo1RadiosLbl);
+		JLabel algo1LatLbl = new JLabel("Lat");
+		algo1LatLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		algo1LatLbl.setBounds(879, 169, 59, 36);
+		frame.getContentPane().add(algo1LatLbl);
+		
+		algo1LocaionRadiosTxt = new JTextField();
+		algo1LocaionRadiosTxt.setColumns(10);
+		algo1LocaionRadiosTxt.setBounds(870, 202, 75, 22);
+		algo1LocaionRadiosTxt.setEditable(false);
+		frame.getContentPane().add(algo1LocaionRadiosTxt);
+		
+		algo1LocaionLonTxt = new JTextField();
+		algo1LocaionLonTxt.setColumns(10);
+		algo1LocaionLonTxt.setBounds(783, 202, 75, 22);
+		algo1LocaionLonTxt.setEditable(false);
+		frame.getContentPane().add(algo1LocaionLonTxt);
+		
+		algo1LocaionAltTxt = new JTextField();
+		algo1LocaionAltTxt.setColumns(10);
+		algo1LocaionAltTxt.setBounds(694, 202, 75, 22);
+		algo1LocaionAltTxt.setEditable(false);
+		frame.getContentPane().add(algo1LocaionAltTxt);
+		
+		JButton algo1RunBut = new JButton("Run");
+		algo1RunBut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{	
+				String mac = MACTxt.getText();
+				System.out.println(mac);
+				Mac fin= filter.mac(mac);
+					walt=fin.getAlt();
+					wlat=fin.getLat();
+					wlon=fin.getLon();
+			
+				algo1LocaionRadiosTxt.setText(""+wlat);
+				algo1LocaionLonTxt.setText(""+wlon);
+				algo1LocaionAltTxt.setText(""+walt);			
+			}
+		});
+		algo1RunBut.setBounds(671, 136, 87, 25);
+		frame.getContentPane().add(algo1RunBut);
+		
 		
 		/**
 		 * Button of Exit
@@ -749,11 +792,12 @@ public class gui {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
 			}
-		});
-				
+		});				
 		exitBut.setFont(new Font("Tahoma", Font.BOLD, 18));
 		exitBut.setBounds(879, 532, 171, 25);
 		frame.getContentPane().add(exitBut);
+				
+		
 	}
 	class MyComboBoxRenderer extends JLabel implements ListCellRenderer
 	{
@@ -860,4 +904,6 @@ public class gui {
 		
 		return timeEnd;		
 	}
+
+	
 }

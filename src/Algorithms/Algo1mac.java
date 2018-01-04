@@ -13,8 +13,9 @@ public class Algo1mac {
 	 * then it's send the new List to calculate w-weight by the class Algo1MacW.	
 	 * @param src
 	 * @param dest 
+	 * @return 
 	 */
-	public static void macbase(List<Row> listInput, String MacStr){		
+	public static Mac macbase(List<Row> listInput, String MacStr){		
 
 		List<Mac> output = new ArrayList<Mac>();
 
@@ -43,7 +44,8 @@ public class Algo1mac {
 
 
 		Algo1MacW W=new Algo1MacW();
-		W.MacW(output);
+		Mac m=W.MacW(output);
+		return m;
 
 	}
 }
