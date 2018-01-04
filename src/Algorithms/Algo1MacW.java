@@ -40,7 +40,7 @@ public class Algo1MacW {
 			}
 			
 			/**
-			 * insert the mac after the calculate,and put it in a List to prepare to export it to csv file.
+			 * insert the mac after the calculate,and put it in a Mac to prepare to export it.
 			 */
 			Mac fin=new Mac(wlat/wsig,wlon/wsig,walt/wsig,2);
 			return fin;

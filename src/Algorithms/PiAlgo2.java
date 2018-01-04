@@ -16,7 +16,7 @@ public class PiAlgo2 {
 	 */
 
 
-	public  void pi(int[] best,int i,List<Row> listInput,List<Row> listcomb,int imgine){
+	public  void pi(int[] best,List<Row> listInput,Row line,int imgine){
 		/**
 		 * This function calculate the diff and then calculate the pi and create arrays with pi
 		 * tnd send the arrays to the function insertpi
@@ -24,38 +24,38 @@ public class PiAlgo2 {
 		double [] datapi=new double[imgine];
 		double power=2,norm=10000,sig_diff=0.4,min_diff=3,diff_no_signal=100,pi=0,diff1;
 		for (int k = 0; k < best.length; k++) {
-			for (int j = 0; j < listInput.get(i).getElement().size(); j++) {
-				if(j<listcomb.get(best[k]).getElement().size()){
-					diff1=Math.max(Math.abs(Double.parseDouble(listInput.get(i).getElement().get(j).getSignal())-
-							Double.parseDouble(listcomb.get(best[k]).getElement().get(j).getSignal())),min_diff);
+			for (int j = 0; j < line.getElement().size(); j++) {
+				if(j<listInput.get(best[k]).getElement().size()){
+					diff1=Math.max(Math.abs(Double.parseDouble(line.getElement().get(j).getSignal())-
+							Double.parseDouble(listInput.get(best[k]).getElement().get(j).getSignal())),min_diff);
 				}
 				else
 					diff1=diff_no_signal;
-				pi+=norm/(Math.pow(diff1, sig_diff)*Math.pow(Double.parseDouble(listInput.get(i).getElement().get(j).getSignal()), power));
+				pi+=norm/(Math.pow(diff1, sig_diff)*Math.pow(Double.parseDouble(line.getElement().get(j).getSignal()), power));
 			}
 			datapi[k]=pi;
 			pi=0;
 		}
-		insertpi(best,i,listInput,listcomb,datapi);
+		insertpi(best,listInput,line,datapi);
 	}
-	public  void insertpi(int[] best,int i,List<Row> listInput,List<Row> listcomb,double [] datapi){
+	public  void insertpi(int[] best,List<Row> listInput,Row line,double [] datapi){
 		/**
 		 * This function calculate the the weight for the location with the pi.
 		 * and in the final insert the location to the list. 
 		 */
 		double walt=0,wlon=0,wlat=0,wsig=0;
 		for (int j = 0; j < datapi.length; j++) {
-			walt+=Double.parseDouble(listcomb.get(best[j]).getHead().getAlt())*datapi[j];
-			wlon+=Double.parseDouble(listcomb.get(best[j]).getHead().getLon())*datapi[j];
-			wlat+=Double.parseDouble(listcomb.get(best[j]).getHead().getLat())*datapi[j];
+			walt+=Double.parseDouble(listInput.get(best[j]).getHead().getAlt())*datapi[j];
+			wlon+=Double.parseDouble(listInput.get(best[j]).getHead().getLon())*datapi[j];
+			wlat+=Double.parseDouble(listInput.get(best[j]).getHead().getLat())*datapi[j];
 			wsig+=datapi[j];
 		}
 		walt/=wsig;
 		wlat/=wsig;
 		wlon/=wsig;
-		listInput.get(i).getHead().setAlt(""+walt);
-		listInput.get(i).getHead().setLat(""+wlat);
-		listInput.get(i).getHead().setLon(""+wlon);
+		line.getHead().setAlt(""+walt);
+		line.getHead().setLat(""+wlat);
+		line.getHead().setLon(""+wlon);
 	}
 
 }

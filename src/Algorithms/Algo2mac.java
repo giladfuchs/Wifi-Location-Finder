@@ -28,38 +28,36 @@ public class Algo2mac {
 	 * @param listcomb   file we create
 	 * @param imagine  how many similar row we want to find
 	 */
-	public static void alg2(String src1, String src2, String des, int imagine)
+	public static void alg2(String src1, String src2, String des, int imagine,Row line)
 	{
 		ReadAndWriteCSV a=new ReadAndWriteCSV();
 		List<Row> listInput = new ArrayList<Row>();	
 		List<Row> listcomb = new ArrayList<Row>();
-		listInput=a.ReadFileIntoList4(src1);
-		listcomb=a.ReadFileIntoList4(src2);
+		
 		
 		double []arr=new double[listcomb.size()];
 		double x=1;
 		for (int i = 0; i < listInput.size(); i++) 
 		{
-			for (int j = 0; j < listcomb.size(); j++) 
+			for (int j = 0; j < line.getElement().size(); j++) 
 			{
-				for (int j2 = 0; j2 <listInput.get(i).getElement().size(); j2++)  
-				{
 					/**
 					 * Calculate how much this row imagine
 					 */
-					if(j2<listcomb.get(j).getElement().size())
+					if(j<listInput.get(i).getElement().size())
 					{
-						x*=((Math.abs(Double.parseDouble(listInput.get(i).getElement().get(j2).getSignal()))
-								+Double.parseDouble(listInput.get(i).getElement().get(j2).getSignal())
-								-Double.parseDouble(listcomb.get(j).getElement().get(j2).getSignal()))
-								/Math.abs(Double.parseDouble(listInput.get(i).getElement().get(j2).getSignal())));
+						x*=((Math.abs(Double.parseDouble(line.getElement().get(j).getSignal()))
+								+Double.parseDouble(line.getElement().get(j).getSignal())
+								-Double.parseDouble(listInput.get(i).getElement().get(j).getSignal()))
+								/Math.abs(Double.parseDouble(line.getElement().get(j).getSignal())));
 					}
 					else
 						x*=0.1;
 				}
-				arr[j]=x;
+				arr[i]=x;
 				x=1;
 			}
+		imagine=Math.min(imagine, listInput.size());
 			int[] best=new int[imagine];
 			FindFive F=new FindFive();
 			/**
@@ -72,9 +70,9 @@ public class Algo2mac {
 			 */
 			P.pi(best,i,listInput,listcomb,imagine);
 			System.out.println(Arrays.toString(best));
-		}
+		
 		/**
-		 * Export to csv
+		 * Export the data
 		 */
 		a.WriteListIntoFile(listInput,des);	
 	}
