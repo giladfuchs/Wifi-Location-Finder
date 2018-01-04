@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import Algorithms.Algo1mac;
+import Algorithms.Algo2mac;
 import Convert.Q2;
 import Objects.Mac;
 import Objects.Row;
@@ -30,6 +31,10 @@ public class Filter {
 			DataBase.add(first);
 		return true;
 		
+	}
+	public Row algo2(Row line,int imagine){
+		Algo2mac m=new Algo2mac();
+		return m.alg2(DataBase.get(0), line, imagine);
 	}
 	public Mac mac(String mac){
 		Algo1mac m=new Algo1mac();

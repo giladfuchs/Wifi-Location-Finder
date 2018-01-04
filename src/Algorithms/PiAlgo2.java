@@ -12,11 +12,12 @@ public class PiAlgo2 {
 	 * @param listInput list we take the data to calculate pi weight
 	 * @param listcomb we calculate diff with it and insert the missing data
 	 *@param imagine  how many similar row we want to find
+	 * @return 
 	 * 
 	 */
 
 
-	public  void pi(int[] best,List<Row> listInput,Row line,int imgine){
+	public  Row pi(int[] best,List<Row> listInput,Row line,int imgine){
 		/**
 		 * This function calculate the diff and then calculate the pi and create arrays with pi
 		 * tnd send the arrays to the function insertpi
@@ -36,9 +37,10 @@ public class PiAlgo2 {
 			datapi[k]=pi;
 			pi=0;
 		}
-		insertpi(best,listInput,line,datapi);
+		line=insertpi(best,listInput,line,datapi);
+		return line;
 	}
-	public  void insertpi(int[] best,List<Row> listInput,Row line,double [] datapi){
+	public  Row insertpi(int[] best,List<Row> listInput,Row line,double [] datapi){
 		/**
 		 * This function calculate the the weight for the location with the pi.
 		 * and in the final insert the location to the list. 
@@ -56,6 +58,7 @@ public class PiAlgo2 {
 		line.getHead().setAlt(""+walt);
 		line.getHead().setLat(""+wlat);
 		line.getHead().setLon(""+wlon);
+		return line;
 	}
 
 }
