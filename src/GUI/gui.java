@@ -113,6 +113,7 @@ public class gui {
 	private int countfilter=0;
 	private int IndexOr=0;
 	private boolean flag=true;
+	private boolean DataStructureEmpty=false;
 	
 	private JRadioButton dateRadioBut;
 	private JRadioButton nameRadioBut;
@@ -174,6 +175,7 @@ public class gui {
 				String dirPath = pathGetDir;
 				try {
 					filter.readq2(dirPath);
+					DataStructureEmpty = true;
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -184,7 +186,7 @@ public class gui {
 		frame.getContentPane().add(inputDirBut);
 		
 		/**
-		 * Button of Get file 
+		 * Button of Read file 
 		 */		
 		JButton btnReadFile = new JButton("Read File");
 		btnReadFile.addActionListener(new ActionListener() {
@@ -192,17 +194,26 @@ public class gui {
 				JFileChooser  fc = new JFileChooser();
 				fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				int returnVal = fc.showOpenDialog(btnReadFile);
-				if(returnVal == JFileChooser.APPROVE_OPTION) {
-					ReadAndWriteCSV read=new ReadAndWriteCSV();
-					
-					try {
-						filter.read(fc.getSelectedFile().getAbsolutePath().replace("\\","/"));
-					} catch (ParseException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
+				if(returnVal == JFileChooser.APPROVE_OPTION) 
+				{										
+					File f = fc.getSelectedFile();
+					String desPath = f.getAbsolutePath();
+					System.out.println("desPath = "+desPath);						
+					if (!(f.isFile() && f.getName().endsWith("csv")))
+						JOptionPane.showMessageDialog(frame,"Wrong file ! choose only CSV !");			
+					else{
+						try {
+							filter.read(fc.getSelectedFile().getAbsolutePath().replace("\\","/"));
+							DataStructureEmpty = true;
+						} catch (ParseException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 					}
 		
 				}
+				
+				
 			}
 		});
 		btnReadFile.setBounds(52, 164, 171, 25);
@@ -259,8 +270,12 @@ public class gui {
 				 * This button the user needs to write a path+name_file to save it as CSV		
 				 */						
 				String desPath = getFilePath();
-				String desPath2 = desPath+".csv";
-				filter.write(desPath2);
+				if(desPath == "")
+					JOptionPane.showMessageDialog(frame,"You didnt choose a path !");
+				else{
+					String desPath2 = desPath+".csv";
+					filter.write(desPath2);
+				}
 				
 
 				/*ReadAndWriteCSV write = new ReadAndWriteCSV();
@@ -312,6 +327,7 @@ public class gui {
 			{
 				listOutput.clear();
 				JOptionPane.showMessageDialog(frame,"Data Structure is now empty !");
+				DataStructureEmpty = false;
 			}
 		});
 		deleteBut.setBounds(52, 223, 171, 25);
@@ -447,36 +463,55 @@ public class gui {
 		AndBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				boolean not=NotCheckBox.isSelected();
-				if(nameRadioBut.isSelected()){
-					
-					System.out.println("name");
-					String strName = nameTxt.getText();
-					System.out.println("strName = "+strName);
-					filter.filtermain(false,not, 1,strName,"","");
-				}					
-				else if(dateRadioBut.isSelected()){
-									
-					
-					System.out.println("date");
-					String startDate= getStartDate();
-					String endDate= getEndDate();
-					System.out.println("startDate = "+startDate);
-					System.out.println("endDate = "+endDate);
-					filter.filtermain(false,not, 2,startDate,endDate,"");
-				}					
-				else if(locationRadioBut.isSelected()){
-					
-					System.out.println("location");
-					String strAlt = LocaionAltTxt.getText();
-					System.out.println("strAlt = "+strAlt);
-					String strLon = LocaionLonTxt.getText();
-					System.out.println("strLon = "+strLon);
-					String strRadios = LocaionRadiosTxt.getText();
-					System.out.println("strRadios = "+strRadios);
-					filter.filtermain(false,not, 3,strAlt,strLon,strRadios);
+				if(DataStructureEmpty == false)
+					JOptionPane.showMessageDialog(frame,"Data structure is empty !");
+				else{
+					boolean not=NotCheckBox.isSelected();
+					if(nameRadioBut.isSelected()){
+
+						System.out.println("name");
+						String strName = nameTxt.getText();
+						System.out.println("strName = "+strName);
+						if(strName.equals(""))
+							JOptionPane.showMessageDialog(frame,"You didnt enter a name !");
+						else
+							filter.filtermain(false,not, 1,strName,"","");
+					}					
+					else if(dateRadioBut.isSelected()){
+
+						System.out.println("date");
+						String startDate= getStartDate();
+						String endDate= getEndDate();
+						System.out.println("startDate = "+startDate);
+						System.out.println("endDate = "+endDate);
+						if(startDate.equals(""))
+							JOptionPane.showMessageDialog(frame,"You didnt enter a start date !");
+						else if(endDate.equals(""))
+							JOptionPane.showMessageDialog(frame,"You didnt enter a end date !"); 
+						else
+							filter.filtermain(false,not, 2,startDate,endDate,"");
+					}					
+					else if(locationRadioBut.isSelected()){
+
+						System.out.println("location");
+						String strAlt = LocaionAltTxt.getText();
+						System.out.println("strAlt = "+strAlt);
+						String strLon = LocaionLonTxt.getText();
+						System.out.println("strLon = "+strLon);
+						String strRadios = LocaionRadiosTxt.getText();
+						System.out.println("strRadios = "+strRadios);
+						if(strAlt.equals(""))
+							JOptionPane.showMessageDialog(frame,"You didnt enter Alt !");
+						else if(strLon.equals(""))
+							JOptionPane.showMessageDialog(frame,"You didnt enter Lon !");
+						else if(strRadios.equals(""))
+							JOptionPane.showMessageDialog(frame,"You didnt enter Radios !");
+						else					
+							filter.filtermain(false,not, 3,strAlt,strLon,strRadios);
+					}
+					else
+						JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter !");
 				}
-				
 		/*		if(!flag){
 					flag=true;
 				}
@@ -529,18 +564,14 @@ public class gui {
 				countfilter++;
 				*/
 				
-				/**
-				 * Values of filter time
-				 */	
-
-
+				
 			}
 		});
 		AndBut.setBounds(385, 508, 95, 25);
 		frame.getContentPane().add(AndBut);
 
 		/**
-		 * CheckBox of Or
+		 * CheckBox of Not
 		 */	
 
 		NotCheckBox = new JCheckBox("not");
@@ -573,38 +604,42 @@ public class gui {
 		JButton OrBut = new JButton("Or");
 		OrBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			
-				
-				boolean not=NotCheckBox.isSelected();
-				if(nameRadioBut.isSelected()){
 					
-					System.out.println("name");
-					String strName = nameTxt.getText();
-					System.out.println("strName = "+strName);
-					filter.filtermain(true,not, 1,strName,"","");
-				}					
-				else if(dateRadioBut.isSelected()){
-									
-					
-					System.out.println("date");
-					String startDate= getStartDate();
-					String endDate= getEndDate();
-					System.out.println("startDate = "+startDate);
-					System.out.println("endDate = "+endDate);
-					filter.filtermain(true,not, 2,startDate,endDate,"");
-				}					
-				else if(locationRadioBut.isSelected()){
-					
-					System.out.println("location");
-					String strAlt = LocaionAltTxt.getText();
-					System.out.println("strAlt = "+strAlt);
-					String strLon = LocaionLonTxt.getText();
-					System.out.println("strLon = "+strLon);
-					String strRadios = LocaionRadiosTxt.getText();
-					System.out.println("strRadios = "+strRadios);
-					filter.filtermain(true,not, 3,strAlt,strLon,strRadios);
+				if(DataStructureEmpty == false)
+					JOptionPane.showMessageDialog(frame,"Data structure is empty !");
+				else{
+					boolean not=NotCheckBox.isSelected();
+					if(nameRadioBut.isSelected()){
+
+						System.out.println("name");
+						String strName = nameTxt.getText();
+						System.out.println("strName = "+strName);
+						filter.filtermain(true,not, 1,strName,"","");
+					}					
+					else if(dateRadioBut.isSelected()){
+
+
+						System.out.println("date");
+						String startDate= getStartDate();
+						String endDate= getEndDate();
+						System.out.println("startDate = "+startDate);
+						System.out.println("endDate = "+endDate);
+						filter.filtermain(true,not, 2,startDate,endDate,"");
+					}					
+					else if(locationRadioBut.isSelected()){
+
+						System.out.println("location");
+						String strAlt = LocaionAltTxt.getText();
+						System.out.println("strAlt = "+strAlt);
+						String strLon = LocaionLonTxt.getText();
+						System.out.println("strLon = "+strLon);
+						String strRadios = LocaionRadiosTxt.getText();
+						System.out.println("strRadios = "+strRadios);
+						filter.filtermain(true,not, 3,strAlt,strLon,strRadios);
+					}
+					else
+						JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter !");
 				}
-				
 				/*
 				 //kind=(String)FilterType.getSelectedItem();
 				
@@ -663,20 +698,7 @@ public class gui {
 		algorithmLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
 		algorithmLbl.setBounds(816, 31, 112, 45);
 		frame.getContentPane().add(algorithmLbl);
-
-		/**
-		 * Button of Exit
-		 */	
-		JButton exitBut = new JButton("Exit");
-		exitBut.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
-			}
-		});
-				
-		exitBut.setFont(new Font("Tahoma", Font.BOLD, 18));
-		exitBut.setBounds(879, 532, 171, 25);
-		frame.getContentPane().add(exitBut);
+		
 
 		/**
 		 * ********************Algorithms************************
@@ -718,6 +740,20 @@ public class gui {
 		algo1RadiosLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		algo1RadiosLbl.setBounds(879, 169, 59, 36);
 		frame.getContentPane().add(algo1RadiosLbl);
+		
+		/**
+		 * Button of Exit
+		 */	
+		JButton exitBut = new JButton("Exit");
+		exitBut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+				
+		exitBut.setFont(new Font("Tahoma", Font.BOLD, 18));
+		exitBut.setBounds(879, 532, 171, 25);
+		frame.getContentPane().add(exitBut);
 	}
 	class MyComboBoxRenderer extends JLabel implements ListCellRenderer
 	{
