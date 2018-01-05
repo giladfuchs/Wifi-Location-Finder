@@ -179,7 +179,7 @@ public class Filter {
 				 * Check if filter Not Or regular
 				 */
 				if(!not)
-					DataBase.add(Not.CalculateByTime1(DataBase.get(countfilter),new ArrayList<Row>(), s1,s2));
+					DataBase.add(And.CalculateByTime1(DataBase.get(countfilter),new ArrayList<Row>(), s1,s2));
 				else
 					DataBase.add(Not.CalculateByTime1(DataBase.get(countfilter),new ArrayList<Row>(), s1,s2));
 			}
@@ -216,7 +216,7 @@ public class Filter {
 				 * Check if filter Not Or regular
 				 */
 				if(!not)
-					DataBase.add(Not.CalculateByLocation1(DataBase.get(countfilter),new ArrayList<Row>(),Double.parseDouble(s1),Double.parseDouble(s2),Double.parseDouble(s3)));
+					DataBase.add(And.CalculateByLocation1(DataBase.get(countfilter),new ArrayList<Row>(),Double.parseDouble(s1),Double.parseDouble(s2),Double.parseDouble(s3)));
 				else
 					DataBase.add(Not.CalculateByLocation1(DataBase.get(countfilter),new ArrayList<Row>(),Double.parseDouble(s1),Double.parseDouble(s2),Double.parseDouble(s3)));
 			}

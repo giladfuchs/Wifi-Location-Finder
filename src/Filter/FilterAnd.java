@@ -99,7 +99,7 @@ public class FilterAnd implements FilterInterFace {
 		/**
 		 * These are the Date formats we use
 		 */
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss");	 
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 		DateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		DateFormat dateFormat3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 

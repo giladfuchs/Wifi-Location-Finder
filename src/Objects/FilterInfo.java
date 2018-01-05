@@ -1,10 +1,19 @@
 package Objects;
 
-public class FilterInfo {
-	String kind;
-	String type;
-	String mode;
-	String data;
+public class FilterInfo 
+{	
+	private String kind;
+	private String type;
+	private String mode;
+	private String data;
+	
+	/**
+	 * This object keep the values of the filter 
+	 * @param kind - And/Or
+	 * @param type - Not/Regular
+	 * @param mode - Date/ID/Location (filter mode)
+	 * @param data - data of the filter mode
+	 */
 	public FilterInfo(String kind,boolean type,String mode,String data){
 		this.kind=kind;
 		this.mode=mode;
@@ -40,6 +49,6 @@ public class FilterInfo {
 	}
 	@Override
 	public String toString() {
-		return "[" + kind + " , " + type + " , " + mode + " data " + data + "]\n";
+		return " " + kind + " , " + type + " , " + mode + " , " + data +  "\n";
 	}
 }
