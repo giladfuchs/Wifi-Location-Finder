@@ -8,6 +8,7 @@ import java.util.List;
 import Algorithms.Algo1mac;
 import Algorithms.Algo2mac;
 import Convert.Q2;
+import GUI.gui;
 import Objects.Mac;
 import Objects.Row;
 import Read_Write.ReadAndWriteCSV;
@@ -22,6 +23,7 @@ public class Filter {
 	 *
 	 */
 	private List<List<Row>> DataBase = new ArrayList< List<Row>>(); 
+	
 	private int countfilter=0;
 	private int indexOr=0;
 	private boolean flag=true;
@@ -44,7 +46,8 @@ public class Filter {
 	 */
 	public boolean readq2(String dirPath) throws ParseException{
 		Q2 q2 = new Q2();
-		List<Row> first = q2.ReadDir(dirPath);
+		List<Row> first = new ArrayList<Row>();
+		first = q2.ReadDir(dirPath);
 		if(first == null)
 			return false;
 		else
@@ -129,15 +132,15 @@ public class Filter {
 	{		
 		FilterNot Not=new FilterNot();
 		FilterAnd And=new FilterAnd();
-
-
+		System.out.println("dsffff");
+       
 		switch (filterType)  
 		{
 		case 1: {
 			/**
 			 * Filter by ID
 			 */
-
+			
 			if(andor){
 				/**
 				 * Filter in Or method
@@ -253,11 +256,13 @@ public class Filter {
 		/**
 		 * Check if the filter return empty list 
 		 */
-		if(DataBase.get(0).get(0).getHead().getAlt().equals("no_change" ) ){
+System.out.println(DataBase.get(DataBase.size()-1).get(0).getHead().toString()+"cxxxxx");
+		if(DataBase.get(DataBase.size()-1).get(0).getHead().getAlt().equals("no_change" ) ){
 			DataBase.get(0).get(0).getHead().setAlt(change);
 			/**
 			 * if it's empty it erase it and not count it as a filter
 			 */
+			System.out.println("fdfdsssss");
 			DataBase.remove(DataBase.size()-1);
 		}
 		else
@@ -284,5 +289,37 @@ public class Filter {
 
 		return mac;
 
+	}
+	public void thread() {
+		while(getDataBase().size()>0)
+			getDataBase().remove(0);
+    	setCountfilter(0);
+    	System.out.println("bef  " +getDataBase().size());
+    	try {
+			boolean b=readq2(getDirPaththread());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	System.out.println("aft  " +getDataBase().size());
+    	for (int i = 0; i < gui.listInfo.size(); i++) {
+    		String s1=gui.listInfo.get(i).getS1();
+    		String s2=gui.listInfo.get(i).getS2();
+    		String s3=gui.listInfo.get(i).getS3();
+    		boolean andor=true;
+    		if(gui.listInfo.get(i).getKind().equals("And"))
+    			andor=false;
+    		boolean not=false;
+    		if(gui.listInfo.get(i).getType().equals("Not"))
+    			not=true;
+    		int filterType = 3;
+    		if(gui.listInfo.get(i).getMode().equals("Name"))
+    			filterType = 1;
+    		else if(gui.listInfo.get(i).getMode().equals("Date"))
+    			filterType = 2;
+    		//
+			filtermain(andor, not, filterType, s1, s2, s3);
+    	}
+		
 	}
 }

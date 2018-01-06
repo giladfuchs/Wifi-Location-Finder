@@ -66,7 +66,7 @@ public class gui {
 	 * Create the application.
 	 * listOutput is the Data Structure
 	 */	
-	static List<FilterInfo> listInfo = new ArrayList<FilterInfo>(); 
+	public static List<FilterInfo> listInfo = new ArrayList<FilterInfo>(); 
 	private String dirPath; 	
 	private JTextField nameTxt;
 	private JTextField LocaionAltTxt;
@@ -163,10 +163,14 @@ public class gui {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				if(DataStructureEmpty){
 				System.out.println(read.getCountwigele());
 				amountListsTxt.setText(""+read.getCountwigele());
 				amountMACTxt.setText(""+filter.NumOfMac());
 				startListen(dirPath);
+				}
+				else
+					JOptionPane.showMessageDialog(frame,"Wrong path ! no Wigele-Wififile !");		
 			}
 		});
 		inputDirBut.setBounds(52, 109, 180, 25);

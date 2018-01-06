@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import Objects.Details;
 import Objects.Row;
 
 
@@ -35,10 +37,8 @@ public class FilterAnd implements FilterInterFace {
 		}
 		if(find ){
 			System.out.println("The filter didnt find this ID");
-			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
+			Row row = new Row(listInput.get(0).getElement(),new Details("","","","no_change","",""));
 			listOutput.add(row);
-			System.out.println("The filter didnt find this ID");
-			listOutput.get(0).getHead().setAlt("no_change");
 		}
 		return listOutput;				
 	}
@@ -74,9 +74,9 @@ public class FilterAnd implements FilterInterFace {
 		}	
 		if(find){
 			System.out.println("The filter didnt find this Location");
-			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
+			Row row = new Row(listInput.get(0).getElement(),new Details("","","","no_change","",""));
 			listOutput.add(row);
-			listOutput.get(0).getHead().setAlt("no_change");	
+				
 		}
 		return listOutput;		
 	}
@@ -145,9 +145,8 @@ public class FilterAnd implements FilterInterFace {
 		}
 		if(find){
 			System.out.println("The filter didnt find this Date");
-			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
+			Row row = new Row(listInput.get(0).getElement(),new Details("","","","no_change","",""));
 			listOutput.add(row);
-			listOutput.get(0).getHead().setAlt("no_change");	
 		}
 		return listOutput;		 		
 	}

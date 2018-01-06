@@ -69,40 +69,11 @@ public class NioFileSupport
                     for (WatchEvent event : key.pollEvents()){                     
                         System.out.printf("Received %s event for file: %s\n", event.kind(), event.context()); 
                       
-                        //gui.threadSignal = true;
-                        try {
-                        	while(filter.getDataBase().size()>0)
-            					filter.getDataBase().remove(0);
-                        	filter.setCountfilter(0);
-                        	System.out.println("bef  " +filter.getDataBase().size());
-                        	boolean b=filter.readq2(filter.getDirPaththread());
-                        	System.out.println("aft  " +filter.getDataBase().size());
-                        	for (int i = 0; i < gui.listInfo.size(); i++) {
-                        		String s1=gui.listInfo.get(i).getS1();
-                        		String s2=gui.listInfo.get(i).getS2();
-                        		String s3=gui.listInfo.get(i).getS3();
-                        		boolean andor=true;
-                        		if(gui.listInfo.get(i).getKind().equals("And"))
-                        			andor=false;
-                        		boolean not=false;
-                        		if(gui.listInfo.get(i).getType().equals("Not"))
-                        			not=true;
-                        		int filterType = 3;
-                        		if(gui.listInfo.get(i).getMode().equals("Name"))
-                        			filterType = 1;
-                        		else if(gui.listInfo.get(i).getMode().equals("Date"))
-                        			filterType = 2;
-                        		//
-								filter.filtermain(andor, not, filterType, s1, s2, s3);
-							}
-                        	//System.out.println(gui.listInfo.get(0).toString());
-                        	System.out.printf("filter.getDirPaththread() = "+filter.getDirPaththread());
-							
-							
-						} catch (ParseException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+                        filter.thread();
+						
+						
+						//System.out.println(gui.listInfo.get(0).toString());
+						System.out.printf("filter.getDirPaththread() = "+filter.getDataBase().size());
 												
                     }
                     System.out.println("------");
