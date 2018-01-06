@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import Objects.Details;
-import Objects.Listmac;
+
 import Objects.Row;
 import Objects.Spot;
 import Objects.Wifi;
@@ -188,48 +188,6 @@ public class ReadAndWriteCSV {
 			e.printStackTrace();}
 
 	}
-	public void WriteListmacIntoFile(List<Listmac> listOutput,String destination) {
-		/**
-		 * Create the Header for the csv file we export
-		 */
-		try{                         
-			FileWriter writer = new FileWriter(destination);  
-			for(int i=0;i<listOutput.size();i++)
-			{
-				String s=""+i;
-				writer.append(s);
-				writer.append(',');
-				writer.append(listOutput.get(i).getId());
-				writer.append(',');
-				writer.append(listOutput.get(i).getName());
-				writer.append(',');
-				writer.append(listOutput.get(i).getFerq());
-				writer.append(',');
-				s=""+listOutput.get(i).getSamemac().get(0).getSignal();
-				writer.append(s);
-				writer.append(',');
-				s=""+listOutput.get(i).getSamemac().get(0).getLat();
-				writer.append(s);
-				writer.append(',');
-				s=""+listOutput.get(i).getSamemac().get(0).getLon();
-				writer.append(s);
-				writer.append(',');
-				s=""+listOutput.get(i).getSamemac().get(0).getAlt();
-				writer.append(s);
-				writer.append(',');
-				writer.append(listOutput.get(i).getTime());
-				writer.append(',');
-				writer.append('\n');
-				writer.flush();
-			
-			
-			
-		}
 	
-		writer.close();
-		}        
-		catch(Exception e){
-			e.printStackTrace();}
-}
 
 }
