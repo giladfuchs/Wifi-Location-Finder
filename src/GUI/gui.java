@@ -866,7 +866,7 @@ public class gui {
 							algo2LocaionLatTxt.setText(line.getHead().getLon());	 
 							algo2LocaionLatTxt.setText(line.getHead().getAlt());
 						}
-					}
+					}//
 					else
 						JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter in algorithm 2!");
 				}
