@@ -5,8 +5,6 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
 import Algorithms.Algo1mac;
 import Algorithms.Algo2mac;
 import Convert.Q2;

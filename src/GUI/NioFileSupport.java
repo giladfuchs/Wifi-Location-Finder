@@ -74,6 +74,9 @@ public class NioFileSupport
                         	while(filter.getDataBase().size()>0)
             					filter.getDataBase().remove(0);
                         	filter.setCountfilter(0);
+                        	System.out.println("bef  " +filter.getDataBase().size());
+                        	boolean b=filter.readq2(filter.getDirPaththread());
+                        	System.out.println("aft  " +filter.getDataBase().size());
                         	for (int i = 0; i < gui.listInfo.size(); i++) {
                         		String s1=gui.listInfo.get(i).getS1();
                         		String s2=gui.listInfo.get(i).getS2();
@@ -92,9 +95,9 @@ public class NioFileSupport
                         		//
 								filter.filtermain(andor, not, filterType, s1, s2, s3);
 							}
-                        	System.out.println(gui.listInfo.get(0).toString());
+                        	//System.out.println(gui.listInfo.get(0).toString());
                         	System.out.printf("filter.getDirPaththread() = "+filter.getDirPaththread());
-							filter.readq2(filter.getDirPaththread());
+							
 							
 						} catch (ParseException e) {
 							// TODO Auto-generated catch block
