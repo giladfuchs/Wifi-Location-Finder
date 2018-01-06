@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import Filter.CalculateByLocation;
+import Filter.FilterAnd;
 import Objects.Details;
 import Objects.Row;
 import Objects.Wifi;
@@ -33,7 +33,7 @@ public class CalculateByLocationTest {
 		double lon = 0;//Enter the lon
 		double lat = 0;//Enter the lat
 		double radius =0;	//Enter the radius				
-		CalculateByLocation loc=new CalculateByLocation();
+		FilterAnd loc=new FilterAnd();
 		/**
 		 * send the list and the data the user wrote and set it up
 		 */
