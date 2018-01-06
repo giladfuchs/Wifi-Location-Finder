@@ -13,6 +13,7 @@ import Convert.Q2;
 import Objects.Mac;
 import Objects.Row;
 import Read_Write.ReadAndWriteCSV;
+import Read_Write.WriteToKML;
 
 public class Filter {
 	/**
@@ -28,6 +29,7 @@ public class Filter {
 	private boolean flag=true;
 	private String change="";
 	ReadAndWriteCSV read = new ReadAndWriteCSV();
+	WriteToKML writeKML = new WriteToKML();
 	/**
 	 * This function get a path to read Wiegele Wifi files.
 	 * @param dirPath
@@ -43,6 +45,15 @@ public class Filter {
 			DataBase.add(first);
 		return true;
 
+	}
+	public void setDataBase(List<List<Row>> dataBase) {
+		DataBase = dataBase;
+	}
+	public void setCountfilter(int countfilter) {
+		this.countfilter = countfilter;
+	}
+	public List<List<Row>> getDataBase() {
+		return DataBase;
 	}
 	/**
 	 * This function make the calculate to location by the requirement of Algoritem2 and return the Coordinate
@@ -71,6 +82,14 @@ public class Filter {
 	public void write(String desPath2){
 		read.WriteListIntoFile(DataBase.get(countfilter),desPath2);
 	}
+	/**
+	 * This function write KML file from the DataBase
+	 * @param desPath2
+	 */
+	public void writeKML(String desPath2){
+		writeKML.createKMLFile(DataBase.get(countfilter), desPath2);
+	}
+	
 	/**
 	 * This Function delete Filter from the data base
 	 */

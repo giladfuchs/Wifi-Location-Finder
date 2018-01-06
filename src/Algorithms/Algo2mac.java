@@ -58,7 +58,7 @@ public class Algo2mac {
 			 * Make the calculate in Pi
 			 */
 			P.pi(best,listInput,line,imagine);
-			System.out.println(Arrays.toString(best));
+			
 		
 		/**
 		 * Export the data

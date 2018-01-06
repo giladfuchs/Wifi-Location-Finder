@@ -1,11 +1,15 @@
 package Objects;
 
+import Filter.Filter;
+
 public class FilterInfo 
 {	
 	private String kind;
 	private String type;
 	private String mode;
 	private String data;
+	private int numoffilter;
+		
 	
 	/**
 	 * This object keep the values of the filter 
@@ -14,7 +18,7 @@ public class FilterInfo
 	 * @param mode - Date/ID/Location (filter mode)
 	 * @param data - data of the filter mode
 	 */
-	public FilterInfo(String kind,boolean type,String mode,String data){
+	public FilterInfo(String kind,boolean type,String mode,String data,int numoffilter){
 		this.kind=kind;
 		this.mode=mode;
 		this.data=data;
@@ -22,6 +26,7 @@ public class FilterInfo
 			this.type="Regular";
 		else
 			this.type="Not";
+		this.numoffilter=numoffilter;
 	}
 	public String getKind() {
 		return kind;
@@ -41,6 +46,12 @@ public class FilterInfo
 	public void setMode(String mode) {
 		this.mode = mode;
 	}
+	public int getNumoffilter() {
+		return numoffilter;
+	}
+	public void setNumoffilter(int numoffilter) {
+		this.numoffilter = numoffilter;
+	}
 	public String getData() {
 		return data;
 	}
@@ -49,6 +60,6 @@ public class FilterInfo
 	}
 	@Override
 	public String toString() {
-		return " " + kind + " , " + type + " , " + mode + " , " + data +  "\n";
+		return "   number of filter: "+numoffilter+" " + kind + " , " + type + " , " + mode + " , " + data +  "\n";
 	}
 }

@@ -115,38 +115,7 @@ public class ReadAndWriteCSV {
 		scan.close();	   
 		return listInput;	   
 	}
-	public List<Row> ReadFileIntoList4(String filePath)  
-	{
-		List<Row> listInput = new ArrayList<Row>();	
-
-		Scanner scan = null;
-		File file = new File(filePath);
-		try{
-			scan = new Scanner(file);}	    
-		catch(FileNotFoundException e){
-			System.out.println(e.getMessage());}	   
-		/**
-		 * read all lines
-		 */
-		while(scan.hasNext())   
-		{
-			String input = scan.nextLine();
-			String[] temp = input.split(",");
-			List<Wifi> element = new ArrayList<Wifi>();
-			int count = Integer.parseInt(temp[5]);
-			int j = 6;
-			for(int i=0;i<count;i++){
-				Wifi insert=new Wifi(temp[j+1],temp[j],temp[j+2],temp[j+3]);
-				element.add(insert);
-				j += 4;
-			}	        	
-			Details general=new Details(temp[0],temp[2],temp[3],temp[4],temp[1],temp[5]);        
-			Row row=new Row(element,general);      
-			listInput.add(row);	         	               	        
-		}	   
-		scan.close();	   
-		return listInput;	   
-	}
+	
 	public void WriteListIntoFile(List<Row> listOutput,String destination)  
 	{
 		/**
