@@ -80,7 +80,7 @@ public class FilterAnd implements FilterInterFace {
 			System.out.println("The filter didnt find this Location");
 			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
 			listOutput.add(row);
-			listOutput.get(0).getHead().setCount("no_change");	
+			listOutput.get(0).getHead().setAlt("no_change");	
 		}
 		return listOutput;		
 	}
@@ -111,10 +111,7 @@ public class FilterAnd implements FilterInterFace {
 			dateStart = dateFormat.parse(startDate);  //convert string to Date by dateFormat
 			dateEnd = dateFormat.parse(endDate);
 		} catch (ParseException e) {
-			System.out.println("The date you entered isnt correct");			
-			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
-			listOutput.add(row);
-			listOutput.get(0).getHead().setCount("no_change");
+	
 			return listOutput;	
 		} 
 
