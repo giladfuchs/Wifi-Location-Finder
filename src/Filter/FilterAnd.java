@@ -110,7 +110,7 @@ public class FilterAnd implements FilterInterFace {
 	
 			return listOutput;	
 		} 
-///1
+		
 		try {
 			for(int i=1;i<listInput.size();i++)
 			{	

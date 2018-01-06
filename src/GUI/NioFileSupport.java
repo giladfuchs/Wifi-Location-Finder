@@ -89,7 +89,7 @@ public class NioFileSupport
                         			filterType = 1;
                         		else if(gui.listInfo.get(i).getMode().equals("Date"))
                         			filterType = 2;
-                        		
+                        		//
 								filter.filtermain(andor, not, filterType, s1, s2, s3);
 							}
                         	System.out.println(gui.listInfo.get(0).toString());
