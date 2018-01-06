@@ -290,6 +290,7 @@ System.out.println(DataBase.get(DataBase.size()-1).get(0).getHead().toString()+"
 		return mac;
 
 	}
+
 	public void thread() {
 		while(getDataBase().size()>0)
 			getDataBase().remove(0);
