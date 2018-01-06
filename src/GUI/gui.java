@@ -853,20 +853,23 @@ public class gui {
 						String signal2 = algo2Signal2Txt.getText();
 						String signal3 = algo2Signal3Txt.getText();
 
-						if(mac1.isEmpty()||mac2.isEmpty()||mac3.isEmpty()||signal1.isEmpty()||signal2.isEmpty()||signal3.isEmpty())
+						if((mac1.isEmpty() || signal1.isEmpty())&& (mac2.isEmpty() || signal2.isEmpty()) &&(mac3.isEmpty() || signal3.isEmpty()))
 							JOptionPane.showMessageDialog(frame,"Please fill all the fields");
 						else{
-							alg2lst.add(new Wifi(mac1,"","",signal1));
-							alg2lst.add(new Wifi(mac2,"","",signal2));
-							alg2lst.add(new Wifi(mac3,"","",signal3));
+							if(!mac1.isEmpty() && !signal1.isEmpty())
+								alg2lst.add(new Wifi(mac1,"","",signal1));
+							if(!mac2.isEmpty() && !signal2.isEmpty())
+								alg2lst.add(new Wifi(mac2,"","",signal2));
+							if(!mac3.isEmpty() && !signal3.isEmpty())
+								alg2lst.add(new Wifi(mac3,"","",signal3));
 
-							Row line=new Row(new ArrayList<Wifi>(alg2lst.get(numberOfRowInt).getElement()), new Details("", "", "", "", "", ""));							
+							Row line=new Row(alg2lst, new Details("", "", "", "", "", ""));							
 							line=filter.algo2(line, 5);
 							algo2LocaionLatTxt.setText(line.getHead().getLat());							
 							algo2LocaionLatTxt.setText(line.getHead().getLon());	 
 							algo2LocaionLatTxt.setText(line.getHead().getAlt());
 						}
-					}//
+					}
 					else
 						JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter in algorithm 2!");
 				}
@@ -961,7 +964,7 @@ public class gui {
 		amountListsTxt.setBounds(131, 462, 75, 22);
 		frame.getContentPane().add(amountListsTxt);
 		
-		amountMACTxt.setText("8888");
+		//amountMACTxt.setText(""+filter.NumOfMac());
 		amountListsTxt.setText("9999");
 		
 		/**
