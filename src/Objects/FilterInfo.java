@@ -7,7 +7,9 @@ public class FilterInfo
 	private String kind;
 	private String type;
 	private String mode;
-	private String data;
+	private String s1;
+	private String s2;
+	private String s3;
 	private int numoffilter;
 		
 	
@@ -18,10 +20,12 @@ public class FilterInfo
 	 * @param mode - Date/ID/Location (filter mode)
 	 * @param data - data of the filter mode
 	 */
-	public FilterInfo(String kind,boolean type,String mode,String data,int numoffilter){
+	public FilterInfo(String kind,boolean type,String mode,String s1,String s2,String s3,int numoffilter){
 		this.kind=kind;
 		this.mode=mode;
-		this.data=data;
+		this.s1=s1;
+		this.s2=s2;
+		this.s3=s3;
 		if(!type)
 			this.type="Regular";
 		else
@@ -52,14 +56,27 @@ public class FilterInfo
 	public void setNumoffilter(int numoffilter) {
 		this.numoffilter = numoffilter;
 	}
-	public String getData() {
-		return data;
-	}
-	public void setData(String data) {
-		this.data = data;
-	}
+
 	@Override
 	public String toString() {
-		return "   number of filter: "+numoffilter+" " + kind + " , " + type + " , " + mode + " , " + data +  "\n";
+		return "   number of filter: "+numoffilter+" " + kind + " , " + type + " , " + mode + " , " + s1+"  " +s2+"  "+s3+  "\n";
+	}
+	public String getS1() {
+		return s1;
+	}
+	public void setS1(String s1) {
+		this.s1 = s1;
+	}
+	public String getS2() {
+		return s2;
+	}
+	public void setS2(String s2) {
+		this.s2 = s2;
+	}
+	public String getS3() {
+		return s3;
+	}
+	public void setS3(String s3) {
+		this.s3 = s3;
 	}
 }

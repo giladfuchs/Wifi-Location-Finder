@@ -27,3 +27,5 @@ This filter has 2 option, user can AND or OR filter with filter and fix the dupl
 In addition, user can run Algorithms, in Algorithm 1 user can enter a MAC address and get the revaluated location of this MAC. In Algorithm 2 user has 2 options, option 1 - choose a file and write a row number then this Algorithm will take the row number user enter from the file and user will get the revaluated location. option 2 - enter 3 MAC addresses and 3 signals and user will get the revaluated location. 
 This interface contains also information field which describes the filter characteristics the user entered, the amount of lists and the amount of MAC in the Data-Base. There is also an Undo button which allows the user return 1 step backward in the filters he make.
 User can also delete the Data-Base and exit from button.
+
+
