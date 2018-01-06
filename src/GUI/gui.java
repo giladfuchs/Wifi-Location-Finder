@@ -389,7 +389,7 @@ public class gui {
 							JOptionPane.showMessageDialog(frame,"You didnt enter a name !");
 						else{
 							filter.filtermain(false,not, 1,strName,"","");
-							//listInfo.add(new FilterInfo("And",not, "Name", strName,"","",filter.getCountfilter()));
+							listInfo.add(new FilterInfo("And",not, "Name", strName,"","",filter.getCountfilter()));
 							amountMACTxt.setText(""+filter.NumOfMac());
 							flagAnd = true;
 						}
@@ -420,7 +420,7 @@ public class gui {
 							JOptionPane.showMessageDialog(frame,"You didnt enter a end date !"); 
 						else{
 							filter.filtermain(false,not, 2,startDate,endDate,"");
-							listInfo.add(new FilterInfo("And",not, "Date", time,filter.getCountfilter()));
+							listInfo.add(new FilterInfo("And",not, "Date", startDate,endDate,"",filter.getCountfilter()));
 							amountMACTxt.setText(""+filter.NumOfMac());
 							flagAnd = true;
 						}
@@ -443,7 +443,7 @@ public class gui {
 							JOptionPane.showMessageDialog(frame,"You didnt enter Radios !");
 						else{					
 							filter.filtermain(false,not, 3,strAlt,strLon,strRadios);
-							listInfo.add(new FilterInfo("And",not, "Location", location,filter.getCountfilter()));
+							listInfo.add(new FilterInfo("And",not, "Location",strAlt,strLon,strRadios,filter.getCountfilter()));
 							amountMACTxt.setText(""+filter.NumOfMac());
 							flagAnd = true;
 						}					
@@ -480,7 +480,7 @@ public class gui {
 						String strName = nameTxt.getText();
 						System.out.println("strName = "+strName);
 						filter.filtermain(true,not, 1,strName,"","");
-						listInfo.add(new FilterInfo("Or",not, "Name", strName,filter.getCountfilter()));
+						listInfo.add(new FilterInfo("Or",not, "Name", strName,"","",filter.getCountfilter()));
 						flagOr = true;
 						amountMACTxt.setText(""+filter.NumOfMac());
 					}					
@@ -505,7 +505,7 @@ public class gui {
 						System.out.println("endDate = "+endDate);
 						String time = startDate+" "+endDate;
 						filter.filtermain(true,not, 2,startDate,endDate,"");
-						listInfo.add(new FilterInfo("Or",not, "Date", time,filter.getCountfilter()));
+						listInfo.add(new FilterInfo("Or",not, "Date", startDate,endDate,"",filter.getCountfilter()));
 						flagOr = true;
 						amountMACTxt.setText(""+filter.NumOfMac());
 					}					
@@ -520,7 +520,7 @@ public class gui {
 						System.out.println("strRadios = "+strRadios);
 						String location = "alt = "+strAlt+" Lon = "+strLon+" Radios = "+strRadios;
 						filter.filtermain(true,not, 3,strAlt,strLon,strRadios);
-						listInfo.add(new FilterInfo("Or",not, "location", location,filter.getCountfilter()));
+						listInfo.add(new FilterInfo("Or",not, "location", strAlt,strLon,strRadios,filter.getCountfilter()));
 						flagOr = true;
 						amountMACTxt.setText(""+filter.NumOfMac());
 					}
