@@ -18,6 +18,7 @@ public class ReadAndWriteCSV {
 	 * @param filePath
 	 * @return
 	 */
+	static int countwigele=0;
 	public List<Spot> ReadFileIntoList2(String filePath)  
 	{
 		/**
@@ -46,7 +47,9 @@ public class ReadAndWriteCSV {
 			System.out.println("The file isnt WigleWifi file");
 			return listInput;	
 		}
-
+		else
+			countwigele++;
+		System.out.println(countwigele);
 		String ID = temp[2].substring(6);
 		input = scan.nextLine(); 
 		/**
@@ -79,6 +82,14 @@ public class ReadAndWriteCSV {
 		return listInput;	   
 	}
 	
+	public int getCountwigele() {
+		return countwigele;
+	}
+
+	public void setCountwigele(int countwigele) {
+		this.countwigele = countwigele;
+	}
+
 	public List<Row> ReadFileIntoList3(String filePath)  
 	{
 		List<Row> listInput = new ArrayList<Row>();	

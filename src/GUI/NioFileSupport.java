@@ -1,6 +1,10 @@
 package GUI;
 
 import java.nio.file.*;
+import java.text.ParseException;
+
+import Filter.Filter;
+
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;;
@@ -31,7 +35,6 @@ public class NioFileSupport
         toWatch.register(myWatcher, ENTRY_CREATE, ENTRY_MODIFY,ENTRY_DELETE);
         th.join();
     }*/
-
     /**
      * This Runnable is used to constantly attempt to take from the watch
      * queue, and will receive all events that are registered with the
@@ -41,6 +44,7 @@ public class NioFileSupport
      */
     public static class MyWatchQueueReader implements Runnable 
     {
+    	private Filter filter=new Filter();
 
         /** the watchService that is passed in from above */
         private WatchService myWatcher;
@@ -62,8 +66,22 @@ public class NioFileSupport
                 while(key != null) {
                     // we have a polled event, now we traverse it and
                     // receive all the states from it
-                    for (WatchEvent event : key.pollEvents())                     
-                        System.out.printf("Received %s event for file: %s\n", event.kind(), event.context());                                        
+                    for (WatchEvent event : key.pollEvents()){                     
+                        System.out.printf("Received %s event for file: %s\n", event.kind(), event.context()); 
+                      
+                        //gui.threadSignal = true;
+                        try {
+                        	System.out.println(gui.listInfo.get(0).toString());
+                        	System.out.printf("filter.getDirPaththread() = "+filter.getDirPaththread());
+							filter.readq2(filter.getDirPaththread());
+							
+						} catch (ParseException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+												
+                    }
+                    System.out.println("------");
                     
                     key.reset();
                     key = myWatcher.take();

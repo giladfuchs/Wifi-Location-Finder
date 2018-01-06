@@ -14,7 +14,6 @@ import Objects.Mac;
 import Objects.Row;
 import Objects.Wifi;
 import Read_Write.ReadAndWriteCSV;
-
 import java.awt.Font;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -37,7 +36,6 @@ import Filter.Filter;
 import javax.swing.SwingConstants;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
@@ -68,21 +66,18 @@ public class gui {
 	 * Create the application.
 	 * listOutput is the Data Structure
 	 */	
-	private List<FilterInfo> listInfo = new ArrayList<FilterInfo>(); 
-	private List<Row> listInput = new ArrayList<Row>(); 	
+	static List<FilterInfo> listInfo = new ArrayList<FilterInfo>(); 
+	private String dirPath; 	
 	private JTextField nameTxt;
 	private JTextField LocaionAltTxt;
 	private JTextField LocaionLonTxt;
 	private JTextField LocaionRadiosTxt;
 	private Filter filter=new Filter();
-	private JComboBox FilterType;
-	private String kind;
-	private int countfilter=0;
-	private int IndexOr=0;
-	private boolean flag=true;
+	
+	
 	private boolean DataStructureEmpty=false;
 	private String destination = "";
-
+	private ReadAndWriteCSV read = new ReadAndWriteCSV();
 	private JRadioButton dateRadioBut;
 	private JRadioButton nameRadioBut;
 	private JRadioButton locationRadioBut;
@@ -111,7 +106,7 @@ public class gui {
 	private JTextField algo2Signal3Txt;
 	private JRadioButton algo2FirstRadioBut;
 	private JRadioButton algo2SecondRadioBut;
-
+	static boolean threadSignal = false;
 
 	public gui() {		
 		initialize();
@@ -139,7 +134,7 @@ public class gui {
 		/**
 		 * Button of Get files from directory 
 		 */			
-		JButton inputDirBut = new JButton("Get files from dir");
+		JButton inputDirBut = new JButton("Read files from directory");
 		inputDirBut.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent arg0) 
@@ -158,19 +153,23 @@ public class gui {
 					pathGetDir = f.getAbsolutePath();
 				}					
 				pathGetDir = pathGetDir.replace("\\","/");
-
+				
 				System.out.println("pathGetDir = "+pathGetDir);				
-				String dirPath = pathGetDir;
+				dirPath = pathGetDir;
 				try {
 					if(filter.readq2(dirPath) == true)
 						DataStructureEmpty = true;
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}				
+				}
+				System.out.println(read.getCountwigele());
+				amountListsTxt.setText(""+read.getCountwigele());
+				amountMACTxt.setText(""+filter.NumOfMac());
+				startListen(dirPath);
 			}
 		});
-		inputDirBut.setBounds(52, 109, 171, 25);
+		inputDirBut.setBounds(52, 109, 180, 25);
 		frame.getContentPane().add(inputDirBut);
 
 		/**
@@ -193,6 +192,7 @@ public class gui {
 						try {
 							filter.read(fc.getSelectedFile().getAbsolutePath().replace("\\","/"));
 							DataStructureEmpty = true;
+							amountMACTxt.setText(""+filter.NumOfMac());
 						} catch (ParseException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -201,7 +201,7 @@ public class gui {
 				}
 			}
 		});
-		btnReadFile.setBounds(52, 164, 171, 25);
+		btnReadFile.setBounds(52, 164, 180, 25);
 		frame.getContentPane().add(btnReadFile);
 
 		/**
@@ -218,14 +218,14 @@ public class gui {
 				if(desPath == "")
 					JOptionPane.showMessageDialog(frame,"You didnt choose a path !");
 				else if (filter.getDataBase().size()<1)
-					JOptionPane.showMessageDialog(frame,"Data Structure is empty !");
+					JOptionPane.showMessageDialog(frame,"Cant save ! Data Structure is empty !");
 				else{
 					String desPath2 = desPath+".csv";
 					filter.write(desPath2);
 				}
 			}
 		});
-		saveCSVBut.setBounds(52, 283, 171, 25);
+		saveCSVBut.setBounds(52, 283, 180, 25);
 		frame.getContentPane().add(saveCSVBut);
 		/**
 		 * Button of Save as KML
@@ -234,6 +234,7 @@ public class gui {
 		saveKMLBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
+				System.out.println(read.getCountwigele());
 				/** 
 				 * This button the user needs to write a path+name_file to save it as KML		
 				 */						
@@ -241,14 +242,14 @@ public class gui {
 				if(desPath == "")
 					JOptionPane.showMessageDialog(frame,"You didnt choose a path !");
 				else if (filter.getDataBase().size()<1)
-					JOptionPane.showMessageDialog(frame,"Data Structure is empty !");
+					JOptionPane.showMessageDialog(frame,"Cant save ! Data Structure is empty !");
 				else{
 					String desPath2 = desPath+".kml";
 					filter.writeKML(desPath2);
 				}
 			}
 		});
-		saveKMLBut.setBounds(52, 341, 171, 25);
+		saveKMLBut.setBounds(52, 341, 180, 25);
 		frame.getContentPane().add(saveKMLBut);
 
 		/**
@@ -273,9 +274,11 @@ public class gui {
 				informationTxt.setText(listInfo.toString());				
 				JOptionPane.showMessageDialog(frame,"Data Structure is now empty !");
 				DataStructureEmpty = false;
+				amountMACTxt.setText("0");
+				amountListsTxt.setText("0");
 			}
 		});
-		deleteBut.setBounds(52, 223, 171, 25);
+		deleteBut.setBounds(52, 223, 180, 25);
 		frame.getContentPane().add(deleteBut);
 
 		
@@ -387,6 +390,7 @@ public class gui {
 						else{
 							filter.filtermain(false,not, 1,strName,"","");
 							listInfo.add(new FilterInfo("And",not, "Name", strName,filter.getCountfilter()));
+							amountMACTxt.setText(""+filter.NumOfMac());
 							flagAnd = true;
 						}
 					}					
@@ -417,6 +421,7 @@ public class gui {
 						else{
 							filter.filtermain(false,not, 2,startDate,endDate,"");
 							listInfo.add(new FilterInfo("And",not, "Date", time,filter.getCountfilter()));
+							amountMACTxt.setText(""+filter.NumOfMac());
 							flagAnd = true;
 						}
 					}					
@@ -439,6 +444,7 @@ public class gui {
 						else{					
 							filter.filtermain(false,not, 3,strAlt,strLon,strRadios);
 							listInfo.add(new FilterInfo("And",not, "Location", location,filter.getCountfilter()));
+							amountMACTxt.setText(""+filter.NumOfMac());
 							flagAnd = true;
 						}					
 					}
@@ -447,7 +453,7 @@ public class gui {
 				}
 				if(flagAnd == true && n+1!=filter.getCountfilter()){
 					listInfo.remove(listInfo.size()-1);
-					JOptionPane.showMessageDialog(frame,"You didnt  filter !");
+					JOptionPane.showMessageDialog(frame,"The filter didnt find this value !");
 				}
 				informationTxt.setText(listInfo.toString());
 				flagAnd = false;
@@ -476,6 +482,7 @@ public class gui {
 						filter.filtermain(true,not, 1,strName,"","");
 						listInfo.add(new FilterInfo("Or",not, "Name", strName,filter.getCountfilter()));
 						flagOr = true;
+						amountMACTxt.setText(""+filter.NumOfMac());
 					}					
 					else if(dateRadioBut.isSelected()){
 
@@ -500,6 +507,7 @@ public class gui {
 						filter.filtermain(true,not, 2,startDate,endDate,"");
 						listInfo.add(new FilterInfo("Or",not, "Date", time,filter.getCountfilter()));
 						flagOr = true;
+						amountMACTxt.setText(""+filter.NumOfMac());
 					}					
 					else if(locationRadioBut.isSelected()){
 
@@ -514,13 +522,14 @@ public class gui {
 						filter.filtermain(true,not, 3,strAlt,strLon,strRadios);
 						listInfo.add(new FilterInfo("Or",not, "location", location,filter.getCountfilter()));
 						flagOr = true;
+						amountMACTxt.setText(""+filter.NumOfMac());
 					}
 					else
 						JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter !");
 				}				
 				if(flagOr == true && n+1!=filter.getCountfilter()){
 					listInfo.remove(listInfo.size()-1);
-				JOptionPane.showMessageDialog(frame,"You didnt  filter !");
+				JOptionPane.showMessageDialog(frame,"The filter didnt find this value !");
 				}
 				informationTxt.setText(listInfo.toString());
 				
@@ -545,6 +554,7 @@ public class gui {
 					filter.undo();
 					listInfo.remove(listInfo.size()-1);
 					informationTxt.setText(listInfo.toString());
+					amountMACTxt.setText(""+filter.NumOfMac());
 				}else
 					JOptionPane.showMessageDialog(frame,"Cant do undo !");
 
@@ -818,11 +828,8 @@ public class gui {
 							try
 							{
 								Integer.parseInt(numberOfRow);
-								int numberOfRowInt = Integer.parseInt(numberOfRow);
-								System.out.println("numberOfRow = "+numberOfRow);
-								System.out.println("destination = "+destination);
-
-								ReadAndWriteCSV read = new ReadAndWriteCSV();
+								int numberOfRowInt = Integer.parseInt(numberOfRow);								
+								
 								List<Row> algo2List=read.ReadFileIntoList3(destination);
 
 								if(numberOfRowInt < algo2List.size())
@@ -866,8 +873,8 @@ public class gui {
 							Row line=new Row(alg2lst, new Details("", "", "", "", "", ""));							
 							line=filter.algo2(line, 5);
 							algo2LocaionLatTxt.setText(line.getHead().getLat());							
-							algo2LocaionLatTxt.setText(line.getHead().getLon());	 
-							algo2LocaionLatTxt.setText(line.getHead().getAlt());
+							algo2LocaionLonTxt.setText(line.getHead().getLon());	 
+							algo2LocaionAltTxt.setText(line.getHead().getAlt());
 						}
 					}
 					else
@@ -942,12 +949,12 @@ public class gui {
 		informationLbl.setBounds(1385, 31, 112, 45);
 		frame.getContentPane().add(informationLbl);
 
-		JLabel amountListsLbl = new JLabel("amount of lists");
+		JLabel amountListsLbl = new JLabel("Amount of lists");
 		amountListsLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		amountListsLbl.setBounds(12, 451, 87, 45);
 		frame.getContentPane().add(amountListsLbl);
 
-		JLabel amountMACLbl = new JLabel("amount of MAC");
+		JLabel amountMACLbl = new JLabel("Amount of MAC");
 		amountMACLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		amountMACLbl.setBounds(12, 411, 87, 45);
 		frame.getContentPane().add(amountMACLbl);
@@ -964,8 +971,8 @@ public class gui {
 		amountListsTxt.setBounds(131, 462, 75, 22);
 		frame.getContentPane().add(amountListsTxt);
 		
-		//amountMACTxt.setText(""+filter.NumOfMac());
-		amountListsTxt.setText("9999");
+		amountMACTxt.setText("0");
+		amountListsTxt.setText("0");
 		
 		/**
 		 * Button of Exit
@@ -1032,6 +1039,7 @@ public class gui {
 			toWatch.register(myWatcher, ENTRY_CREATE, ENTRY_MODIFY,ENTRY_DELETE);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
+			System.out.println("7777777777777777");
 			e1.printStackTrace();
 		}
 		/*try {

@@ -28,8 +28,16 @@ public class Filter {
 	private int indexOr=0;
 	private boolean flag=true;
 	private String change="";
+	private static String dirPaththread="";
+	public String getDirPaththread() {
+		return dirPaththread;
+	}
+	public void setDirPaththread(String dirPaththread) {
+		this.dirPaththread = dirPaththread;
+	}
 	ReadAndWriteCSV read = new ReadAndWriteCSV();
 	WriteToKML writeKML = new WriteToKML();
+	
 	/**
 	 * This function get a path to read Wiegele Wifi files.
 	 * @param dirPath
@@ -43,6 +51,7 @@ public class Filter {
 			return false;
 		else
 			DataBase.add(first);
+		dirPaththread =dirPath;
 		return true;
 
 	}
