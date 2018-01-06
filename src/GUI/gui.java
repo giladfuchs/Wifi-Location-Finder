@@ -389,7 +389,7 @@ public class gui {
 							JOptionPane.showMessageDialog(frame,"You didnt enter a name !");
 						else{
 							filter.filtermain(false,not, 1,strName,"","");
-							listInfo.add(new FilterInfo("And",not, "Name", strName,filter.getCountfilter()));
+							//listInfo.add(new FilterInfo("And",not, "Name", strName,"","",filter.getCountfilter()));
 							amountMACTxt.setText(""+filter.NumOfMac());
 							flagAnd = true;
 						}
