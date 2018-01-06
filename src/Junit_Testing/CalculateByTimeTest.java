@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
-
-import Filter.CalculateByTime;
+import Filter.FilterAnd;
 import Objects.Details;
 import Objects.Row;
 import Objects.Wifi;
@@ -40,7 +39,7 @@ public class CalculateByTimeTest {
 		 */
 		String EndDate ="2017-11-09 17:18:38";	
 
-		CalculateByTime time=new CalculateByTime();
+		FilterAnd time=new FilterAnd();
 		/**
 		 * send the list and the data the user wrote and set it up
 		 */

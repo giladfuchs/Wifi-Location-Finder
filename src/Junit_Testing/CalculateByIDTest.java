@@ -2,10 +2,8 @@ package Junit_Testing;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.junit.Test;
-
-import Filter.CalculateByID;
+import Filter.FilterAnd;
 import Objects.Row;
 import Read_Write.ReadAndWriteCSV;
 
@@ -22,7 +20,7 @@ public class CalculateByIDTest {
 		 */
 		List<Row> listInput = new ArrayList<Row>();  
 		listInput = read.ReadFileIntoList3("C:/Users/Gilad Fuchs/workspace/Ex0/output2.csv");
-		CalculateByID id=new CalculateByID();
+		FilterAnd id=new FilterAnd();
 		List<Row> listOutput = new ArrayList<Row>();
 		/**
 		 * Insert manually the Id you want
