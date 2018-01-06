@@ -2,15 +2,11 @@ package Filter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
-
 import Objects.Row;
 
-import Read_Write.ReadAndWriteCSV;
+
 
 public class FilterAnd implements FilterInterFace {
 
@@ -42,7 +38,7 @@ public class FilterAnd implements FilterInterFace {
 			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
 			listOutput.add(row);
 			System.out.println("The filter didnt find this ID");
-			listOutput.get(0).getHead().setCount("no_change");
+			listOutput.get(0).getHead().setAlt("no_change");
 		}
 		return listOutput;				
 	}
@@ -151,7 +147,7 @@ public class FilterAnd implements FilterInterFace {
 			System.out.println("The filter didnt find this Date");
 			Row row = new Row(listInput.get(0).getElement(),listInput.get(0).getHead());
 			listOutput.add(row);
-			listOutput.get(0).getHead().setCount("no_change");	
+			listOutput.get(0).getHead().setAlt("no_change");	
 		}
 		return listOutput;		 		
 	}

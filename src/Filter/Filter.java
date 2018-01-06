@@ -52,6 +52,7 @@ public class Filter {
 		else
 			DataBase.add(first);
 		dirPaththread =dirPath;
+		change=DataBase.get(0).get(0).getHead().getAlt();
 		return true;
 
 	}
@@ -115,7 +116,7 @@ public class Filter {
 
 		System.out.println(srcPath);
 		DataBase.add(read.ReadFileIntoList3(srcPath));
-		change=DataBase.get(0).get(0).getHead().getCount();
+		change=DataBase.get(0).get(0).getHead().getAlt();
 	}
 	/**
 	 * This function filter how the user ask in the gui and add a new filter to the DataBase
@@ -254,8 +255,8 @@ public class Filter {
 		/**
 		 * Check if the filter return empty list 
 		 */
-		if(DataBase.get(0).get(0).getHead().getCount().equals("no_change" ) ){
-			DataBase.get(0).get(0).getHead().setCount(change);
+		if(DataBase.get(0).get(0).getHead().getAlt().equals("no_change" ) ){
+			DataBase.get(0).get(0).getHead().setAlt(change);
 			/**
 			 * if it's empty it erase it and not count it as a filter
 			 */
