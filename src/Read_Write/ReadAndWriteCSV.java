@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import Objects.Details;
-import Objects.Listmac;
+
 import Objects.Row;
 import Objects.Spot;
 import Objects.Wifi;
@@ -115,38 +115,7 @@ public class ReadAndWriteCSV {
 		scan.close();	   
 		return listInput;	   
 	}
-	public List<Row> ReadFileIntoList4(String filePath)  
-	{
-		List<Row> listInput = new ArrayList<Row>();	
-
-		Scanner scan = null;
-		File file = new File(filePath);
-		try{
-			scan = new Scanner(file);}	    
-		catch(FileNotFoundException e){
-			System.out.println(e.getMessage());}	   
-		/**
-		 * read all lines
-		 */
-		while(scan.hasNext())   
-		{
-			String input = scan.nextLine();
-			String[] temp = input.split(",");
-			List<Wifi> element = new ArrayList<Wifi>();
-			int count = Integer.parseInt(temp[5]);
-			int j = 6;
-			for(int i=0;i<count;i++){
-				Wifi insert=new Wifi(temp[j+1],temp[j],temp[j+2],temp[j+3]);
-				element.add(insert);
-				j += 4;
-			}	        	
-			Details general=new Details(temp[0],temp[2],temp[3],temp[4],temp[1],temp[5]);        
-			Row row=new Row(element,general);      
-			listInput.add(row);	         	               	        
-		}	   
-		scan.close();	   
-		return listInput;	   
-	}
+	
 	public void WriteListIntoFile(List<Row> listOutput,String destination)  
 	{
 		/**
@@ -219,48 +188,6 @@ public class ReadAndWriteCSV {
 			e.printStackTrace();}
 
 	}
-	public void WriteListmacIntoFile(List<Listmac> listOutput,String destination) {
-		/**
-		 * Create the Header for the csv file we export
-		 */
-		try{                         
-			FileWriter writer = new FileWriter(destination);  
-			for(int i=0;i<listOutput.size();i++)
-			{
-				String s=""+i;
-				writer.append(s);
-				writer.append(',');
-				writer.append(listOutput.get(i).getId());
-				writer.append(',');
-				writer.append(listOutput.get(i).getName());
-				writer.append(',');
-				writer.append(listOutput.get(i).getFerq());
-				writer.append(',');
-				s=""+listOutput.get(i).getSamemac().get(0).getSignal();
-				writer.append(s);
-				writer.append(',');
-				s=""+listOutput.get(i).getSamemac().get(0).getLat();
-				writer.append(s);
-				writer.append(',');
-				s=""+listOutput.get(i).getSamemac().get(0).getLon();
-				writer.append(s);
-				writer.append(',');
-				s=""+listOutput.get(i).getSamemac().get(0).getAlt();
-				writer.append(s);
-				writer.append(',');
-				writer.append(listOutput.get(i).getTime());
-				writer.append(',');
-				writer.append('\n');
-				writer.flush();
-			
-			
-			
-		}
 	
-		writer.close();
-		}        
-		catch(Exception e){
-			e.printStackTrace();}
-}
 
 }

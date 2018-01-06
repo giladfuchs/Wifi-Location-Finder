@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import Objects.Row;
-import Read_Write.CopyListToList;
+
 import Read_Write.ReadAndWriteCSV;
 
 public class FilterAnd implements FilterInterFace {

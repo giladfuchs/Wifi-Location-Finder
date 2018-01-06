@@ -246,4 +246,16 @@ public class Filter {
 	public int getCountfilter() {
 		return countfilter;
 	}
+	/**
+	 * Counting The Number Of mac
+	 * @return mac
+	 */
+	public int NumOfMac(){
+		int mac=0;
+		for (int i = 0; i < DataBase.get(countfilter).size(); i++) 
+			mac+=Integer.parseInt( DataBase.get(countfilter).get(i).getHead().getCount());
+
+		return mac;
+
+	}
 }
