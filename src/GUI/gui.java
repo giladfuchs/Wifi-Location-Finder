@@ -123,7 +123,7 @@ public class gui {
 	private void initialize() {
 
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1500, 629);
+		frame.setBounds(100, 100, 1700, 629);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -591,7 +591,7 @@ public class gui {
 		JLabel algorithmLbl = new JLabel("Algorithm");
 		algorithmLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algorithmLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
-		algorithmLbl.setBounds(816, 31, 112, 45);
+		algorithmLbl.setBounds(852, 33, 112, 45);
 		frame.getContentPane().add(algorithmLbl);
 
 		/**
@@ -600,56 +600,56 @@ public class gui {
 		JLabel algo1Lbl = new JLabel("Algorithm 1");
 		algo1Lbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo1Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo1Lbl.setBounds(840, 89, 95, 36);
+		algo1Lbl.setBounds(876, 91, 95, 36);
 		frame.getContentPane().add(algo1Lbl);
 
 		JLabel algo1MACLbl = new JLabel("MAC");
 		algo1MACLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo1MACLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo1MACLbl.setBounds(973, 128, 57, 36);
+		algo1MACLbl.setBounds(1009, 130, 57, 36);
 		frame.getContentPane().add(algo1MACLbl);
 
 		MACTxt = new JTextField();
 		MACTxt.setColumns(10);
-		MACTxt.setBounds(694, 137, 258, 22);
+		MACTxt.setBounds(730, 139, 258, 22);
 		frame.getContentPane().add(MACTxt);
 
 		JLabel algo1LocationLbl = new JLabel("Location");
 		algo1LocationLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo1LocationLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo1LocationLbl.setBounds(973, 169, 57, 36);
+		algo1LocationLbl.setBounds(1112, 196, 57, 36);
 		frame.getContentPane().add(algo1LocationLbl);
 
 		JLabel algo1AltLbl = new JLabel("Alt");
 		algo1AltLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo1AltLbl.setBounds(730, 169, 38, 36);
+		algo1AltLbl.setBounds(717, 166, 38, 36);
 		frame.getContentPane().add(algo1AltLbl);
 
 		JLabel algo1LonLbl = new JLabel("Lon");
 		algo1LonLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo1LonLbl.setBounds(808, 169, 38, 36);
+		algo1LonLbl.setBounds(866, 166, 38, 36);
 		frame.getContentPane().add(algo1LonLbl);
 
 		JLabel algo1LatLbl = new JLabel("Lat");
 		algo1LatLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo1LatLbl.setBounds(879, 169, 59, 36);
+		algo1LatLbl.setBounds(1007, 166, 59, 36);
 		frame.getContentPane().add(algo1LatLbl);
 
 		algo1LocaionLatTxt = new JTextField();
 		algo1LocaionLatTxt.setColumns(10);
-		algo1LocaionLatTxt.setBounds(870, 202, 75, 22);
+		algo1LocaionLatTxt.setBounds(954, 204, 133, 22);
 		algo1LocaionLatTxt.setEditable(false);
 		frame.getContentPane().add(algo1LocaionLatTxt);
 
 		algo1LocaionLonTxt = new JTextField();
 		algo1LocaionLonTxt.setColumns(10);
-		algo1LocaionLonTxt.setBounds(783, 202, 75, 22);
+		algo1LocaionLonTxt.setBounds(816, 204, 133, 22);
 		algo1LocaionLonTxt.setEditable(false);
 		frame.getContentPane().add(algo1LocaionLonTxt);
 
 		algo1LocaionAltTxt = new JTextField();
 		algo1LocaionAltTxt.setColumns(10);
-		algo1LocaionAltTxt.setBounds(694, 202, 75, 22);
+		algo1LocaionAltTxt.setBounds(674, 204, 133, 22);
 		algo1LocaionAltTxt.setEditable(false);
 		frame.getContentPane().add(algo1LocaionAltTxt);
 
@@ -676,7 +676,7 @@ public class gui {
 				}
 			}
 		});
-		algo1RunBut.setBounds(741, 96, 87, 25);
+		algo1RunBut.setBounds(777, 98, 87, 25);
 		frame.getContentPane().add(algo1RunBut);
 
 		/**
@@ -686,115 +686,115 @@ public class gui {
 		JLabel algo2Lbl = new JLabel("Algorithm 2");
 		algo2Lbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo2Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2Lbl.setBounds(840, 253, 95, 36);
+		algo2Lbl.setBounds(876, 260, 95, 36);
 		frame.getContentPane().add(algo2Lbl);
 
 		JLabel algo2LocationLbl = new JLabel("Location");
 		algo2LocationLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo2LocationLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2LocationLbl.setBounds(973, 501, 57, 36);
+		algo2LocationLbl.setBounds(1112, 533, 57, 36);
 		frame.getContentPane().add(algo2LocationLbl);
 
 		JLabel algo2LatLbl = new JLabel("Lat");
 		algo2LatLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2LatLbl.setBounds(909, 501, 35, 34);
+		algo2LatLbl.setBounds(1001, 509, 35, 34);
 		frame.getContentPane().add(algo2LatLbl);
 
 		algo2LocaionLatTxt = new JTextField();
 		algo2LocaionLatTxt.setEditable(false);
 		algo2LocaionLatTxt.setColumns(10);
-		algo2LocaionLatTxt.setBounds(879, 534, 85, 22);
+		algo2LocaionLatTxt.setBounds(954, 541, 133, 22);
 		frame.getContentPane().add(algo2LocaionLatTxt);
 
 		algo2LocaionLonTxt = new JTextField();
 		algo2LocaionLonTxt.setEditable(false);
 		algo2LocaionLonTxt.setColumns(10);
-		algo2LocaionLonTxt.setBounds(783, 534, 85, 22);
+		algo2LocaionLonTxt.setBounds(816, 541, 133, 22);
 		frame.getContentPane().add(algo2LocaionLonTxt);
 
 		JLabel algo2LonLbl = new JLabel("Lon");
 		algo2LonLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2LonLbl.setBounds(808, 501, 38, 36);
+		algo2LonLbl.setBounds(876, 508, 38, 36);
 		frame.getContentPane().add(algo2LonLbl);
 
 		JLabel algo2AltLbl = new JLabel("Alt");
 		algo2AltLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2AltLbl.setBounds(710, 501, 38, 36);
+		algo2AltLbl.setBounds(730, 508, 38, 36);
 		frame.getContentPane().add(algo2AltLbl);
 
 		algo2LocaionAltTxt = new JTextField();
 		algo2LocaionAltTxt.setEditable(false);
 		algo2LocaionAltTxt.setColumns(10);
-		algo2LocaionAltTxt.setBounds(683, 534, 85, 22);
+		algo2LocaionAltTxt.setBounds(674, 541, 133, 22);
 		frame.getContentPane().add(algo2LocaionAltTxt);
 
 		algo2MAC1Txt = new JTextField();
 		algo2MAC1Txt.setColumns(10);
-		algo2MAC1Txt.setBounds(808, 399, 158, 22);
+		algo2MAC1Txt.setBounds(844, 406, 158, 22);
 		frame.getContentPane().add(algo2MAC1Txt);
 
 		algo2Signal1Txt = new JTextField();
 		algo2Signal1Txt.setColumns(10);
-		algo2Signal1Txt.setBounds(713, 399, 59, 22);
+		algo2Signal1Txt.setBounds(749, 406, 59, 22);
 		frame.getContentPane().add(algo2Signal1Txt);
 
 		algo2MAC2Txt = new JTextField();
 		algo2MAC2Txt.setColumns(10);
-		algo2MAC2Txt.setBounds(808, 431, 158, 22);
+		algo2MAC2Txt.setBounds(844, 438, 158, 22);
 		frame.getContentPane().add(algo2MAC2Txt);
 
 		algo2Signal2Txt = new JTextField();
 		algo2Signal2Txt.setColumns(10);
-		algo2Signal2Txt.setBounds(713, 431, 59, 22);
+		algo2Signal2Txt.setBounds(749, 438, 59, 22);
 		frame.getContentPane().add(algo2Signal2Txt);
 
 		algo2MAC3Txt = new JTextField();
 		algo2MAC3Txt.setColumns(10);
-		algo2MAC3Txt.setBounds(808, 462, 158, 22);
+		algo2MAC3Txt.setBounds(844, 469, 158, 22);
 		frame.getContentPane().add(algo2MAC3Txt);
 
 		algo2Signal3Txt = new JTextField();
 		algo2Signal3Txt.setColumns(10);
-		algo2Signal3Txt.setBounds(713, 462, 59, 22);
+		algo2Signal3Txt.setBounds(749, 469, 59, 22);
 		frame.getContentPane().add(algo2Signal3Txt);				
 
 		JLabel algo2MACLbl = new JLabel("MAC");
 		algo2MACLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo2MACLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2MACLbl.setBounds(859, 357, 57, 36);
+		algo2MACLbl.setBounds(895, 364, 57, 36);
 		frame.getContentPane().add(algo2MACLbl);
 
 		JLabel algo2SiganlLbl = new JLabel("Signal");
 		algo2SiganlLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo2SiganlLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2SiganlLbl.setBounds(710, 357, 57, 36);
+		algo2SiganlLbl.setBounds(746, 364, 57, 36);
 		frame.getContentPane().add(algo2SiganlLbl);
 
 		JLabel algo2MAC1Lbl = new JLabel("1");
 		algo2MAC1Lbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo2MAC1Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2MAC1Lbl.setBounds(973, 399, 57, 25);
+		algo2MAC1Lbl.setBounds(1009, 406, 57, 25);
 		frame.getContentPane().add(algo2MAC1Lbl);
 
 		JLabel algo2MAC2Lbl = new JLabel("2");
 		algo2MAC2Lbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo2MAC2Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2MAC2Lbl.setBounds(973, 431, 57, 25);
+		algo2MAC2Lbl.setBounds(1009, 438, 57, 25);
 		frame.getContentPane().add(algo2MAC2Lbl);
 
 		JLabel algo2MAC3Lbl = new JLabel("3");
 		algo2MAC3Lbl.setHorizontalAlignment(SwingConstants.CENTER);
 		algo2MAC3Lbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		algo2MAC3Lbl.setBounds(973, 459, 57, 25);
+		algo2MAC3Lbl.setBounds(1009, 466, 57, 25);
 		frame.getContentPane().add(algo2MAC3Lbl);
 		algo2NumberRowTxt = new JTextField();
 		algo2NumberRowTxt.setColumns(10);
-		algo2NumberRowTxt.setBounds(730, 319, 75, 22);
+		algo2NumberRowTxt.setBounds(766, 326, 75, 22);
 		frame.getContentPane().add(algo2NumberRowTxt);
 
 		algo2NumberRowLbl = new JLabel("Row Number");
 		algo2NumberRowLbl.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		algo2NumberRowLbl.setBounds(730, 298, 75, 25);
+		algo2NumberRowLbl.setBounds(766, 305, 75, 25);
 		frame.getContentPane().add(algo2NumberRowLbl);
 
 
@@ -826,10 +826,12 @@ public class gui {
 								List<Row> algo2List=read.ReadFileIntoList3(destination);
 
 								if(numberOfRowInt < algo2List.size())
-								{
-									
+								{							
 									Row line=new Row(new ArrayList<Wifi>(algo2List.get(numberOfRowInt).getElement()), new Details("", "", "", "", "", ""));
-									line=filter.algo2(line, 5);
+									line=filter.algo2(line, 5);									
+									algo2LocaionLatTxt.setText(line.getHead().getLat());
+									algo2LocaionLonTxt.setText(line.getHead().getLon());
+									algo2LocaionAltTxt.setText(line.getHead().getAlt());
 								}
 								else
 									JOptionPane.showMessageDialog(frame,"The row number you entered is wrong");	
@@ -858,7 +860,7 @@ public class gui {
 							alg2lst.add(new Wifi(mac2,"","",signal2));
 							alg2lst.add(new Wifi(mac3,"","",signal3));
 
-							Row line=new Row(alg2lst,null);
+							Row line=new Row(new ArrayList<Wifi>(alg2lst.get(numberOfRowInt).getElement()), new Details("", "", "", "", "", ""));							
 							line=filter.algo2(line, 5);
 							algo2LocaionLatTxt.setText(line.getHead().getLat());							
 							algo2LocaionLatTxt.setText(line.getHead().getLon());	 
@@ -870,7 +872,7 @@ public class gui {
 				}
 			}
 		});
-		algo2RunBut.setBounds(730, 260, 87, 25);
+		algo2RunBut.setBounds(766, 267, 87, 25);
 		frame.getContentPane().add(algo2RunBut);
 
 		/**
@@ -899,7 +901,7 @@ public class gui {
 				}
 			}
 		});
-		algo2ChooseFileBut.setBounds(816, 319, 150, 25);
+		algo2ChooseFileBut.setBounds(852, 326, 150, 25);
 		frame.getContentPane().add(algo2ChooseFileBut);
 
 		/**
@@ -909,9 +911,9 @@ public class gui {
 		ButtonGroup buttonGroup2 = new ButtonGroup();
 
 		algo2FirstRadioBut = new JRadioButton("1");
-		algo2FirstRadioBut.setBounds(1008, 311, 44, 25);
+		algo2FirstRadioBut.setBounds(1043, 319, 44, 25);
 		algo2SecondRadioBut = new JRadioButton("2");
-		algo2SecondRadioBut.setBounds(1008, 364, 38, 25);
+		algo2SecondRadioBut.setBounds(1043, 372, 38, 25);
 
 		frame.getContentPane().add(algo2FirstRadioBut);	
 		frame.getContentPane().add(algo2SecondRadioBut);
@@ -928,13 +930,13 @@ public class gui {
 
 		informationTxt = new JTextArea();
 		informationTxt.setEditable(false);
-		informationTxt.setBounds(1075, 91, 365, 408);
+		informationTxt.setBounds(1196, 89, 445, 408);
 		frame.getContentPane().add(informationTxt);
 
 		informationLbl = new JLabel("Information");
 		informationLbl.setHorizontalAlignment(SwingConstants.CENTER);
 		informationLbl.setFont(new Font("Tahoma", Font.BOLD, 15));
-		informationLbl.setBounds(1186, 31, 112, 45);
+		informationLbl.setBounds(1385, 31, 112, 45);
 		frame.getContentPane().add(informationLbl);
 
 		JLabel amountListsLbl = new JLabel("amount of lists");
@@ -972,7 +974,7 @@ public class gui {
 			}
 		});				
 		exitBut.setFont(new Font("Tahoma", Font.BOLD, 18));
-		exitBut.setBounds(1299, 531, 171, 25);
+		exitBut.setBounds(1470, 531, 171, 25);
 		frame.getContentPane().add(exitBut);
 
 
