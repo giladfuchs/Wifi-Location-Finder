@@ -23,7 +23,7 @@ public class Filter {
 	 *
 	 */
 	private List<List<Row>> DataBase = new ArrayList< List<Row>>(); 
-	
+
 	private int countfilter=0;
 	private int indexOr=0;
 	private boolean flag=true;
@@ -37,7 +37,7 @@ public class Filter {
 	}
 	ReadAndWriteCSV read = new ReadAndWriteCSV();
 	WriteToKML writeKML = new WriteToKML();
-	
+
 	/**
 	 * This function get a path to read Wiegele Wifi files.
 	 * @param dirPath
@@ -46,14 +46,12 @@ public class Filter {
 	 */
 	public boolean readq2(String dirPath) throws ParseException{
 		Q2 q2 = new Q2();
-		List<Row> first = new ArrayList<Row>();
-		first = q2.ReadDir(dirPath);
+		List<Row> first = q2.ReadDir(dirPath);
 		if(first == null)
 			return false;
 		else
 			DataBase.add(first);
 		dirPaththread =dirPath;
-		change=DataBase.get(0).get(0).getHead().getAlt();
 		return true;
 
 	}
@@ -100,13 +98,30 @@ public class Filter {
 	public void writeKML(String desPath2){
 		writeKML.createKMLFile(DataBase.get(countfilter), desPath2);
 	}
-	
+
 	/**
 	 * This Function delete Filter from the data base
 	 */
 	public void undo(){
 		DataBase.remove(countfilter);
 		countfilter--;
+		/**
+		 * Set index Or about the last filter inn Or
+		 */
+		if(indexOr>=countfilter){
+			int i=gui.listInfo.size()-1;
+			while(i>0){
+				if(gui.listInfo.get(i).getKind().equals("And"))
+					break;
+				else
+					i--;
+			}
+			indexOr=i;
+			if(indexOr!=countfilter)
+				flag=false;
+			else
+				flag=true;
+		}
 	}
 	/**
 	 * This function upload a file with 46 column  to the DataBase
@@ -117,7 +132,7 @@ public class Filter {
 
 		System.out.println(srcPath);
 		DataBase.add(read.ReadFileIntoList3(srcPath));
-		change=DataBase.get(0).get(0).getHead().getAlt();
+
 	}
 	/**
 	 * This function filter how the user ask in the gui and add a new filter to the DataBase
@@ -132,15 +147,14 @@ public class Filter {
 	{		
 		FilterNot Not=new FilterNot();
 		FilterAnd And=new FilterAnd();
-		System.out.println("dsffff");
-       
+		
 		switch (filterType)  
 		{
 		case 1: {
 			/**
 			 * Filter by ID
 			 */
-			
+
 			if(andor){
 				/**
 				 * Filter in Or method
@@ -169,9 +183,9 @@ public class Filter {
 				 * Check if filter Not Or regular
 				 */
 				if(!not)
-					DataBase.add(And.CalculateByID1(DataBase.get(countfilter),new ArrayList<Row>(),  s1));
+					this.DataBase.add(And.CalculateByID1(DataBase.get(countfilter),new ArrayList<Row>(),  s1));
 				else
-					DataBase.add(Not.CalculateByID1(DataBase.get(countfilter),new ArrayList<Row>(),  s1));
+					this.DataBase.add(Not.CalculateByID1(DataBase.get(countfilter),new ArrayList<Row>(),  s1));
 			}
 
 			break;
@@ -256,7 +270,7 @@ public class Filter {
 		/**
 		 * Check if the filter return empty list 
 		 */
-System.out.println(DataBase.get(DataBase.size()-1).get(0).getHead().toString()+"cxxxxx");
+
 		if(DataBase.get(DataBase.size()-1).get(0).getHead().getAlt().equals("no_change" ) ){
 			DataBase.get(0).get(0).getHead().setAlt(change);
 			/**
@@ -284,6 +298,7 @@ System.out.println(DataBase.get(DataBase.size()-1).get(0).getHead().toString()+"
 	 */
 	public int NumOfMac(){
 		int mac=0;
+
 		for (int i = 0; i < DataBase.get(countfilter).size(); i++) 
 			mac+=Integer.parseInt( DataBase.get(countfilter).get(i).getHead().getCount());
 
@@ -292,35 +307,52 @@ System.out.println(DataBase.get(DataBase.size()-1).get(0).getHead().toString()+"
 	}
 
 	public void thread() {
-		while(getDataBase().size()>0)
-			getDataBase().remove(0);
-    	setCountfilter(0);
-    	System.out.println("bef  " +getDataBase().size());
-    	try {
+
+		setCountfilter(0);
+
+		try {
 			boolean b=readq2(getDirPaththread());
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	System.out.println("aft  " +getDataBase().size());
-    	for (int i = 0; i < gui.listInfo.size(); i++) {
-    		String s1=gui.listInfo.get(i).getS1();
-    		String s2=gui.listInfo.get(i).getS2();
-    		String s3=gui.listInfo.get(i).getS3();
-    		boolean andor=true;
-    		if(gui.listInfo.get(i).getKind().equals("And"))
-    			andor=false;
-    		boolean not=false;
-    		if(gui.listInfo.get(i).getType().equals("Not"))
-    			not=true;
-    		int filterType = 3;
-    		if(gui.listInfo.get(i).getMode().equals("Name"))
-    			filterType = 1;
-    		else if(gui.listInfo.get(i).getMode().equals("Date"))
-    			filterType = 2;
-    		//
-			filtermain(andor, not, filterType, s1, s2, s3);
-    	}
+
+		if(DataBase.size()>0){
+			for (int i = 0; i < gui.listInfo.size(); i++) {
+				String s1=gui.listInfo.get(i).getS1();
+				String s2=gui.listInfo.get(i).getS2();
+				String s3=gui.listInfo.get(i).getS3();
+				boolean andor=true;
+				if(gui.listInfo.get(i).getKind().equals("And"))
+					andor=false;
+				boolean not=false;
+				if(gui.listInfo.get(i).getType().equals("Not"))
+					not=true;
+				int filterType = 3;
+				if(gui.listInfo.get(i).getMode().equals("Name"))
+					filterType = 1;
+				else if(gui.listInfo.get(i).getMode().equals("Date"))
+					filterType = 2;
+				//
+				filtermain(andor, not, filterType, s1, s2, s3);
+				if(countfilter!=i+1)
+				{
+					System.out.println("count    "+countfilter+"  i  "+i);
+					gui.listInfo.remove(i);
+					i--;
+				}
+			}
+			System.out.println("list infovv    "+gui.listInfo .size());
+		}
+		else
+			gui.listInfo.clear();
+	}
+	public void delete() {
+		DataBase.clear();
+		setCountfilter(0);
+		indexOr=0;
+		flag=true;
+		// TODO Auto-generated method stub
 		
 	}
 }

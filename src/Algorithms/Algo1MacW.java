@@ -2,10 +2,10 @@ package Algorithms;
 import java.util.ArrayList;
 import java.util.List;
 
-import GUI.gui;
+
 
 import Objects.Mac;
-import Read_Write.ReadAndWriteCSV;
+
 
 public class Algo1MacW {
 	/**

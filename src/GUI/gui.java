@@ -72,7 +72,7 @@ public class gui {
 	private JTextField LocaionAltTxt;
 	private JTextField LocaionLonTxt;
 	private JTextField LocaionRadiosTxt;
-	private Filter filter=new Filter();
+	public static Filter filter=new Filter();
 	
 	
 	private boolean DataStructureEmpty=false;
@@ -91,7 +91,7 @@ public class gui {
 	private String walt;
 	private JTextField amountMACTxt;
 	private JTextField amountListsTxt;
-	private JTextArea informationTxt;
+	public static JTextArea informationTxt;
 	private JLabel informationLbl;
 	private JTextField algo2LocaionLatTxt;
 	private JTextField algo2LocaionLonTxt;
@@ -168,6 +168,7 @@ public class gui {
 				amountListsTxt.setText(""+read.getCountwigele());
 				amountMACTxt.setText(""+filter.NumOfMac());
 				startListen(dirPath);
+				
 				}
 				else
 					JOptionPane.showMessageDialog(frame,"Wrong path ! no Wigele-Wififile !");		
@@ -266,10 +267,8 @@ public class gui {
 				/**
 				 * Empty the DataBase except the file we read
 				 */
-				while(filter.getDataBase().size()>0)
-					filter.getDataBase().remove(0);
+				filter.delete();
 				
-				filter.setCountfilter(0);
 				/**
 				 * Empty the informtionList how we filterd
 				 */

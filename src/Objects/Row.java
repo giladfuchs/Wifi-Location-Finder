@@ -49,11 +49,18 @@ public class Row
 	public String toString() {
 		return "Row [element=" + element + ", head=" + head + "]";
 	}
-
+/**
+ * Checking if the Row is duplicate
+ * @param another
+ * @return
+ */
 	public boolean isEquals(Row another)
 	{
 		if(this.getHead().getID().equals(another.getHead().getID()) && 
-				this.getHead().getTime().equals(another.getHead().getTime()))
+				this.getHead().getTime().equals(another.getHead().getTime()) && 
+				this.getHead().getLat().equals(another.getHead().getLat()) &&
+				this.getHead().getLon().equals(another.getHead().getLon()) &&
+				this.getHead().getAlt().equals(another.getHead().getAlt()))
 			return true;
 		return false;
 	}

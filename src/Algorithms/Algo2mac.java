@@ -1,11 +1,6 @@
 package Algorithms;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 import Objects.Row;
-import Read_Write.ReadAndWriteCSV;
-
 public class Algo2mac {
 
 	/**

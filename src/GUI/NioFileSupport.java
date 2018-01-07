@@ -44,7 +44,7 @@ public class NioFileSupport
      */
     public static class MyWatchQueueReader implements Runnable 
     {
-    	private Filter filter=new Filter();
+ 
 
         /** the watchService that is passed in from above */
         private WatchService myWatcher;
@@ -68,12 +68,12 @@ public class NioFileSupport
                     // receive all the states from it
                     for (WatchEvent event : key.pollEvents()){                     
                         System.out.printf("Received %s event for file: %s\n", event.kind(), event.context()); 
-                      
-                        filter.thread();
-						
+                       gui.filter.getDataBase().clear();
+                        gui.filter.thread();
+                        gui.informationTxt.setText(gui.listInfo.toString());
 						
 						//System.out.println(gui.listInfo.get(0).toString());
-						System.out.printf("filter.getDirPaththread() = "+filter.getDataBase().size());
+						System.out.printf("filter.getDirPaththread() = "+gui.filter.getDataBase().size());
 												
                     }
                     System.out.println("------");
