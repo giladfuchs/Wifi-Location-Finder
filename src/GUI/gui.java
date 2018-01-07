@@ -72,9 +72,7 @@ public class gui {
 	private JTextField LocaionAltTxt;
 	private JTextField LocaionLonTxt;
 	private JTextField LocaionRadiosTxt;
-	public static Filter filter=new Filter();
-	
-	
+	public static Filter filter=new Filter();		
 	private boolean DataStructureEmpty=false;
 	private String destination = "";
 	private ReadAndWriteCSV read = new ReadAndWriteCSV();
@@ -167,8 +165,8 @@ public class gui {
 				System.out.println(read.getCountwigele());
 				amountListsTxt.setText(""+read.getCountwigele());
 				amountMACTxt.setText(""+filter.NumOfMac());
-				startListen(dirPath);
-				
+				amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
+				startListen(dirPath);				
 				}
 				else
 					JOptionPane.showMessageDialog(frame,"Wrong path ! no Wigele-Wififile !");		
@@ -198,6 +196,7 @@ public class gui {
 							filter.read(fc.getSelectedFile().getAbsolutePath().replace("\\","/"));
 							DataStructureEmpty = true;
 							amountMACTxt.setText(""+filter.NumOfMac());
+							amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
 						} catch (ParseException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -394,6 +393,7 @@ public class gui {
 							filter.filtermain(false,not, 1,strName,"","");
 							listInfo.add(new FilterInfo("And",not, "Name", strName,"","",filter.getCountfilter()));
 							amountMACTxt.setText(""+filter.NumOfMac());
+							amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
 							flagAnd = true;
 						}
 					}					
@@ -413,8 +413,7 @@ public class gui {
 						dateFromDateChooser = dateChooserMax.getDate();
 						dateString = String.format("%1$td-%1$tm-%1$tY", dateFromDateChooser);						
 						String endDate = dateString+" "+formattedDate;
-
-						String time = startDate+" "+endDate;						
+						
 						System.out.println("startDate = "+startDate);
 						System.out.println("endDate = "+endDate);
 						if(startDate.equals(""))
@@ -425,6 +424,7 @@ public class gui {
 							filter.filtermain(false,not, 2,startDate,endDate,"");
 							listInfo.add(new FilterInfo("And",not, "Date", startDate,endDate,"",filter.getCountfilter()));
 							amountMACTxt.setText(""+filter.NumOfMac());
+							amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
 							flagAnd = true;
 						}
 					}					
@@ -437,7 +437,6 @@ public class gui {
 						System.out.println("strLon = "+strLon);
 						String strRadios = LocaionRadiosTxt.getText();
 						System.out.println("strRadios = "+strRadios);
-						String location = "alt = "+strAlt+" Lon = "+strLon+" Radios = "+strRadios;
 						if(strAlt.equals(""))
 							JOptionPane.showMessageDialog(frame,"You didnt enter Alt !");
 						else if(strLon.equals(""))
@@ -448,6 +447,7 @@ public class gui {
 							filter.filtermain(false,not, 3,strAlt,strLon,strRadios);
 							listInfo.add(new FilterInfo("And",not, "Location",strAlt,strLon,strRadios,filter.getCountfilter()));
 							amountMACTxt.setText(""+filter.NumOfMac());
+							amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
 							flagAnd = true;
 						}					
 					}
@@ -486,6 +486,7 @@ public class gui {
 						listInfo.add(new FilterInfo("Or",not, "Name", strName,"","",filter.getCountfilter()));
 						flagOr = true;
 						amountMACTxt.setText(""+filter.NumOfMac());
+						amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
 					}					
 					else if(dateRadioBut.isSelected()){
 
@@ -506,11 +507,11 @@ public class gui {
 
 						System.out.println("startDate = "+startDate);
 						System.out.println("endDate = "+endDate);
-						String time = startDate+" "+endDate;
 						filter.filtermain(true,not, 2,startDate,endDate,"");
 						listInfo.add(new FilterInfo("Or",not, "Date", startDate,endDate,"",filter.getCountfilter()));
 						flagOr = true;
 						amountMACTxt.setText(""+filter.NumOfMac());
+						amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
 					}					
 					else if(locationRadioBut.isSelected()){
 
@@ -520,12 +521,12 @@ public class gui {
 						String strLon = LocaionLonTxt.getText();
 						System.out.println("strLon = "+strLon);
 						String strRadios = LocaionRadiosTxt.getText();
-						System.out.println("strRadios = "+strRadios);
-						String location = "alt = "+strAlt+" Lon = "+strLon+" Radios = "+strRadios;
+						System.out.println("strRadios = "+strRadios);						
 						filter.filtermain(true,not, 3,strAlt,strLon,strRadios);
 						listInfo.add(new FilterInfo("Or",not, "location", strAlt,strLon,strRadios,filter.getCountfilter()));
 						flagOr = true;
 						amountMACTxt.setText(""+filter.NumOfMac());
+						amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
 					}
 					else
 						JOptionPane.showMessageDialog(frame,"You didnt choose a type of filter !");
@@ -558,6 +559,7 @@ public class gui {
 					listInfo.remove(listInfo.size()-1);
 					informationTxt.setText(listInfo.toString());
 					amountMACTxt.setText(""+filter.NumOfMac());
+					amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
 				}else
 					JOptionPane.showMessageDialog(frame,"Cant do undo !");
 
@@ -1041,8 +1043,7 @@ public class gui {
 		try {
 			toWatch.register(myWatcher, ENTRY_CREATE, ENTRY_MODIFY,ENTRY_DELETE);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			System.out.println("7777777777777777");
+			// TODO Auto-generated catch block			
 			e1.printStackTrace();
 		}
 		/*try {
