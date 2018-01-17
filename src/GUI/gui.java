@@ -104,7 +104,8 @@ public class gui {
 	private JTextField algo2Signal3Txt;
 	private JRadioButton algo2FirstRadioBut;
 	private JRadioButton algo2SecondRadioBut;
-	static boolean threadSignal = false;
+	public static boolean  sqlthred=true;
+	public static boolean listen =false;
 
 	public gui() {		
 		initialize();
@@ -991,6 +992,14 @@ public class gui {
 		exitBut.setFont(new Font("Tahoma", Font.BOLD, 18));
 		exitBut.setBounds(1470, 531, 171, 25);
 		frame.getContentPane().add(exitBut);
+		
+		JButton sqlBut = new JButton("sql");
+		sqlBut.setBounds(103, 384, 97, 25);
+		frame.getContentPane().add(sqlBut);
+		
+		JButton sqlTestBut = new JButton("Test");
+		sqlTestBut.setBounds(212, 379, 97, 25);
+		frame.getContentPane().add(sqlTestBut);
 
 
 	}
@@ -1053,5 +1062,4 @@ public class gui {
 			e1.printStackTrace();
 		}*/
 	}
-
 }

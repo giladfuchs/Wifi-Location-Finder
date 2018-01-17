@@ -8,6 +8,7 @@ import java.util.List;
 import Algorithms.Algo1mac;
 import Algorithms.Algo2mac;
 import Convert.Q2;
+import GUI.OrgSql;
 import GUI.gui;
 import Objects.Mac;
 import Objects.Row;
@@ -123,6 +124,13 @@ public class Filter {
 				flag=true;
 		}
 	}
+	public void readsql() throws ParseException{
+
+		
+		DataBase.add(OrgSql.test_ex4_db());
+       System.out.println(DataBase.get(countfilter).get(0).getHead().getTime());
+	}
+	
 	/**
 	 * This function upload a file with 46 column  to the DataBase
 	 * @param srcPath
