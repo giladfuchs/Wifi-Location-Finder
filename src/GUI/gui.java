@@ -1,8 +1,12 @@
 package GUI;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -957,24 +961,24 @@ public class gui {
 
 		JLabel amountListsLbl = new JLabel("Amount of lists");
 		amountListsLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		amountListsLbl.setBounds(12, 451, 87, 45);
+		amountListsLbl.setBounds(12, 506, 87, 45);
 		frame.getContentPane().add(amountListsLbl);
 
 		JLabel amountMACLbl = new JLabel("Amount of MAC");
 		amountMACLbl.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		amountMACLbl.setBounds(12, 411, 87, 45);
+		amountMACLbl.setBounds(12, 466, 87, 45);
 		frame.getContentPane().add(amountMACLbl);
 
 		amountMACTxt = new JTextField();
 		amountMACTxt.setEditable(false);
 		amountMACTxt.setColumns(10);
-		amountMACTxt.setBounds(131, 422, 75, 22);
+		amountMACTxt.setBounds(131, 477, 75, 22);
 		frame.getContentPane().add(amountMACTxt);
 
 		amountListsTxt = new JTextField();
 		amountListsTxt.setEditable(false);
 		amountListsTxt.setColumns(10);
-		amountListsTxt.setBounds(131, 462, 75, 22);
+		amountListsTxt.setBounds(131, 517, 75, 22);
 		frame.getContentPane().add(amountListsTxt);
 		
 		amountMACTxt.setText("0");
@@ -983,6 +987,7 @@ public class gui {
 		/**
 		 * Button of Exit
 		 */	
+		
 		JButton exitBut = new JButton("Exit");
 		exitBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -993,13 +998,99 @@ public class gui {
 		exitBut.setBounds(1470, 531, 171, 25);
 		frame.getContentPane().add(exitBut);
 		
-		JButton sqlBut = new JButton("sql");
-		sqlBut.setBounds(103, 384, 97, 25);
-		frame.getContentPane().add(sqlBut);
+
+		/**
+		 * Button of SQL
+		 */	
 		
-		JButton sqlTestBut = new JButton("Test");
-		sqlTestBut.setBounds(212, 379, 97, 25);
-		frame.getContentPane().add(sqlTestBut);
+		JButton sqlBut = new JButton("SQL");
+		sqlBut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+							
+				JPanel panel=new JPanel();  
+				panel.setBounds(0,0,500,500);  
+				panel.setBackground(Color.CYAN);
+											
+				JLabel IPLbl=new JLabel("IP");	
+				IPLbl.setFont(new Font("Serif", Font.PLAIN, 20));
+				IPLbl.setBounds(50, 20, 150, 40);
+				
+				JLabel URLLbl=new JLabel("URL");	
+				URLLbl.setFont(new Font("Serif", Font.PLAIN, 20));
+				URLLbl.setBounds(50, 50, 150, 70);
+				
+				JLabel userLbl=new JLabel("User");   
+				userLbl.setFont(new Font("Serif", Font.PLAIN, 20));
+				userLbl.setBounds(50, 80, 150, 100);
+				
+				JLabel passwordLbl=new JLabel("Password"); 
+				passwordLbl.setFont(new Font("Serif", Font.PLAIN, 20));
+				passwordLbl.setBounds(50, 110, 150, 130);
+				
+				JLabel pathLbl=new JLabel("Path");
+				pathLbl.setFont(new Font("Serif", Font.PLAIN, 20));
+				pathLbl.setBounds(50, 140, 150, 160);
+								
+		        JTextField  IPTxt = new JTextField();
+		        IPTxt.setBounds(180, 30, 200, 20);
+		        
+		        JTextField  URLTxt = new JTextField();
+		        URLTxt.setBounds(180, 75, 200, 20);
+		        
+		        JTextField  userTxt = new JTextField();
+		        userTxt.setBounds(180, 125, 200, 20);
+		        
+		        JPasswordField  passwordTxt = new JPasswordField();
+		        passwordTxt.setBounds(180, 170, 200, 20);
+		        
+		        JTextField  pathTxt = new JTextField();
+		        pathTxt.setBounds(180, 210, 200, 20);
+
+		        
+		        JButton runSQL = new JButton("RUN"); 				
+		        runSQL.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) 
+					{
+						String IP = IPTxt.getText();
+						String URL = URLTxt.getText();
+						String user = userTxt.getText();
+						String password = passwordTxt.getText();
+						String path = pathTxt.getText();	
+						
+						System.out.println("IP = "+IP);
+						System.out.println("URL = "+URL);
+						System.out.println("user = "+user);
+						System.out.println("password = "+password);
+						System.out.println("path = "+path);
+						System.out.println("-----------------");
+					}
+				});	
+		        runSQL.setBounds(200, 270, 100, 30);
+		        panel.setLayout(null);
+				panel.add(IPTxt); 
+				panel.add(URLTxt);  
+				panel.add(userTxt);  
+				panel.add(passwordTxt);  
+				panel.add(pathTxt);  
+				panel.add(IPLbl);
+		        panel.add(URLLbl); 
+		        panel.add(userLbl); 
+		        panel.add(passwordLbl);
+		        panel.add(pathLbl); 			        
+		        panel.add(runSQL);
+		        
+		        JFrame frame = new JFrame("SQLFrame");
+				frame.setBounds(500, 100, 500, 400);			
+				frame.setVisible(true);
+		        frame.getContentPane().add(panel);  		       	        		      		        
+		        frame.getContentPane().setLayout(null);    
+		        frame.setVisible(true);    
+		               
+			}
+		});
+		sqlBut.setBounds(52, 399, 180, 25);
+		frame.getContentPane().add(sqlBut);
 
 
 	}
