@@ -170,8 +170,7 @@ public class gui {
 					e.printStackTrace();
 				}
 				if(DataStructureEmpty){
-				System.out.println(read.getCountwigele());
-				amountListsTxt.setText(""+read.getCountwigele());
+				
 				amountMACTxt.setText(""+filter.NumOfMac());
 				amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
 				startListen(dirPath);				

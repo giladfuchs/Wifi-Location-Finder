@@ -32,7 +32,7 @@ public class OrgSql{
 	private static String _ip;	
 	private static String _user ;
 	private static String _password ;
-	private static String _path="oop_course_ariel";
+	private static String _path;
 	private static String _table;
 	private static String _url ;
 	private static Connection _con = null;

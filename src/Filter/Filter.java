@@ -24,12 +24,12 @@ public class Filter {
 	 *
 	 */
 	private List<List<Row>> DataBase = new ArrayList< List<Row>>(); 
-	private static String _ip = "5.29.193.52";
-	private static String _url = "jdbc:mysql://"+_ip+":3306/oop_course_ariel";
-	private static String _user = "oop1";
-	private static String _password = "Lambda1();";
-	private static String path="oop_course_ariel";
-	private static String table="ex4_db";
+	private static String _ip ;
+	private static String _url ;
+	private static String _user;
+	private static String _password ;
+	private static String path;
+	private static String table;
 	private int countfilter=0;
 	private int indexOr=0;
 	private boolean flag=true;
@@ -135,7 +135,8 @@ public class Filter {
 
 		delete();
 		DataBase.add(OrgSql.test_ex4_db(_ip, _url, _user, _password, path,table));
-		
+		gui.amountListsTxt.setText(""+getDataBase().get(getDataBase().size()-1).size());
+		gui.amountMACTxt.setText(""+NumOfMac());
 	}
 
 	/**
@@ -371,7 +372,7 @@ public class Filter {
 		else
 			gui.listInfo.clear();
 		
-		gui.amountListsTxt.setText(""+read.getCountwigele());
+		gui.amountListsTxt.setText(""+getDataBase().get(getDataBase().size()-1).size());
 		gui.amountMACTxt.setText(""+NumOfMac());
 	
 	}
