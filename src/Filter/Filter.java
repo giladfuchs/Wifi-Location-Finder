@@ -24,7 +24,12 @@ public class Filter {
 	 *
 	 */
 	private List<List<Row>> DataBase = new ArrayList< List<Row>>(); 
-
+	private static String _ip = "5.29.193.52";
+	private static String _url = "jdbc:mysql://"+_ip+":3306/oop_course_ariel";
+	private static String _user = "oop1";
+	private static String _password = "Lambda1();";
+	private static String path="oop_course_ariel";
+	private static String table="ex4_db";
 	private int countfilter=0;
 	private int indexOr=0;
 	private boolean flag=true;
@@ -50,8 +55,10 @@ public class Filter {
 		List<Row> first = q2.ReadDir(dirPath);
 		if(first == null)
 			return false;
-		else
+		else{
+			delete();
 			DataBase.add(first);
+		}
 		dirPaththread =dirPath;
 		return true;
 
@@ -126,18 +133,18 @@ public class Filter {
 	}
 	public void readsql() throws ParseException{
 
+		delete();
+		DataBase.add(OrgSql.test_ex4_db(_ip, _url, _user, _password, path,table));
 		
-		DataBase.add(OrgSql.test_ex4_db());
-       System.out.println(DataBase.get(countfilter).get(0).getHead().getTime());
 	}
-	
+
 	/**
 	 * This function upload a file with 46 column  to the DataBase
 	 * @param srcPath
 	 * @throws ParseException
 	 */
 	public void read(String srcPath) throws ParseException{
-
+		delete();
 		System.out.println(srcPath);
 		DataBase.add(read.ReadFileIntoList3(srcPath));
 
@@ -155,7 +162,7 @@ public class Filter {
 	{		
 		FilterNot Not=new FilterNot();
 		FilterAnd And=new FilterAnd();
-		
+
 		switch (filterType)  
 		{
 		case 1: {
@@ -317,12 +324,21 @@ public class Filter {
 	public void thread() {
 
 		setCountfilter(0);
-
-		try {
-			boolean b=readq2(getDirPaththread());
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(gui.listen){
+			try {
+				boolean b=readq2(getDirPaththread());
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else{
+			try {
+				readsql();
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		if(DataBase.size()>0){
@@ -354,13 +370,65 @@ public class Filter {
 		}
 		else
 			gui.listInfo.clear();
+		
+		gui.amountListsTxt.setText(""+read.getCountwigele());
+		gui.amountMACTxt.setText(""+NumOfMac());
+	
 	}
 	public void delete() {
 		DataBase.clear();
 		setCountfilter(0);
 		indexOr=0;
 		flag=true;
+		/**
+		 * Empty the informtionList how we filterd
+		 */
+		if(!gui.listen && !gui.sqlthred)
+		gui.listInfo.clear();
+		gui.informationTxt.setText(gui.listInfo.toString());
 		// TODO Auto-generated method stub
-		
+
+	}
+	public static String get_ip() {
+		return _ip;
+	}
+	public static void set_ip(String _ip) {
+		Filter._ip = _ip;
+	}
+	public static String get_url() {
+		return _url;
+	}
+	public static void set_url(String _url) {
+		Filter._url = _url;
+	}
+	public static String get_user() {
+		return _user;
+	}
+	public static void set_user(String _user) {
+		Filter._user = _user;
+	}
+	public static String get_password() {
+		return _password;
+	}
+	public static void set_password(String _password) {
+		Filter._password = _password;
+	}
+	public static String getPath() {
+		return path;
+	}
+	public static void setPath(String path) {
+		Filter.path = path;
+	}
+	public static String getTable() {
+		return table;
+	}
+	public static void setTable(String table) {
+		Filter.table = table;
+	}
+	public String getChange() {
+		return change;
+	}
+	public void setChange(String change) {
+		this.change = change;
 	}
 }

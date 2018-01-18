@@ -1,39 +1,42 @@
 package GUI;
 
 
-class RunnableDemo implements Runnable {
+class SqlThread implements Runnable {
    private Thread t;
-   private String threadName;
    
-   RunnableDemo( String name) {
-      threadName = name;
-      System.out.println("Creating " +  threadName );
+   
+   SqlThread( ) {
+     
+      System.out.println("Creating "  );
    }
    
    public void run() {
-      System.out.println("Running " +  threadName );
+      System.out.println("Running " );
       try {
         while(gui.sqlthred){
-            System.out.println("Thread: " + threadName + ", " );
+            System.out.println("Thread:workink ");
             // Let the thread sleep for a while.
-            while(!MySQL_101.isModified()  && gui.sqlthred){
-        	
-        		 Thread.sleep(5000);
+            if(OrgSql.TimeUpdateCheck()){
+            	System.out.println("Reconize change");
+            	gui.filter.getDataBase().clear();
+				gui.filter.thread();
+				gui.informationTxt.setText(gui.listInfo.toString());
+        		 
          }
-            Thread.sleep(5000);
+            Thread.sleep(15000);
        
         }
        
       } catch (InterruptedException e) {
-         System.out.println("Thread " +  threadName + " interrupted.");
+         System.out.println("Thread  interrupted.");
       }
-      System.out.println("Thread " +  threadName + " exiting.");
+      System.out.println("Threadexiting.");
    }
    
    public void start () {
-      System.out.println("Starting " +  threadName );
+      System.out.println("Starting " );
       if (t == null) {
-         t = new Thread (this, threadName);
+         t = new Thread (this);
          t.start ();
       }
    }

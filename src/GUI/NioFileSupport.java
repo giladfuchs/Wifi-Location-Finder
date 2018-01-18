@@ -39,12 +39,14 @@ public class NioFileSupport
 					if(!gui.listen)
 						break;
 					
-					for (WatchEvent event : key.pollEvents() ){                     
+					for (WatchEvent event : key.pollEvents() ){   
+						if(gui.listen){
 						System.out.printf("Received %s event for file: %s\n", event.kind(), event.context()); 
 						gui.filter.getDataBase().clear();
 						gui.filter.thread();
 						gui.informationTxt.setText(gui.listInfo.toString());
 						System.out.printf("filter.getDirPaththread() = "+gui.filter.getDataBase().size());
+					}
 					}
 				
                   

@@ -91,8 +91,8 @@ public class gui {
 	private String wlat;
 	private String wlon;
 	private String walt;
-	private JTextField amountMACTxt;
-	private JTextField amountListsTxt;
+	public static JTextField amountMACTxt;
+	public static JTextField amountListsTxt;
 	public static JTextArea informationTxt;
 	private JLabel informationLbl;
 	private JTextField algo2LocaionLatTxt;
@@ -108,9 +108,9 @@ public class gui {
 	private JTextField algo2Signal3Txt;
 	private JRadioButton algo2FirstRadioBut;
 	private JRadioButton algo2SecondRadioBut;
-	public static boolean  sqlthred=true;
+	public static boolean  sqlthred=false;
 	public static boolean listen =false;
-
+	
 	public gui() {		
 		initialize();
 	}
@@ -161,7 +161,10 @@ public class gui {
 				dirPath = pathGetDir;
 				try {
 					if(filter.readq2(dirPath) == true)
+						
 						DataStructureEmpty = true;
+					 sqlthred=false;
+					 listen =true;
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -200,6 +203,8 @@ public class gui {
 						try {
 							filter.read(fc.getSelectedFile().getAbsolutePath().replace("\\","/"));
 							DataStructureEmpty = true;
+							 sqlthred=false;
+							 listen =false;
 							amountMACTxt.setText(""+filter.NumOfMac());
 							amountListsTxt.setText(""+filter.getDataBase().get(filter.getDataBase().size()-1).size());
 						} catch (ParseException e1) {
@@ -271,13 +276,14 @@ public class gui {
 				/**
 				 * Empty the DataBase except the file we read
 				 */
+				listen=false;
+				sqlthred=false;
 				filter.delete();
 				
 				/**
 				 * Empty the informtionList how we filterd
 				 */
-				while(listInfo.size()>0)
-					listInfo.remove(0);
+				
 				informationTxt.setText(listInfo.toString());				
 				JOptionPane.showMessageDialog(frame,"Data Structure is now empty !");
 				DataStructureEmpty = false;
@@ -1016,9 +1022,9 @@ public class gui {
 				IPLbl.setFont(new Font("Serif", Font.PLAIN, 20));
 				IPLbl.setBounds(50, 20, 150, 40);
 				
-				JLabel URLLbl=new JLabel("URL");	
-				URLLbl.setFont(new Font("Serif", Font.PLAIN, 20));
-				URLLbl.setBounds(50, 50, 150, 70);
+				JLabel portLbl=new JLabel("Port");	
+				portLbl.setFont(new Font("Serif", Font.PLAIN, 20));
+				portLbl.setBounds(50, 50, 150, 70);
 				
 				JLabel userLbl=new JLabel("User");   
 				userLbl.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -1031,12 +1037,16 @@ public class gui {
 				JLabel pathLbl=new JLabel("Path");
 				pathLbl.setFont(new Font("Serif", Font.PLAIN, 20));
 				pathLbl.setBounds(50, 140, 150, 160);
+				
+				JLabel tableLbl=new JLabel("Table");	
+				tableLbl.setFont(new Font("Serif", Font.PLAIN, 20));
+				tableLbl.setBounds(50, 170, 150, 190);
 								
 		        JTextField  IPTxt = new JTextField();
 		        IPTxt.setBounds(180, 30, 200, 20);
 		        
-		        JTextField  URLTxt = new JTextField();
-		        URLTxt.setBounds(180, 75, 200, 20);
+		        JTextField  portTxt = new JTextField();
+		        portTxt.setBounds(180, 75, 200, 20);
 		        
 		        JTextField  userTxt = new JTextField();
 		        userTxt.setBounds(180, 125, 200, 20);
@@ -1046,39 +1056,53 @@ public class gui {
 		        
 		        JTextField  pathTxt = new JTextField();
 		        pathTxt.setBounds(180, 210, 200, 20);
+		        
+		        JTextField  tableTxt = new JTextField();
+		        tableTxt.setBounds(180, 250, 200, 20);
 
 		        
 		        JButton runSQL = new JButton("RUN"); 				
 		        runSQL.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) 
 					{
-						String IP = IPTxt.getText();
-						String URL = URLTxt.getText();
-						String user = userTxt.getText();
-						String password = passwordTxt.getText();
-						String path = pathTxt.getText();	
+						filter.set_ip( IPTxt.getText());
+						filter.set_url(portTxt.getText());
+						filter.set_user(userTxt.getText());
+						filter.set_password(passwordTxt.getText());
+						filter.setPath( pathTxt.getText());	
+						filter.setTable(tableTxt.getText());
+						DataStructureEmpty=true;
+						try {
+							 listen =false;
+								DataStructureEmpty=true;
+								filter.readsql();
+								sqlthred=true;
+								SqlThread tsql=new SqlThread();
+								tsql.start();
+							
+						} catch (ParseException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						
-						System.out.println("IP = "+IP);
-						System.out.println("URL = "+URL);
-						System.out.println("user = "+user);
-						System.out.println("password = "+password);
-						System.out.println("path = "+path);
 						System.out.println("-----------------");
 					}
 				});	
-		        runSQL.setBounds(200, 270, 100, 30);
+		        runSQL.setBounds(200, 290, 100, 30);
 		        panel.setLayout(null);
 				panel.add(IPTxt); 
-				panel.add(URLTxt);  
+				panel.add(portTxt);  
 				panel.add(userTxt);  
 				panel.add(passwordTxt);  
 				panel.add(pathTxt);  
 				panel.add(IPLbl);
-		        panel.add(URLLbl); 
+		        panel.add(portLbl); 
 		        panel.add(userLbl); 
 		        panel.add(passwordLbl);
 		        panel.add(pathLbl); 			        
 		        panel.add(runSQL);
+		        panel.add(tableTxt);
+		        panel.add(tableLbl);
 		        
 		        JFrame frame = new JFrame("SQLFrame");
 				frame.setBounds(500, 100, 500, 400);			
@@ -1091,8 +1115,6 @@ public class gui {
 		});
 		sqlBut.setBounds(52, 399, 180, 25);
 		frame.getContentPane().add(sqlBut);
-
-
 	}
 	private String getFilePath()
 	{
