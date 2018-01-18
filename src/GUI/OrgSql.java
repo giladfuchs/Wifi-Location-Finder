@@ -40,7 +40,7 @@ public class OrgSql{
 	
 
 
-	public static List<Row>  test_ex4_db(String ip,String port,String user,String password, String path, String table) {
+	public static List<Row>  ReadSqlData(String ip,String port,String user,String password, String path, String table) {
 		_ip = ip;
 		_path=path;
 		_url ="jdbc:mysql://"+_ip+":"+port+"/"+_path+"?useSSL=false";

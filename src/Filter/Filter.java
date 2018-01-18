@@ -134,7 +134,7 @@ public class Filter {
 	public void readsql() throws ParseException{
 
 		delete();
-		DataBase.add(OrgSql.test_ex4_db(_ip, _url, _user, _password, path,table));
+		DataBase.add(OrgSql.ReadSqlData(_ip, _url, _user, _password, path,table));
 		gui.amountListsTxt.setText(""+getDataBase().get(getDataBase().size()-1).size());
 		gui.amountMACTxt.setText(""+NumOfMac());
 	}
